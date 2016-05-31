@@ -13,6 +13,11 @@
 		EF3602EB1CFDCC0000ABD8AD /* RideGirlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602EA1CFDCC0000ABD8AD /* RideGirlTests.m */; };
 		EF3602F61CFDCC0000ABD8AD /* RideGirlUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602F51CFDCC0000ABD8AD /* RideGirlUITests.m */; };
 		EF3603071CFDCD6C00ABD8AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF3603061CFDCD6C00ABD8AD /* Assets.xcassets */; };
+		EFA7CB771CFDE5FA0097FA52 /* LHBEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CB761CFDE5FA0097FA52 /* LHBEssenceViewController.m */; };
+		EFA7CB7A1CFDE60C0097FA52 /* LHBNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CB791CFDE60C0097FA52 /* LHBNewViewController.m */; };
+		EFA7CB7D1CFDE6230097FA52 /* LHBFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CB7C1CFDE6230097FA52 /* LHBFriendTrendsViewController.m */; };
+		EFA7CB801CFDE6320097FA52 /* LHBMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CB7F1CFDE6320097FA52 /* LHBMeViewController.m */; };
+		EFA7CB831CFDEDA40097FA52 /* LHBTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CB821CFDEDA40097FA52 /* LHBTabBar.m */; };
 		EFDF67471CFDD5A7009261EB /* LHBTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDF67461CFDD5A7009261EB /* LHBTabBarViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +54,16 @@
 		EF3602F51CFDCC0000ABD8AD /* RideGirlUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RideGirlUITests.m; sourceTree = "<group>"; };
 		EF3602F71CFDCC0000ABD8AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF3603061CFDCD6C00ABD8AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EFA7CB751CFDE5FA0097FA52 /* LHBEssenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBEssenceViewController.h; sourceTree = "<group>"; };
+		EFA7CB761CFDE5FA0097FA52 /* LHBEssenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBEssenceViewController.m; sourceTree = "<group>"; };
+		EFA7CB781CFDE60C0097FA52 /* LHBNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBNewViewController.h; sourceTree = "<group>"; };
+		EFA7CB791CFDE60C0097FA52 /* LHBNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBNewViewController.m; sourceTree = "<group>"; };
+		EFA7CB7B1CFDE6230097FA52 /* LHBFriendTrendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBFriendTrendsViewController.h; sourceTree = "<group>"; };
+		EFA7CB7C1CFDE6230097FA52 /* LHBFriendTrendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBFriendTrendsViewController.m; sourceTree = "<group>"; };
+		EFA7CB7E1CFDE6320097FA52 /* LHBMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBMeViewController.h; sourceTree = "<group>"; };
+		EFA7CB7F1CFDE6320097FA52 /* LHBMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBMeViewController.m; sourceTree = "<group>"; };
+		EFA7CB811CFDEDA40097FA52 /* LHBTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBTabBar.h; sourceTree = "<group>"; };
+		EFA7CB821CFDEDA40097FA52 /* LHBTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBTabBar.m; sourceTree = "<group>"; };
 		EFDF67451CFDD5A7009261EB /* LHBTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBTabBarViewController.h; sourceTree = "<group>"; };
 		EFDF67461CFDD5A7009261EB /* LHBTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBTabBarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +140,16 @@
 				EF3602D41CFDCC0000ABD8AD /* AppDelegate.m */,
 				EFDF67451CFDD5A7009261EB /* LHBTabBarViewController.h */,
 				EFDF67461CFDD5A7009261EB /* LHBTabBarViewController.m */,
+				EFA7CB751CFDE5FA0097FA52 /* LHBEssenceViewController.h */,
+				EFA7CB761CFDE5FA0097FA52 /* LHBEssenceViewController.m */,
+				EFA7CB781CFDE60C0097FA52 /* LHBNewViewController.h */,
+				EFA7CB791CFDE60C0097FA52 /* LHBNewViewController.m */,
+				EFA7CB7B1CFDE6230097FA52 /* LHBFriendTrendsViewController.h */,
+				EFA7CB7C1CFDE6230097FA52 /* LHBFriendTrendsViewController.m */,
+				EFA7CB7E1CFDE6320097FA52 /* LHBMeViewController.h */,
+				EFA7CB7F1CFDE6320097FA52 /* LHBMeViewController.m */,
+				EFA7CB811CFDEDA40097FA52 /* LHBTabBar.h */,
+				EFA7CB821CFDEDA40097FA52 /* LHBTabBar.m */,
 				EF3602E11CFDCC0000ABD8AD /* Info.plist */,
 				EF3603061CFDCD6C00ABD8AD /* Assets.xcassets */,
 				EF3602D01CFDCC0000ABD8AD /* Supporting Files */,
@@ -341,9 +366,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFA7CB831CFDEDA40097FA52 /* LHBTabBar.m in Sources */,
+				EFA7CB771CFDE5FA0097FA52 /* LHBEssenceViewController.m in Sources */,
 				EF3602D51CFDCC0000ABD8AD /* AppDelegate.m in Sources */,
 				EF3602D21CFDCC0000ABD8AD /* main.m in Sources */,
 				EFDF67471CFDD5A7009261EB /* LHBTabBarViewController.m in Sources */,
+				EFA7CB7A1CFDE60C0097FA52 /* LHBNewViewController.m in Sources */,
+				EFA7CB7D1CFDE6230097FA52 /* LHBFriendTrendsViewController.m in Sources */,
+				EFA7CB801CFDE6320097FA52 /* LHBMeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
