@@ -1,5 +1,5 @@
 //
-//  MainViewController.h
+//  LHBTabBarViewController.h
 //  RideGirl
 //
 //  Created by LHB on 16/5/31.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UIViewController
+@interface LHBTabBarViewController : UITabBarController
 
 @end

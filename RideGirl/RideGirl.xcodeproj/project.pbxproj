@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F97ED90D251420C1EB932F5 /* Pods_RideGirl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36F7713304DB02680F4305B9 /* Pods_RideGirl.framework */; };
 		EF3602D21CFDCC0000ABD8AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602D11CFDCC0000ABD8AD /* main.m */; };
 		EF3602D51CFDCC0000ABD8AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602D41CFDCC0000ABD8AD /* AppDelegate.m */; };
 		EF3602EB1CFDCC0000ABD8AD /* RideGirlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602EA1CFDCC0000ABD8AD /* RideGirlTests.m */; };
 		EF3602F61CFDCC0000ABD8AD /* RideGirlUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602F51CFDCC0000ABD8AD /* RideGirlUITests.m */; };
-		EF3603051CFDCC4600ABD8AD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3603041CFDCC4600ABD8AD /* MainViewController.m */; };
 		EF3603071CFDCD6C00ABD8AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF3603061CFDCD6C00ABD8AD /* Assets.xcassets */; };
+		EFDF67471CFDD5A7009261EB /* LHBTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDF67461CFDD5A7009261EB /* LHBTabBarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		36F7713304DB02680F4305B9 /* Pods_RideGirl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideGirl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B18E73453938C145A53A055B /* Pods-RideGirl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideGirl.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideGirl/Pods-RideGirl.release.xcconfig"; sourceTree = "<group>"; };
+		D3068E2231FA0651355DB87D /* Pods-RideGirl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideGirl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideGirl/Pods-RideGirl.debug.xcconfig"; sourceTree = "<group>"; };
 		EF3602CD1CFDCC0000ABD8AD /* RideGirl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideGirl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3602D11CFDCC0000ABD8AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EF3602D31CFDCC0000ABD8AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -44,9 +48,9 @@
 		EF3602F11CFDCC0000ABD8AD /* RideGirlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RideGirlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3602F51CFDCC0000ABD8AD /* RideGirlUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RideGirlUITests.m; sourceTree = "<group>"; };
 		EF3602F71CFDCC0000ABD8AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EF3603031CFDCC4600ABD8AD /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		EF3603041CFDCC4600ABD8AD /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		EF3603061CFDCD6C00ABD8AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EFDF67451CFDD5A7009261EB /* LHBTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBTabBarViewController.h; sourceTree = "<group>"; };
+		EFDF67461CFDD5A7009261EB /* LHBTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBTabBarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F97ED90D251420C1EB932F5 /* Pods_RideGirl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F8B056318D7D424C52C6D22 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D3068E2231FA0651355DB87D /* Pods-RideGirl.debug.xcconfig */,
+				B18E73453938C145A53A055B /* Pods-RideGirl.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8BD8DBB746901FD207C0E279 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				36F7713304DB02680F4305B9 /* Pods_RideGirl.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EF3602C41CFDCC0000ABD8AD = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +103,8 @@
 				EF3602E91CFDCC0000ABD8AD /* RideGirlTests */,
 				EF3602F41CFDCC0000ABD8AD /* RideGirlUITests */,
 				EF3602CE1CFDCC0000ABD8AD /* Products */,
+				2F8B056318D7D424C52C6D22 /* Pods */,
+				8BD8DBB746901FD207C0E279 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,8 +123,8 @@
 			children = (
 				EF3602D31CFDCC0000ABD8AD /* AppDelegate.h */,
 				EF3602D41CFDCC0000ABD8AD /* AppDelegate.m */,
-				EF3603031CFDCC4600ABD8AD /* MainViewController.h */,
-				EF3603041CFDCC4600ABD8AD /* MainViewController.m */,
+				EFDF67451CFDD5A7009261EB /* LHBTabBarViewController.h */,
+				EFDF67461CFDD5A7009261EB /* LHBTabBarViewController.m */,
 				EF3602E11CFDCC0000ABD8AD /* Info.plist */,
 				EF3603061CFDCD6C00ABD8AD /* Assets.xcassets */,
 				EF3602D01CFDCC0000ABD8AD /* Supporting Files */,
@@ -141,9 +165,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF3602FA1CFDCC0000ABD8AD /* Build configuration list for PBXNativeTarget "RideGirl" */;
 			buildPhases = (
+				51D95599377942324F2FDC89 /* Check Pods Manifest.lock */,
 				EF3602C91CFDCC0000ABD8AD /* Sources */,
 				EF3602CA1CFDCC0000ABD8AD /* Frameworks */,
 				EF3602CB1CFDCC0000ABD8AD /* Resources */,
+				246A3EF45E080B8F077F6CEA /* Embed Pods Frameworks */,
+				55796770D2E531FC569A83BA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,6 +223,7 @@
 		EF3602C51CFDCC0000ABD8AD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LHB;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = LHB;
 				TargetAttributes = {
@@ -260,14 +288,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		246A3EF45E080B8F077F6CEA /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RideGirl/Pods-RideGirl-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51D95599377942324F2FDC89 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		55796770D2E531FC569A83BA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RideGirl/Pods-RideGirl-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EF3602C91CFDCC0000ABD8AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EF3602D51CFDCC0000ABD8AD /* AppDelegate.m in Sources */,
-				EF3603051CFDCC4600ABD8AD /* MainViewController.m in Sources */,
 				EF3602D21CFDCC0000ABD8AD /* main.m in Sources */,
+				EFDF67471CFDD5A7009261EB /* LHBTabBarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +465,7 @@
 		};
 		EF3602FB1CFDCC0000ABD8AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3068E2231FA0651355DB87D /* Pods-RideGirl.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -403,6 +480,7 @@
 		};
 		EF3602FC1CFDCC0000ABD8AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B18E73453938C145A53A055B /* Pods-RideGirl.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
