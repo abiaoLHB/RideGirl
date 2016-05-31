@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF3602D21CFDCC0000ABD8AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602D11CFDCC0000ABD8AD /* main.m */; };
+		EF3602D51CFDCC0000ABD8AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602D41CFDCC0000ABD8AD /* AppDelegate.m */; };
+		EF3602EB1CFDCC0000ABD8AD /* RideGirlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602EA1CFDCC0000ABD8AD /* RideGirlTests.m */; };
+		EF3602F61CFDCC0000ABD8AD /* RideGirlUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602F51CFDCC0000ABD8AD /* RideGirlUITests.m */; };
+		EF3603051CFDCC4600ABD8AD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3603041CFDCC4600ABD8AD /* MainViewController.m */; };
+		EF3603071CFDCD6C00ABD8AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF3603061CFDCD6C00ABD8AD /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF3602E71CFDCC0000ABD8AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF3602C51CFDCC0000ABD8AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF3602CC1CFDCC0000ABD8AD;
+			remoteInfo = RideGirl;
+		};
+		EF3602F21CFDCC0000ABD8AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF3602C51CFDCC0000ABD8AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF3602CC1CFDCC0000ABD8AD;
+			remoteInfo = RideGirl;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EF3602CD1CFDCC0000ABD8AD /* RideGirl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideGirl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF3602D11CFDCC0000ABD8AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EF3602D31CFDCC0000ABD8AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EF3602D41CFDCC0000ABD8AD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EF3602E11CFDCC0000ABD8AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF3602E61CFDCC0000ABD8AD /* RideGirlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RideGirlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF3602EA1CFDCC0000ABD8AD /* RideGirlTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RideGirlTests.m; sourceTree = "<group>"; };
+		EF3602EC1CFDCC0000ABD8AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF3602F11CFDCC0000ABD8AD /* RideGirlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RideGirlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF3602F51CFDCC0000ABD8AD /* RideGirlUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RideGirlUITests.m; sourceTree = "<group>"; };
+		EF3602F71CFDCC0000ABD8AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF3603031CFDCC4600ABD8AD /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		EF3603041CFDCC4600ABD8AD /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		EF3603061CFDCD6C00ABD8AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF3602CA1CFDCC0000ABD8AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3602E31CFDCC0000ABD8AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3602EE1CFDCC0000ABD8AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF3602C41CFDCC0000ABD8AD = {
+			isa = PBXGroup;
+			children = (
+				EF3602CF1CFDCC0000ABD8AD /* RideGirl */,
+				EF3602E91CFDCC0000ABD8AD /* RideGirlTests */,
+				EF3602F41CFDCC0000ABD8AD /* RideGirlUITests */,
+				EF3602CE1CFDCC0000ABD8AD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EF3602CE1CFDCC0000ABD8AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF3602CD1CFDCC0000ABD8AD /* RideGirl.app */,
+				EF3602E61CFDCC0000ABD8AD /* RideGirlTests.xctest */,
+				EF3602F11CFDCC0000ABD8AD /* RideGirlUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF3602CF1CFDCC0000ABD8AD /* RideGirl */ = {
+			isa = PBXGroup;
+			children = (
+				EF3602D31CFDCC0000ABD8AD /* AppDelegate.h */,
+				EF3602D41CFDCC0000ABD8AD /* AppDelegate.m */,
+				EF3603031CFDCC4600ABD8AD /* MainViewController.h */,
+				EF3603041CFDCC4600ABD8AD /* MainViewController.m */,
+				EF3602E11CFDCC0000ABD8AD /* Info.plist */,
+				EF3603061CFDCD6C00ABD8AD /* Assets.xcassets */,
+				EF3602D01CFDCC0000ABD8AD /* Supporting Files */,
+			);
+			path = RideGirl;
+			sourceTree = "<group>";
+		};
+		EF3602D01CFDCC0000ABD8AD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EF3602D11CFDCC0000ABD8AD /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EF3602E91CFDCC0000ABD8AD /* RideGirlTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF3602EA1CFDCC0000ABD8AD /* RideGirlTests.m */,
+				EF3602EC1CFDCC0000ABD8AD /* Info.plist */,
+			);
+			path = RideGirlTests;
+			sourceTree = "<group>";
+		};
+		EF3602F41CFDCC0000ABD8AD /* RideGirlUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EF3602F51CFDCC0000ABD8AD /* RideGirlUITests.m */,
+				EF3602F71CFDCC0000ABD8AD /* Info.plist */,
+			);
+			path = RideGirlUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF3602CC1CFDCC0000ABD8AD /* RideGirl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF3602FA1CFDCC0000ABD8AD /* Build configuration list for PBXNativeTarget "RideGirl" */;
+			buildPhases = (
+				EF3602C91CFDCC0000ABD8AD /* Sources */,
+				EF3602CA1CFDCC0000ABD8AD /* Frameworks */,
+				EF3602CB1CFDCC0000ABD8AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RideGirl;
+			productName = RideGirl;
+			productReference = EF3602CD1CFDCC0000ABD8AD /* RideGirl.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EF3602E51CFDCC0000ABD8AD /* RideGirlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF3602FD1CFDCC0000ABD8AD /* Build configuration list for PBXNativeTarget "RideGirlTests" */;
+			buildPhases = (
+				EF3602E21CFDCC0000ABD8AD /* Sources */,
+				EF3602E31CFDCC0000ABD8AD /* Frameworks */,
+				EF3602E41CFDCC0000ABD8AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF3602E81CFDCC0000ABD8AD /* PBXTargetDependency */,
+			);
+			name = RideGirlTests;
+			productName = RideGirlTests;
+			productReference = EF3602E61CFDCC0000ABD8AD /* RideGirlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EF3602F01CFDCC0000ABD8AD /* RideGirlUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF3603001CFDCC0000ABD8AD /* Build configuration list for PBXNativeTarget "RideGirlUITests" */;
+			buildPhases = (
+				EF3602ED1CFDCC0000ABD8AD /* Sources */,
+				EF3602EE1CFDCC0000ABD8AD /* Frameworks */,
+				EF3602EF1CFDCC0000ABD8AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF3602F31CFDCC0000ABD8AD /* PBXTargetDependency */,
+			);
+			name = RideGirlUITests;
+			productName = RideGirlUITests;
+			productReference = EF3602F11CFDCC0000ABD8AD /* RideGirlUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF3602C51CFDCC0000ABD8AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = LHB;
+				TargetAttributes = {
+					EF3602CC1CFDCC0000ABD8AD = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 52GUR5R28T;
+					};
+					EF3602E51CFDCC0000ABD8AD = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 52GUR5R28T;
+						TestTargetID = EF3602CC1CFDCC0000ABD8AD;
+					};
+					EF3602F01CFDCC0000ABD8AD = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 52GUR5R28T;
+						TestTargetID = EF3602CC1CFDCC0000ABD8AD;
+					};
+				};
+			};
+			buildConfigurationList = EF3602C81CFDCC0000ABD8AD /* Build configuration list for PBXProject "RideGirl" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EF3602C41CFDCC0000ABD8AD;
+			productRefGroup = EF3602CE1CFDCC0000ABD8AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF3602CC1CFDCC0000ABD8AD /* RideGirl */,
+				EF3602E51CFDCC0000ABD8AD /* RideGirlTests */,
+				EF3602F01CFDCC0000ABD8AD /* RideGirlUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF3602CB1CFDCC0000ABD8AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF3603071CFDCD6C00ABD8AD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3602E41CFDCC0000ABD8AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3602EF1CFDCC0000ABD8AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF3602C91CFDCC0000ABD8AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF3602D51CFDCC0000ABD8AD /* AppDelegate.m in Sources */,
+				EF3603051CFDCC4600ABD8AD /* MainViewController.m in Sources */,
+				EF3602D21CFDCC0000ABD8AD /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3602E21CFDCC0000ABD8AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF3602EB1CFDCC0000ABD8AD /* RideGirlTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3602ED1CFDCC0000ABD8AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF3602F61CFDCC0000ABD8AD /* RideGirlUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF3602E81CFDCC0000ABD8AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF3602CC1CFDCC0000ABD8AD /* RideGirl */;
+			targetProxy = EF3602E71CFDCC0000ABD8AD /* PBXContainerItemProxy */;
+		};
+		EF3602F31CFDCC0000ABD8AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF3602CC1CFDCC0000ABD8AD /* RideGirl */;
+			targetProxy = EF3602F21CFDCC0000ABD8AD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EF3602F81CFDCC0000ABD8AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF3602F91CFDCC0000ABD8AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF3602FB1CFDCC0000ABD8AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				INFOPLIST_FILE = RideGirl/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lhb.company.RideGirl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		EF3602FC1CFDCC0000ABD8AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				INFOPLIST_FILE = RideGirl/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lhb.company.RideGirl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		EF3602FE1CFDCC0000ABD8AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RideGirlTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lhb.company.RideGirlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RideGirl.app/RideGirl";
+			};
+			name = Debug;
+		};
+		EF3602FF1CFDCC0000ABD8AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RideGirlTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lhb.company.RideGirlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RideGirl.app/RideGirl";
+			};
+			name = Release;
+		};
+		EF3603011CFDCC0000ABD8AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RideGirlUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lhb.company.RideGirlUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RideGirl;
+			};
+			name = Debug;
+		};
+		EF3603021CFDCC0000ABD8AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RideGirlUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lhb.company.RideGirlUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RideGirl;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF3602C81CFDCC0000ABD8AD /* Build configuration list for PBXProject "RideGirl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF3602F81CFDCC0000ABD8AD /* Debug */,
+				EF3602F91CFDCC0000ABD8AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF3602FA1CFDCC0000ABD8AD /* Build configuration list for PBXNativeTarget "RideGirl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF3602FB1CFDCC0000ABD8AD /* Debug */,
+				EF3602FC1CFDCC0000ABD8AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF3602FD1CFDCC0000ABD8AD /* Build configuration list for PBXNativeTarget "RideGirlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF3602FE1CFDCC0000ABD8AD /* Debug */,
+				EF3602FF1CFDCC0000ABD8AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF3603001CFDCC0000ABD8AD /* Build configuration list for PBXNativeTarget "RideGirlUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF3603011CFDCC0000ABD8AD /* Debug */,
+				EF3603021CFDCC0000ABD8AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EF3602C51CFDCC0000ABD8AD /* Project object */;
+}
