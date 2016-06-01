@@ -114,12 +114,15 @@
 
 - (void)setupChildVc:(UIViewController *)vc title:(NSString *)title image:(NSString *)image selecteImage:(NSString *)selecteImage
 {
+    vc.navigationItem.title = title;
     //设置文字和图片
     vc.tabBarItem.title = title;
     vc.tabBarItem.image = [UIImage imageNamed:image];
     vc.tabBarItem.selectedImage = [UIImage imageNamed:selecteImage];
-    vc.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(100)/100.0 green:arc4random_uniform(100)/100.0 blue:arc4random_uniform(100)/100.0 alpha:1.0];
-    [self addChildViewController:vc];
+    //这句代码会导致所有的控制器提前创建，因为你访问了控制器的view。只要你访问了控制器的view，控制器的view就会加载所以不能在这里设置控制器的view的颜色
+//    vc.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(100)/100.0 green:arc4random_uniform(100)/100.0 blue:arc4random_uniform(100)/100.0 alpha:1.0];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self addChildViewController:nav];
 }
 
 
