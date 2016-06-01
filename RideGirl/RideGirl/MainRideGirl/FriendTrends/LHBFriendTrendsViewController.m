@@ -7,6 +7,7 @@
 //
 
 #import "LHBFriendTrendsViewController.h"
+#import "LHBRecommendViewController.h"
 
 @interface LHBFriendTrendsViewController ()
 
@@ -26,7 +27,8 @@
 }
 - (void)friendLeftBtnDown
 {
-    LHBLogFunc;
+    LHBRecommendViewController *recommendVC = [[LHBRecommendViewController alloc] init];
+    [self.navigationController pushViewController:recommendVC animated:YES];
 }
 
 

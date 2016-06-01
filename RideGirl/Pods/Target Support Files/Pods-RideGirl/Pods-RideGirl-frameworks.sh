@@ -85,7 +85,11 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$CONFIGURATION_BUILD_DIR/AFNetworking/AFNetworking.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/SDWebImage/SDWebImage.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/SVProgressHUD/SVProgressHUD.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$CONFIGURATION_BUILD_DIR/AFNetworking/AFNetworking.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/SDWebImage/SDWebImage.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/SVProgressHUD/SVProgressHUD.framework"
 fi
