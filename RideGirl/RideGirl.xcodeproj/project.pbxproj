@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9F97ED90D251420C1EB932F5 /* Pods_RideGirl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36F7713304DB02680F4305B9 /* Pods_RideGirl.framework */; };
+		EF09C7081CFF156D00F95B28 /* LHBFriendTrendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF09C7071CFF156D00F95B28 /* LHBFriendTrendsViewController.xib */; };
 		EF3602D21CFDCC0000ABD8AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602D11CFDCC0000ABD8AD /* main.m */; };
 		EF3602EB1CFDCC0000ABD8AD /* RideGirlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602EA1CFDCC0000ABD8AD /* RideGirlTests.m */; };
 		EF3602F61CFDCC0000ABD8AD /* RideGirlUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602F51CFDCC0000ABD8AD /* RideGirlUITests.m */; };
@@ -46,6 +47,7 @@
 		36F7713304DB02680F4305B9 /* Pods_RideGirl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideGirl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18E73453938C145A53A055B /* Pods-RideGirl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideGirl.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideGirl/Pods-RideGirl.release.xcconfig"; sourceTree = "<group>"; };
 		D3068E2231FA0651355DB87D /* Pods-RideGirl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideGirl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideGirl/Pods-RideGirl.debug.xcconfig"; sourceTree = "<group>"; };
+		EF09C7071CFF156D00F95B28 /* LHBFriendTrendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBFriendTrendsViewController.xib; sourceTree = "<group>"; };
 		EF3602CD1CFDCC0000ABD8AD /* RideGirl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideGirl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3602D11CFDCC0000ABD8AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EF3602E11CFDCC0000ABD8AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			children = (
 				EFA7CB9E1CFED8D00097FA52 /* LHBFriendTrendsViewController.h */,
 				EFA7CB9F1CFED8D00097FA52 /* LHBFriendTrendsViewController.m */,
+				EF09C7071CFF156D00F95B28 /* LHBFriendTrendsViewController.xib */,
 			);
 			path = FriendTrends;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF3603071CFDCD6C00ABD8AD /* Assets.xcassets in Resources */,
+				EF09C7081CFF156D00F95B28 /* LHBFriendTrendsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
