@@ -12,12 +12,31 @@
 #import "LHBFriendTrendsViewController.h"
 #import "LHBMeViewController.h"
 #import "LHBTabBar.h"
-
+#import "LHBUINavigationController.h"
 @interface LHBTabBarViewController ()
 
 @end
 
 @implementation LHBTabBarViewController
+
+//该类第一次加载时调用一次
++ (void)initialize
+{
+    NSMutableDictionary *normalDic = [NSMutableDictionary dictionary];
+    normalDic[NSFontAttributeName] = [UIFont systemFontOfSize:10];
+    normalDic[NSForegroundColorAttributeName] = [UIColor lightGrayColor];
+    
+    NSMutableDictionary *selectDic = [NSMutableDictionary dictionary];
+    //    selectDic[NSFontAttributeName] = [UIFont systemFontOfSize:10];
+    selectDic[NSFontAttributeName] = normalDic[NSFontAttributeName];
+    selectDic[NSForegroundColorAttributeName] = [UIColor darkGrayColor];
+    
+    
+    UITabBarItem *item = [UITabBarItem appearance];
+    [item setTitleTextAttributes:normalDic forState:UIControlStateNormal];
+    [item setTitleTextAttributes:selectDic forState:UIControlStateSelected];
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -52,19 +71,19 @@
     
     //第二种做法 ： 拿到tabBarItem的ppearance的外观、皮肤对象，并对它设置，这样所有tabBarItem的属性都一样了(使用条件：发现某个方法后面有 UI_APPEARANCE_SELECTOR 的宏)
     
-    NSMutableDictionary *normalDic = [NSMutableDictionary dictionary];
-    normalDic[NSFontAttributeName] = [UIFont systemFontOfSize:10];
-    normalDic[NSForegroundColorAttributeName] = [UIColor lightGrayColor];
-    
-    NSMutableDictionary *selectDic = [NSMutableDictionary dictionary];
-//    selectDic[NSFontAttributeName] = [UIFont systemFontOfSize:10];
-    selectDic[NSFontAttributeName] = normalDic[NSFontAttributeName];
-    selectDic[NSForegroundColorAttributeName] = [UIColor darkGrayColor];
-
-
-    UITabBarItem *item = [UITabBarItem appearance];
-    [item setTitleTextAttributes:normalDic forState:UIControlStateNormal];
-    [item setTitleTextAttributes:selectDic forState:UIControlStateSelected];
+//    NSMutableDictionary *normalDic = [NSMutableDictionary dictionary];
+//    normalDic[NSFontAttributeName] = [UIFont systemFontOfSize:10];
+//    normalDic[NSForegroundColorAttributeName] = [UIColor lightGrayColor];
+//    
+//    NSMutableDictionary *selectDic = [NSMutableDictionary dictionary];
+////    selectDic[NSFontAttributeName] = [UIFont systemFontOfSize:10];
+//    selectDic[NSFontAttributeName] = normalDic[NSFontAttributeName];
+//    selectDic[NSForegroundColorAttributeName] = [UIColor darkGrayColor];
+//
+//
+//    UITabBarItem *item = [UITabBarItem appearance];
+//    [item setTitleTextAttributes:normalDic forState:UIControlStateNormal];
+//    [item setTitleTextAttributes:selectDic forState:UIControlStateSelected];
 //
 //    [self addChildViewController:vc01];
 //    
@@ -106,6 +125,9 @@
 //    self.tabBar = [[LHBTabBar alloc] init];//报错，只读
     //通过kvc赋值给下划线的属性.然后在这个自定义的tabbar里布局子控件
     [self setValue:[[LHBTabBar alloc] init] forKeyPath:@"tabBar"];
+    
+    //换掉tabbar以后在还tabbar的背景(写道自定义tabbar里)
+//    [self.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbar-light"]];
 }
 
 /*
@@ -121,7 +143,11 @@
     vc.tabBarItem.selectedImage = [UIImage imageNamed:selecteImage];
     //这句代码会导致所有的控制器提前创建，因为你访问了控制器的view。只要你访问了控制器的view，控制器的view就会加载所以不能在这里设置控制器的view的颜色
 //    vc.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(100)/100.0 green:arc4random_uniform(100)/100.0 blue:arc4random_uniform(100)/100.0 alpha:1.0];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    LHBUINavigationController *nav = [[LHBUINavigationController alloc] initWithRootViewController:vc];
+    //设置nav的背景图片 (去自定义导航栏设置)
+//    [nav.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
+//    或者(所有的UINavigationBar背景都一样)
+//    [[UINavigationBar appearance]setBackgroundImage:[UIImage imageNamed:@"tabBar_friendTrends_click_icon"] forBarMetrics:UIBarMetricsDefault ];
     [self addChildViewController:nav];
 }
 

@@ -7,7 +7,7 @@
 //
 
 #import "LHBEssenceViewController.h"
-
+#import "LHBTestVC.h"
 @interface LHBEssenceViewController ()
 
 @end
@@ -39,5 +39,9 @@
     self.view.backgroundColor = LHBRGBColor(223, 223, 233);
 }
 
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    LHBTestVC *vc = [[LHBTestVC alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 @end

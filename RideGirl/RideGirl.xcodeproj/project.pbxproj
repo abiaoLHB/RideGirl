@@ -21,6 +21,8 @@
 		EFA7CBAC1CFED8D00097FA52 /* LHBMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CBA21CFED8D00097FA52 /* LHBMeViewController.m */; };
 		EFA7CBAD1CFED8D00097FA52 /* LHBNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CBA51CFED8D00097FA52 /* LHBNewViewController.m */; };
 		EFA7CBB01CFED90D0097FA52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CBAF1CFED90D0097FA52 /* AppDelegate.m */; };
+		EFA7CBB31CFEE2370097FA52 /* LHBUINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CBB21CFEE2370097FA52 /* LHBUINavigationController.m */; };
+		EFA7CBB91CFEEB2B0097FA52 /* LHBTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CBB81CFEEB2B0097FA52 /* LHBTestVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,10 @@
 		EFA7CBA51CFED8D00097FA52 /* LHBNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBNewViewController.m; sourceTree = "<group>"; };
 		EFA7CBAE1CFED90D0097FA52 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EFA7CBAF1CFED90D0097FA52 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EFA7CBB11CFEE2370097FA52 /* LHBUINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBUINavigationController.h; sourceTree = "<group>"; };
+		EFA7CBB21CFEE2370097FA52 /* LHBUINavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBUINavigationController.m; sourceTree = "<group>"; };
+		EFA7CBB71CFEEB2B0097FA52 /* LHBTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBTestVC.h; sourceTree = "<group>"; };
+		EFA7CBB81CFEEB2B0097FA52 /* LHBTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBTestVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +223,8 @@
 				EFA7CB971CFED8D00097FA52 /* LHBTabBar.m */,
 				EFA7CB981CFED8D00097FA52 /* LHBTabBarViewController.h */,
 				EFA7CB991CFED8D00097FA52 /* LHBTabBarViewController.m */,
+				EFA7CBB11CFEE2370097FA52 /* LHBUINavigationController.h */,
+				EFA7CBB21CFEE2370097FA52 /* LHBUINavigationController.m */,
 				EFA7CBAE1CFED90D0097FA52 /* AppDelegate.h */,
 				EFA7CBAF1CFED90D0097FA52 /* AppDelegate.m */,
 			);
@@ -228,6 +236,8 @@
 			children = (
 				EFA7CB9B1CFED8D00097FA52 /* LHBEssenceViewController.h */,
 				EFA7CB9C1CFED8D00097FA52 /* LHBEssenceViewController.m */,
+				EFA7CBB71CFEEB2B0097FA52 /* LHBTestVC.h */,
+				EFA7CBB81CFEEB2B0097FA52 /* LHBTestVC.m */,
 			);
 			path = Essence;
 			sourceTree = "<group>";
@@ -442,6 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFA7CBB31CFEE2370097FA52 /* LHBUINavigationController.m in Sources */,
 				EFA7CBA81CFED8D00097FA52 /* LHBTabBar.m in Sources */,
 				EFA7CBAC1CFED8D00097FA52 /* LHBMeViewController.m in Sources */,
 				EFA7CBAA1CFED8D00097FA52 /* LHBEssenceViewController.m in Sources */,
@@ -450,6 +461,7 @@
 				EFA7CBA61CFED8D00097FA52 /* UIBarButtonItem+LHBUIBarButtonItemExtension.m in Sources */,
 				EF3602D21CFDCC0000ABD8AD /* main.m in Sources */,
 				EFA7CBA71CFED8D00097FA52 /* UIView+LHBFrameExtension.m in Sources */,
+				EFA7CBB91CFEEB2B0097FA52 /* LHBTestVC.m in Sources */,
 				EFA7CBA91CFED8D00097FA52 /* LHBTabBarViewController.m in Sources */,
 				EFA7CBAB1CFED8D00097FA52 /* LHBFriendTrendsViewController.m in Sources */,
 			);
