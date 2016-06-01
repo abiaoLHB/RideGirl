@@ -4,5 +4,6 @@ use_frameworks!
 target 'RideGirl' do
  	 pod 'AFNetworking'
 	pod 'SDWebImage'
+	pod 'MJExtension'
 	pod 'SVProgressHUD'
 end

@@ -11,6 +11,9 @@
 		EF09C7081CFF156D00F95B28 /* LHBFriendTrendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF09C7071CFF156D00F95B28 /* LHBFriendTrendsViewController.xib */; };
 		EF09C70C1CFF1D5800F95B28 /* LHBRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF09C70A1CFF1D5800F95B28 /* LHBRecommendViewController.m */; };
 		EF09C70D1CFF1D5800F95B28 /* LHBRecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF09C70B1CFF1D5800F95B28 /* LHBRecommendViewController.xib */; };
+		EF09C7131CFF2C5D00F95B28 /* LHBRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF09C7121CFF2C5D00F95B28 /* LHBRecommendCell.m */; };
+		EF09C7151CFF2C8E00F95B28 /* LHBRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF09C7141CFF2C8E00F95B28 /* LHBRecommendCell.xib */; };
+		EF09C7181CFF2CD500F95B28 /* LHBRecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF09C7171CFF2CD500F95B28 /* LHBRecommendModel.m */; };
 		EF3602D21CFDCC0000ABD8AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602D11CFDCC0000ABD8AD /* main.m */; };
 		EF3602EB1CFDCC0000ABD8AD /* RideGirlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602EA1CFDCC0000ABD8AD /* RideGirlTests.m */; };
 		EF3602F61CFDCC0000ABD8AD /* RideGirlUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602F51CFDCC0000ABD8AD /* RideGirlUITests.m */; };
@@ -53,6 +56,11 @@
 		EF09C7091CFF1D5800F95B28 /* LHBRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBRecommendViewController.h; sourceTree = "<group>"; };
 		EF09C70A1CFF1D5800F95B28 /* LHBRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBRecommendViewController.m; sourceTree = "<group>"; };
 		EF09C70B1CFF1D5800F95B28 /* LHBRecommendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBRecommendViewController.xib; sourceTree = "<group>"; };
+		EF09C7111CFF2C5D00F95B28 /* LHBRecommendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBRecommendCell.h; sourceTree = "<group>"; };
+		EF09C7121CFF2C5D00F95B28 /* LHBRecommendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBRecommendCell.m; sourceTree = "<group>"; };
+		EF09C7141CFF2C8E00F95B28 /* LHBRecommendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBRecommendCell.xib; sourceTree = "<group>"; };
+		EF09C7161CFF2CD500F95B28 /* LHBRecommendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBRecommendModel.h; sourceTree = "<group>"; };
+		EF09C7171CFF2CD500F95B28 /* LHBRecommendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBRecommendModel.m; sourceTree = "<group>"; };
 		EF3602CD1CFDCC0000ABD8AD /* RideGirl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideGirl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3602D11CFDCC0000ABD8AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EF3602E11CFDCC0000ABD8AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,6 +137,38 @@
 				36F7713304DB02680F4305B9 /* Pods_RideGirl.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF09C70E1CFF2BA600F95B28 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EFA7CB9E1CFED8D00097FA52 /* LHBFriendTrendsViewController.h */,
+				EFA7CB9F1CFED8D00097FA52 /* LHBFriendTrendsViewController.m */,
+				EF09C7071CFF156D00F95B28 /* LHBFriendTrendsViewController.xib */,
+				EF09C7091CFF1D5800F95B28 /* LHBRecommendViewController.h */,
+				EF09C70A1CFF1D5800F95B28 /* LHBRecommendViewController.m */,
+				EF09C70B1CFF1D5800F95B28 /* LHBRecommendViewController.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		EF09C70F1CFF2BC400F95B28 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF09C7161CFF2CD500F95B28 /* LHBRecommendModel.h */,
+				EF09C7171CFF2CD500F95B28 /* LHBRecommendModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EF09C7101CFF2BDD00F95B28 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EF09C7111CFF2C5D00F95B28 /* LHBRecommendCell.h */,
+				EF09C7121CFF2C5D00F95B28 /* LHBRecommendCell.m */,
+				EF09C7141CFF2C8E00F95B28 /* LHBRecommendCell.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		EF3602C41CFDCC0000ABD8AD = {
@@ -252,12 +292,9 @@
 		EFA7CB9D1CFED8D00097FA52 /* FriendTrends */ = {
 			isa = PBXGroup;
 			children = (
-				EFA7CB9E1CFED8D00097FA52 /* LHBFriendTrendsViewController.h */,
-				EFA7CB9F1CFED8D00097FA52 /* LHBFriendTrendsViewController.m */,
-				EF09C7071CFF156D00F95B28 /* LHBFriendTrendsViewController.xib */,
-				EF09C7091CFF1D5800F95B28 /* LHBRecommendViewController.h */,
-				EF09C70A1CFF1D5800F95B28 /* LHBRecommendViewController.m */,
-				EF09C70B1CFF1D5800F95B28 /* LHBRecommendViewController.xib */,
+				EF09C70E1CFF2BA600F95B28 /* Controller */,
+				EF09C70F1CFF2BC400F95B28 /* Model */,
+				EF09C7101CFF2BDD00F95B28 /* View */,
 			);
 			path = FriendTrends;
 			sourceTree = "<group>";
@@ -391,6 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF3603071CFDCD6C00ABD8AD /* Assets.xcassets in Resources */,
+				EF09C7151CFF2C8E00F95B28 /* LHBRecommendCell.xib in Resources */,
 				EF09C7081CFF156D00F95B28 /* LHBFriendTrendsViewController.xib in Resources */,
 				EF09C70D1CFF1D5800F95B28 /* LHBRecommendViewController.xib in Resources */,
 			);
@@ -468,7 +506,9 @@
 				EFA7CBB31CFEE2370097FA52 /* LHBUINavigationController.m in Sources */,
 				EFA7CBA81CFED8D00097FA52 /* LHBTabBar.m in Sources */,
 				EFA7CBAC1CFED8D00097FA52 /* LHBMeViewController.m in Sources */,
+				EF09C7131CFF2C5D00F95B28 /* LHBRecommendCell.m in Sources */,
 				EFA7CBAA1CFED8D00097FA52 /* LHBEssenceViewController.m in Sources */,
+				EF09C7181CFF2CD500F95B28 /* LHBRecommendModel.m in Sources */,
 				EFA7CBAD1CFED8D00097FA52 /* LHBNewViewController.m in Sources */,
 				EFA7CBB01CFED90D0097FA52 /* AppDelegate.m in Sources */,
 				EFA7CBA61CFED8D00097FA52 /* UIBarButtonItem+LHBUIBarButtonItemExtension.m in Sources */,
