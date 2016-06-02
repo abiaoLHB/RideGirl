@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LHBRecommendViewController">
             <connections>
                 <outlet property="catgoryTableView" destination="YSE-3e-Px9" id="ixz-tD-HbJ"/>
+                <outlet property="rightUserTableView" destination="7fE-gf-Qra" id="Hlo-4T-9el"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,23 +17,35 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YSE-3e-Px9">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YSE-3e-Px9">
                     <rect key="frame" x="0.0" y="0.0" width="70" height="667"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="70" id="xuJ-fu-nHD"/>
+                        <constraint firstAttribute="width" constant="70" id="kvH-53-qPX"/>
                     </constraints>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Fqg-nY-SJW"/>
                         <outlet property="delegate" destination="-1" id="CRf-rf-Pem"/>
                     </connections>
                 </tableView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7fE-gf-Qra" userLabel="right TableView">
+                    <rect key="frame" x="70" y="0.0" width="305" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="bWu-3T-e3p"/>
+                        <outlet property="delegate" destination="-1" id="WUC-qp-hJc"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="YSE-3e-Px9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ycz-3d-rvW"/>
-                <constraint firstAttribute="bottom" secondItem="YSE-3e-Px9" secondAttribute="bottom" id="jNm-L0-1mn"/>
-                <constraint firstItem="YSE-3e-Px9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="lwn-If-Im9"/>
+                <constraint firstItem="YSE-3e-Px9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2V3-Xq-J5X"/>
+                <constraint firstItem="YSE-3e-Px9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DA4-pS-Yvz"/>
+                <constraint firstAttribute="bottom" secondItem="YSE-3e-Px9" secondAttribute="bottom" id="Jy4-pt-Vc8"/>
+                <constraint firstItem="7fE-gf-Qra" firstAttribute="leading" secondItem="YSE-3e-Px9" secondAttribute="trailing" id="NP9-us-OA3"/>
+                <constraint firstItem="7fE-gf-Qra" firstAttribute="bottom" secondItem="YSE-3e-Px9" secondAttribute="bottom" id="Nko-Dd-cht"/>
+                <constraint firstItem="7fE-gf-Qra" firstAttribute="top" secondItem="YSE-3e-Px9" secondAttribute="top" id="d4U-gV-pTe"/>
+                <constraint firstAttribute="trailing" secondItem="7fE-gf-Qra" secondAttribute="trailing" id="xNv-db-Xtl"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
         </view>

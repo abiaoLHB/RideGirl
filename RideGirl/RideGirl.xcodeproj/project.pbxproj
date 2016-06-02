@@ -18,6 +18,9 @@
 		EF3602EB1CFDCC0000ABD8AD /* RideGirlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602EA1CFDCC0000ABD8AD /* RideGirlTests.m */; };
 		EF3602F61CFDCC0000ABD8AD /* RideGirlUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602F51CFDCC0000ABD8AD /* RideGirlUITests.m */; };
 		EF3603071CFDCD6C00ABD8AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF3603061CFDCD6C00ABD8AD /* Assets.xcassets */; };
+		EF69DC881D008D76007CE788 /* LHBRecommendRightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF69DC871D008D76007CE788 /* LHBRecommendRightModel.m */; };
+		EF69DC8C1D008E96007CE788 /* LHBRecommendRightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF69DC8A1D008E96007CE788 /* LHBRecommendRightCell.m */; };
+		EF69DC8D1D008E96007CE788 /* LHBRecommendRightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF69DC8B1D008E96007CE788 /* LHBRecommendRightCell.xib */; };
 		EFA7CBA61CFED8D00097FA52 /* UIBarButtonItem+LHBUIBarButtonItemExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CB901CFED8D00097FA52 /* UIBarButtonItem+LHBUIBarButtonItemExtension.m */; };
 		EFA7CBA71CFED8D00097FA52 /* UIView+LHBFrameExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CB921CFED8D00097FA52 /* UIView+LHBFrameExtension.m */; };
 		EFA7CBA81CFED8D00097FA52 /* LHBTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CB971CFED8D00097FA52 /* LHBTabBar.m */; };
@@ -71,6 +74,11 @@
 		EF3602F51CFDCC0000ABD8AD /* RideGirlUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RideGirlUITests.m; sourceTree = "<group>"; };
 		EF3602F71CFDCC0000ABD8AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF3603061CFDCD6C00ABD8AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF69DC861D008D76007CE788 /* LHBRecommendRightModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBRecommendRightModel.h; sourceTree = "<group>"; };
+		EF69DC871D008D76007CE788 /* LHBRecommendRightModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBRecommendRightModel.m; sourceTree = "<group>"; };
+		EF69DC891D008E96007CE788 /* LHBRecommendRightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBRecommendRightCell.h; sourceTree = "<group>"; };
+		EF69DC8A1D008E96007CE788 /* LHBRecommendRightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBRecommendRightCell.m; sourceTree = "<group>"; };
+		EF69DC8B1D008E96007CE788 /* LHBRecommendRightCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBRecommendRightCell.xib; sourceTree = "<group>"; };
 		EFA7CB841CFEB9300097FA52 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		EFA7CB8F1CFED8D00097FA52 /* UIBarButtonItem+LHBUIBarButtonItemExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+LHBUIBarButtonItemExtension.h"; sourceTree = "<group>"; };
 		EFA7CB901CFED8D00097FA52 /* UIBarButtonItem+LHBUIBarButtonItemExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+LHBUIBarButtonItemExtension.m"; sourceTree = "<group>"; };
@@ -157,6 +165,8 @@
 			children = (
 				EF09C7161CFF2CD500F95B28 /* LHBRecommendModel.h */,
 				EF09C7171CFF2CD500F95B28 /* LHBRecommendModel.m */,
+				EF69DC861D008D76007CE788 /* LHBRecommendRightModel.h */,
+				EF69DC871D008D76007CE788 /* LHBRecommendRightModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -167,6 +177,9 @@
 				EF09C7111CFF2C5D00F95B28 /* LHBRecommendCell.h */,
 				EF09C7121CFF2C5D00F95B28 /* LHBRecommendCell.m */,
 				EF09C7141CFF2C8E00F95B28 /* LHBRecommendCell.xib */,
+				EF69DC891D008E96007CE788 /* LHBRecommendRightCell.h */,
+				EF69DC8A1D008E96007CE788 /* LHBRecommendRightCell.m */,
+				EF69DC8B1D008E96007CE788 /* LHBRecommendRightCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -429,6 +442,7 @@
 			files = (
 				EF3603071CFDCD6C00ABD8AD /* Assets.xcassets in Resources */,
 				EF09C7151CFF2C8E00F95B28 /* LHBRecommendCell.xib in Resources */,
+				EF69DC8D1D008E96007CE788 /* LHBRecommendRightCell.xib in Resources */,
 				EF09C7081CFF156D00F95B28 /* LHBFriendTrendsViewController.xib in Resources */,
 				EF09C70D1CFF1D5800F95B28 /* LHBRecommendViewController.xib in Resources */,
 			);
@@ -505,11 +519,13 @@
 			files = (
 				EFA7CBB31CFEE2370097FA52 /* LHBUINavigationController.m in Sources */,
 				EFA7CBA81CFED8D00097FA52 /* LHBTabBar.m in Sources */,
+				EF69DC881D008D76007CE788 /* LHBRecommendRightModel.m in Sources */,
 				EFA7CBAC1CFED8D00097FA52 /* LHBMeViewController.m in Sources */,
 				EF09C7131CFF2C5D00F95B28 /* LHBRecommendCell.m in Sources */,
 				EFA7CBAA1CFED8D00097FA52 /* LHBEssenceViewController.m in Sources */,
 				EF09C7181CFF2CD500F95B28 /* LHBRecommendModel.m in Sources */,
 				EFA7CBAD1CFED8D00097FA52 /* LHBNewViewController.m in Sources */,
+				EF69DC8C1D008E96007CE788 /* LHBRecommendRightCell.m in Sources */,
 				EFA7CBB01CFED90D0097FA52 /* AppDelegate.m in Sources */,
 				EFA7CBA61CFED8D00097FA52 /* UIBarButtonItem+LHBUIBarButtonItemExtension.m in Sources */,
 				EF3602D21CFDCC0000ABD8AD /* main.m in Sources */,
@@ -643,13 +659,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = RideGirl/PrefixHeader.pch;
 				INFOPLIST_FILE = RideGirl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lhb.company.RideGirl;
+				PRODUCT_BUNDLE_IDENTIFIER = lhb.company;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -659,13 +676,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = RideGirl/PrefixHeader.pch;
 				INFOPLIST_FILE = RideGirl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lhb.company.RideGirl;
+				PRODUCT_BUNDLE_IDENTIFIER = lhb.company;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
