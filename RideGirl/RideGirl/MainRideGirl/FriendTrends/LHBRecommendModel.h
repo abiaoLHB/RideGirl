@@ -15,4 +15,16 @@
 @property (nonatomic, assign) NSInteger count;
 /** 名字 */
 @property (nonatomic, copy) NSString *name;
+
+@property (nonatomic,strong) NSMutableArray *leftModelDataArr;
+//总页数
+@property (nonatomic,assign) NSInteger total_page;
+//总数
+@property (nonatomic,assign) NSInteger total;
+//下一页
+@property (nonatomic,assign) NSInteger next_page;
+
+
+
+
 @end

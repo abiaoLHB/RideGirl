@@ -22,17 +22,17 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9w-BU-1Ph" userLabel="昵称">
-                        <rect key="frame" x="70" y="10" width="80" height="20"/>
+                        <rect key="frame" x="70" y="10" width="150" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="QH5-vO-Yw1"/>
-                            <constraint firstAttribute="width" constant="80" id="RAF-Ue-Kme"/>
+                            <constraint firstAttribute="width" constant="150" id="RAF-Ue-Kme"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBc-PX-gXs" userLabel="粉丝">
-                        <rect key="frame" x="70" y="37" width="100" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBc-PX-gXs" userLabel="粉丝">
+                        <rect key="frame" x="70" y="44" width="100" height="14.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="rzm-n5-fZs"/>
                         </constraints>
@@ -54,6 +54,13 @@
                             <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                     </button>
+                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KdF-6v-CZE">
+                        <rect key="frame" x="0.0" y="67" width="320" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="S6c-LE-UQW"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="qaE-00-kU7" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="7AW-xc-PI3"/>
@@ -66,6 +73,9 @@
                     <constraint firstItem="xDB-Mo-fjz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="StC-Uf-X8E"/>
                     <constraint firstAttribute="bottom" secondItem="xDB-Mo-fjz" secondAttribute="bottom" constant="10" id="SvT-2U-pFx"/>
                     <constraint firstItem="nBc-PX-gXs" firstAttribute="leading" secondItem="Z9w-BU-1Ph" secondAttribute="leading" id="g17-GX-jMb"/>
+                    <constraint firstAttribute="trailing" secondItem="KdF-6v-CZE" secondAttribute="trailing" id="hvN-d8-pm9"/>
+                    <constraint firstAttribute="bottom" secondItem="KdF-6v-CZE" secondAttribute="bottom" id="ipG-IT-kWL"/>
+                    <constraint firstItem="KdF-6v-CZE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="mrz-Kg-u2k"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">

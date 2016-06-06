@@ -14,6 +14,8 @@
 #import "LHBRecommendCell.h"
 #import "LHBRecommendRightCell.h"
 #import "LHBRecommendRightModel.h"
+#import <MJRefresh/MJRefresh.h>
+
 
 @interface LHBRecommendViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -32,11 +34,8 @@ static NSString *const  rightRuseCellid = @"user";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //注册cell
-    [self.catgoryTableView registerNib:[UINib nibWithNibName:NSStringFromClass([LHBRecommendCell class]) bundle:nil] forCellReuseIdentifier:leftRuseCellid];
-    [self.rightUserTableView registerNib:[UINib nibWithNibName:NSStringFromClass([LHBRecommendRightCell class]) bundle:nil] forCellReuseIdentifier:rightRuseCellid];
-    
-    
+    [self setupTableView];
+    [self setupRefresh];
     self.navigationItem.title = @"推荐关注";
     self.view.backgroundColor = LHBRGBColor(223, 223, 223);
     
@@ -66,12 +65,71 @@ static NSString *const  rightRuseCellid = @"user";
     }];
     
 }
+- (void)setupRefresh
+{
+//    self.rightUserTableView.mj_footer = [MJRefreshBackFooter footerWithRefreshingBlock:^{
+//        LHBLog(@"进入刷新");
+//    }];
+    //也可以
+    self.rightUserTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    
+    self.rightUserTableView.mj_footer.hidden= YES;
+}
+
+#pragma mark - 加载更多数据
+- (void)loadMoreData
+{
+    LHBRecommendModel *model = self.leftDataArr[self.catgoryTableView.indexPathForSelectedRow.row];
+    
+    NSMutableDictionary *pramDic = [NSMutableDictionary dictionary];
+    pramDic[@"a"] = @"list";
+    pramDic[@"c"] = @"subscribe";
+    pramDic[@"category_id"] = @(model.id);
+//    pramDic[@"page"] = @"2";
+    // 点击哪个分类，就根据哪个分类的id去加载数据
+    AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
+    
+    [manger GET:@"http://api.budejie.com/api/api_open.php" parameters:pramDic progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSArray *userArr = [LHBRecommendRightModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        
+        [model.leftModelDataArr addObjectsFromArray:userArr];
+        
+        [self.rightUserTableView reloadData];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+    
+
+}
+
+- (void)setupTableView
+{
+    //注册cell
+    [self.catgoryTableView registerNib:[UINib nibWithNibName:NSStringFromClass([LHBRecommendCell class]) bundle:nil] forCellReuseIdentifier:leftRuseCellid];
+    [self.rightUserTableView registerNib:[UINib nibWithNibName:NSStringFromClass([LHBRecommendRightCell class]) bundle:nil] forCellReuseIdentifier:rightRuseCellid];
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.catgoryTableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
+    self.rightUserTableView.contentInset = self.catgoryTableView.contentInset;
+}
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (tableView == self.catgoryTableView) {
         return self.leftDataArr.count;
     }else{
-        return self.rightDataArr.count;
+        LHBRecommendModel *model = self.leftDataArr[self.catgoryTableView.indexPathForSelectedRow.row];
+        
+        self.rightUserTableView.mj_footer.hidden = (model.leftModelDataArr.count == 0);
+        
+        
+        
+        return model.leftModelDataArr.count;
     }
 }
 
@@ -83,7 +141,9 @@ static NSString *const  rightRuseCellid = @"user";
         return cell;
     }else{
         LHBRecommendRightCell *cell = [tableView dequeueReusableCellWithIdentifier:rightRuseCellid];
-        cell.rightModel = self.rightDataArr[indexPath.row];
+        LHBRecommendModel *model =self.leftDataArr[self.catgoryTableView.indexPathForSelectedRow.row];
+        cell.rightModel = model.leftModelDataArr[indexPath.row];
+
         return cell;
     }
 }
@@ -92,30 +152,39 @@ static NSString *const  rightRuseCellid = @"user";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     LHBRecommendModel *model = self.leftDataArr[indexPath.row];
-
-    if (tableView == self.catgoryTableView) {
-        NSMutableDictionary *pramDic = [NSMutableDictionary dictionary];
-        pramDic[@"a"] = @"list";
-        pramDic[@"c"] = @"subscribe";
-        pramDic[@"category_id"] = @(model.id);
+    if (model.leftModelDataArr.count) {
+        [self.rightUserTableView reloadData];
+    }else{
+        //选中那一行，就刷那一行右边的数据，没有数据就没有，放置看到由于网络缓慢导致点了这行还显示上一个标签所对应的右边残留的数据
+        [self.rightUserTableView reloadData];
         
-        // 点击哪个分类，就根据哪个分类的id去加载数据
-        AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
-        
-        [manger GET:@"http://api.budejie.com/api/api_open.php" parameters:pramDic progress:^(NSProgress * _Nonnull downloadProgress) {
+       //再请求数据
+            NSMutableDictionary *pramDic = [NSMutableDictionary dictionary];
+            pramDic[@"a"] = @"list";
+            pramDic[@"c"] = @"subscribe";
+            pramDic[@"category_id"] = @(model.id);
             
-        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            NSLog(@"%@",responseObject);
+            // 点击哪个分类，就根据哪个分类的id去加载数据
+            AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
             
-            self.rightDataArr = [LHBRecommendRightModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+            [manger GET:@"http://api.budejie.com/api/api_open.php" parameters:pramDic progress:^(NSProgress * _Nonnull downloadProgress) {
+                
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                
+                NSArray *userArr = [LHBRecommendRightModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+                
+                [model.leftModelDataArr addObjectsFromArray:userArr];
+                
+                [self.rightUserTableView reloadData];
+                
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                
+            }];
             
-            [self.rightUserTableView reloadData];
-            
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            
-        }];
 
+        
     }
+    
 }
 
 
@@ -125,7 +194,7 @@ static NSString *const  rightRuseCellid = @"user";
     if (tableView == self.catgoryTableView) {
         return 44;
     }else{
-        return 60;
+        return 70;
     }
 }
 

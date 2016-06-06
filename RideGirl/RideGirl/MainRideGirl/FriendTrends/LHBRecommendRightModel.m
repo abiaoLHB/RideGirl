@@ -10,4 +10,5 @@
 
 @implementation LHBRecommendRightModel
 
+
 @end

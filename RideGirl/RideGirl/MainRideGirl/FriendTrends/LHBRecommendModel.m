@@ -10,4 +10,12 @@
 
 @implementation LHBRecommendModel
 
+- (NSMutableArray *)leftModelDataArr
+{
+    if (_leftModelDataArr == nil) {
+        _leftModelDataArr = [NSMutableArray array];
+    }
+    return _leftModelDataArr;
+}
+
 @end
