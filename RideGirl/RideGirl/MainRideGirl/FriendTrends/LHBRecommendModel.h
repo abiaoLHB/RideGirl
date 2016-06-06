@@ -24,7 +24,8 @@
 //下一页
 @property (nonatomic,assign) NSInteger next_page;
 
-
+//自己加一个模型，当前页
+@property (nonatomic,assign) NSInteger currentPage;
 
 
 @end

@@ -67,6 +67,9 @@ static NSString *const  rightRuseCellid = @"user";
 }
 - (void)setupRefresh
 {
+    //头部
+    self.rightUserTableView.mj_header= [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    
 //    self.rightUserTableView.mj_footer = [MJRefreshBackFooter footerWithRefreshingBlock:^{
 //        LHBLog(@"进入刷新");
 //    }];
@@ -75,6 +78,44 @@ static NSString *const  rightRuseCellid = @"user";
     
     self.rightUserTableView.mj_footer.hidden= YES;
 }
+#pragma mark - 加载最新数据
+- (void)loadNewData
+{
+    LHBRecommendModel *model = self.leftDataArr[self.catgoryTableView.indexPathForSelectedRow.row];
+    model.currentPage = 1;
+    //再请求数据
+    NSMutableDictionary *pramDic = [NSMutableDictionary dictionary];
+    pramDic[@"a"] = @"list";
+    pramDic[@"c"] = @"subscribe";
+    pramDic[@"category_id"] = @(model.id);
+    pramDic[@"page"] =@( model.currentPage);
+    // 点击哪个分类，就根据哪个分类的id去加载数据
+    AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
+    
+    [manger GET:@"http://api.budejie.com/api/api_open.php" parameters:pramDic progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSArray *userArr = [LHBRecommendRightModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        //添加之前先清掉老数据
+        [model.leftModelDataArr removeAllObjects];
+        //添加到当前类别对应的用户数组中
+        [model.leftModelDataArr addObjectsFromArray:userArr];
+        //保存总页数
+        model.total = [responseObject[@"total"] integerValue];
+        //刷新右边表格
+        [self.rightUserTableView reloadData];
+        //结束刷新
+        [self.rightUserTableView.mj_header endRefreshing];
+        //假如本来就一页数据活着刷新一下总共就这些数据，那么底部控件也应该有相应的状态
+        [self cheakFootState];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [SVProgressHUD showWithStatus:@"刷新失败"];
+        [self.rightUserTableView.mj_header endRefreshing];
+    }];
+
+}
+
 
 #pragma mark - 加载更多数据
 - (void)loadMoreData
@@ -85,7 +126,8 @@ static NSString *const  rightRuseCellid = @"user";
     pramDic[@"a"] = @"list";
     pramDic[@"c"] = @"subscribe";
     pramDic[@"category_id"] = @(model.id);
-//    pramDic[@"page"] = @"2";
+    pramDic[@"page"] = @(++model.currentPage);
+    
     // 点击哪个分类，就根据哪个分类的id去加载数据
     AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
     
@@ -99,8 +141,11 @@ static NSString *const  rightRuseCellid = @"user";
         
         [self.rightUserTableView reloadData];
         
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [self cheakFootState];
         
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [self.rightUserTableView.mj_footer endRefreshing];
+
     }];
     
 
@@ -116,7 +161,19 @@ static NSString *const  rightRuseCellid = @"user";
     self.catgoryTableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
     self.rightUserTableView.contentInset = self.catgoryTableView.contentInset;
 }
-
+//时刻监测foot状态
+- (void)cheakFootState
+{
+    LHBRecommendModel *model = self.leftDataArr[self.catgoryTableView.indexPathForSelectedRow.row];
+    //每次刷新右边数据时，都控制foot显示活着隐藏
+    self.rightUserTableView.mj_footer.hidden = (model.leftModelDataArr.count == 0);
+    
+    if (model.leftModelDataArr.count == model.total) {
+        [self.rightUserTableView.mj_footer endRefreshingWithNoMoreData];
+    }else{
+        [self.rightUserTableView.mj_footer endRefreshing];
+    }
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -124,10 +181,8 @@ static NSString *const  rightRuseCellid = @"user";
         return self.leftDataArr.count;
     }else{
         LHBRecommendModel *model = self.leftDataArr[self.catgoryTableView.indexPathForSelectedRow.row];
-        
-        self.rightUserTableView.mj_footer.hidden = (model.leftModelDataArr.count == 0);
-        
-        
+
+        [self cheakFootState];
         
         return model.leftModelDataArr.count;
     }
@@ -151,40 +206,20 @@ static NSString *const  rightRuseCellid = @"user";
 #pragma mark - tableView代理 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    LHBRecommendModel *model = self.leftDataArr[indexPath.row];
-    if (model.leftModelDataArr.count) {
-        [self.rightUserTableView reloadData];
-    }else{
-        //选中那一行，就刷那一行右边的数据，没有数据就没有，放置看到由于网络缓慢导致点了这行还显示上一个标签所对应的右边残留的数据
-        [self.rightUserTableView reloadData];
-        
-       //再请求数据
-            NSMutableDictionary *pramDic = [NSMutableDictionary dictionary];
-            pramDic[@"a"] = @"list";
-            pramDic[@"c"] = @"subscribe";
-            pramDic[@"category_id"] = @(model.id);
-            
-            // 点击哪个分类，就根据哪个分类的id去加载数据
-            AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
-            
-            [manger GET:@"http://api.budejie.com/api/api_open.php" parameters:pramDic progress:^(NSProgress * _Nonnull downloadProgress) {
-                
-            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                
-                NSArray *userArr = [LHBRecommendRightModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
-                
-                [model.leftModelDataArr addObjectsFromArray:userArr];
-                
-                [self.rightUserTableView reloadData];
-                
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                
-            }];
-            
+    if (tableView == self.catgoryTableView) {
+        LHBRecommendModel *model = self.leftDataArr[indexPath.row];
+        if (model.leftModelDataArr.count) {
+            [self.rightUserTableView reloadData];
+        }else{
+            //选中那一行，就刷那一行右边的数据，没有数据就没有，放置看到由于网络缓慢导致点了这行还显示上一个标签所对应的右边残留的数据
+            [self.rightUserTableView reloadData];
+            //进入一个新页签，先开始刷新(其实就掉网络请求方法)
+            [self.rightUserTableView.mj_header beginRefreshing];
+        }
 
-        
+    }else{
+        LHBLog(@"点击的右边:%zd",indexPath.row);
     }
-    
 }
 
 
