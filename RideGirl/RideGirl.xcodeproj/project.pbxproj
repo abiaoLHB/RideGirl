@@ -21,6 +21,10 @@
 		EF69DC881D008D76007CE788 /* LHBRecommendRightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF69DC871D008D76007CE788 /* LHBRecommendRightModel.m */; };
 		EF69DC8C1D008E96007CE788 /* LHBRecommendRightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF69DC8A1D008E96007CE788 /* LHBRecommendRightCell.m */; };
 		EF69DC8D1D008E96007CE788 /* LHBRecommendRightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF69DC8B1D008E96007CE788 /* LHBRecommendRightCell.xib */; };
+		EFA135C01D07203900FB6964 /* LHBRecommendTagsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA135BF1D07203900FB6964 /* LHBRecommendTagsTableViewController.m */; };
+		EFA135C61D0725A500FB6964 /* LHBRecommendTagsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA135C51D0725A500FB6964 /* LHBRecommendTagsModel.m */; };
+		EFA135CA1D07272F00FB6964 /* LHBRecommendTagsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA135C81D07272F00FB6964 /* LHBRecommendTagsTableViewCell.m */; };
+		EFA135CB1D07272F00FB6964 /* LHBRecommendTagsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFA135C91D07272F00FB6964 /* LHBRecommendTagsTableViewCell.xib */; };
 		EFA7CBA61CFED8D00097FA52 /* UIBarButtonItem+LHBUIBarButtonItemExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CB901CFED8D00097FA52 /* UIBarButtonItem+LHBUIBarButtonItemExtension.m */; };
 		EFA7CBA71CFED8D00097FA52 /* UIView+LHBFrameExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CB921CFED8D00097FA52 /* UIView+LHBFrameExtension.m */; };
 		EFA7CBA81CFED8D00097FA52 /* LHBTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CB971CFED8D00097FA52 /* LHBTabBar.m */; };
@@ -31,7 +35,6 @@
 		EFA7CBAD1CFED8D00097FA52 /* LHBNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CBA51CFED8D00097FA52 /* LHBNewViewController.m */; };
 		EFA7CBB01CFED90D0097FA52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CBAF1CFED90D0097FA52 /* AppDelegate.m */; };
 		EFA7CBB31CFEE2370097FA52 /* LHBUINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CBB21CFEE2370097FA52 /* LHBUINavigationController.m */; };
-		EFA7CBB91CFEEB2B0097FA52 /* LHBTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CBB81CFEEB2B0097FA52 /* LHBTestVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,13 @@
 		EF69DC891D008E96007CE788 /* LHBRecommendRightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBRecommendRightCell.h; sourceTree = "<group>"; };
 		EF69DC8A1D008E96007CE788 /* LHBRecommendRightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBRecommendRightCell.m; sourceTree = "<group>"; };
 		EF69DC8B1D008E96007CE788 /* LHBRecommendRightCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBRecommendRightCell.xib; sourceTree = "<group>"; };
+		EFA135BE1D07203900FB6964 /* LHBRecommendTagsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBRecommendTagsTableViewController.h; sourceTree = "<group>"; };
+		EFA135BF1D07203900FB6964 /* LHBRecommendTagsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBRecommendTagsTableViewController.m; sourceTree = "<group>"; };
+		EFA135C41D0725A500FB6964 /* LHBRecommendTagsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBRecommendTagsModel.h; sourceTree = "<group>"; };
+		EFA135C51D0725A500FB6964 /* LHBRecommendTagsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBRecommendTagsModel.m; sourceTree = "<group>"; };
+		EFA135C71D07272F00FB6964 /* LHBRecommendTagsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBRecommendTagsTableViewCell.h; sourceTree = "<group>"; };
+		EFA135C81D07272F00FB6964 /* LHBRecommendTagsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBRecommendTagsTableViewCell.m; sourceTree = "<group>"; };
+		EFA135C91D07272F00FB6964 /* LHBRecommendTagsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBRecommendTagsTableViewCell.xib; sourceTree = "<group>"; };
 		EFA7CB841CFEB9300097FA52 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		EFA7CB8F1CFED8D00097FA52 /* UIBarButtonItem+LHBUIBarButtonItemExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+LHBUIBarButtonItemExtension.h"; sourceTree = "<group>"; };
 		EFA7CB901CFED8D00097FA52 /* UIBarButtonItem+LHBUIBarButtonItemExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+LHBUIBarButtonItemExtension.m"; sourceTree = "<group>"; };
@@ -100,8 +110,6 @@
 		EFA7CBAF1CFED90D0097FA52 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EFA7CBB11CFEE2370097FA52 /* LHBUINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBUINavigationController.h; sourceTree = "<group>"; };
 		EFA7CBB21CFEE2370097FA52 /* LHBUINavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBUINavigationController.m; sourceTree = "<group>"; };
-		EFA7CBB71CFEEB2B0097FA52 /* LHBTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBTestVC.h; sourceTree = "<group>"; };
-		EFA7CBB81CFEEB2B0097FA52 /* LHBTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBTestVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +254,36 @@
 			path = RideGirlUITests;
 			sourceTree = "<group>";
 		};
+		EFA135C11D07255700FB6964 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EFA7CB9B1CFED8D00097FA52 /* LHBEssenceViewController.h */,
+				EFA7CB9C1CFED8D00097FA52 /* LHBEssenceViewController.m */,
+				EFA135BE1D07203900FB6964 /* LHBRecommendTagsTableViewController.h */,
+				EFA135BF1D07203900FB6964 /* LHBRecommendTagsTableViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		EFA135C21D07257000FB6964 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EFA135C71D07272F00FB6964 /* LHBRecommendTagsTableViewCell.h */,
+				EFA135C81D07272F00FB6964 /* LHBRecommendTagsTableViewCell.m */,
+				EFA135C91D07272F00FB6964 /* LHBRecommendTagsTableViewCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		EFA135C31D07257B00FB6964 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EFA135C41D0725A500FB6964 /* LHBRecommendTagsModel.h */,
+				EFA135C51D0725A500FB6964 /* LHBRecommendTagsModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		EFA7CB8E1CFED8D00097FA52 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,10 +332,9 @@
 		EFA7CB9A1CFED8D00097FA52 /* Essence */ = {
 			isa = PBXGroup;
 			children = (
-				EFA7CB9B1CFED8D00097FA52 /* LHBEssenceViewController.h */,
-				EFA7CB9C1CFED8D00097FA52 /* LHBEssenceViewController.m */,
-				EFA7CBB71CFEEB2B0097FA52 /* LHBTestVC.h */,
-				EFA7CBB81CFEEB2B0097FA52 /* LHBTestVC.m */,
+				EFA135C11D07255700FB6964 /* Controller */,
+				EFA135C21D07257000FB6964 /* View */,
+				EFA135C31D07257B00FB6964 /* Model */,
 			);
 			path = Essence;
 			sourceTree = "<group>";
@@ -442,6 +479,7 @@
 			files = (
 				EF3603071CFDCD6C00ABD8AD /* Assets.xcassets in Resources */,
 				EF09C7151CFF2C8E00F95B28 /* LHBRecommendCell.xib in Resources */,
+				EFA135CB1D07272F00FB6964 /* LHBRecommendTagsTableViewCell.xib in Resources */,
 				EF69DC8D1D008E96007CE788 /* LHBRecommendRightCell.xib in Resources */,
 				EF09C7081CFF156D00F95B28 /* LHBFriendTrendsViewController.xib in Resources */,
 				EF09C70D1CFF1D5800F95B28 /* LHBRecommendViewController.xib in Resources */,
@@ -519,19 +557,21 @@
 			files = (
 				EFA7CBB31CFEE2370097FA52 /* LHBUINavigationController.m in Sources */,
 				EFA7CBA81CFED8D00097FA52 /* LHBTabBar.m in Sources */,
+				EFA135C61D0725A500FB6964 /* LHBRecommendTagsModel.m in Sources */,
 				EF69DC881D008D76007CE788 /* LHBRecommendRightModel.m in Sources */,
 				EFA7CBAC1CFED8D00097FA52 /* LHBMeViewController.m in Sources */,
+				EFA135C01D07203900FB6964 /* LHBRecommendTagsTableViewController.m in Sources */,
 				EF09C7131CFF2C5D00F95B28 /* LHBRecommendCell.m in Sources */,
 				EFA7CBAA1CFED8D00097FA52 /* LHBEssenceViewController.m in Sources */,
 				EF09C7181CFF2CD500F95B28 /* LHBRecommendModel.m in Sources */,
 				EFA7CBAD1CFED8D00097FA52 /* LHBNewViewController.m in Sources */,
 				EF69DC8C1D008E96007CE788 /* LHBRecommendRightCell.m in Sources */,
+				EFA135CA1D07272F00FB6964 /* LHBRecommendTagsTableViewCell.m in Sources */,
 				EFA7CBB01CFED90D0097FA52 /* AppDelegate.m in Sources */,
 				EFA7CBA61CFED8D00097FA52 /* UIBarButtonItem+LHBUIBarButtonItemExtension.m in Sources */,
 				EF3602D21CFDCC0000ABD8AD /* main.m in Sources */,
 				EF09C70C1CFF1D5800F95B28 /* LHBRecommendViewController.m in Sources */,
 				EFA7CBA71CFED8D00097FA52 /* UIView+LHBFrameExtension.m in Sources */,
-				EFA7CBB91CFEEB2B0097FA52 /* LHBTestVC.m in Sources */,
 				EFA7CBA91CFED8D00097FA52 /* LHBTabBarViewController.m in Sources */,
 				EFA7CBAB1CFED8D00097FA52 /* LHBFriendTrendsViewController.m in Sources */,
 			);

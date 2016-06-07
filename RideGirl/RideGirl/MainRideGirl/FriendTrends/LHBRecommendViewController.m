@@ -58,7 +58,7 @@ static NSString *const  rightRuseCellid = @"user";
     NSMutableDictionary *pramDic = [NSMutableDictionary dictionary];
     pramDic[@"a"] = @"category";
     pramDic[@"c"] = @"subscribe";
-    
+  
     //保存请求参数
     self.pramDic = pramDic;
     

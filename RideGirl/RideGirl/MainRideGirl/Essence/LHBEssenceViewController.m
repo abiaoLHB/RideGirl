@@ -5,9 +5,8 @@
 //  Created by LHB on 16/5/31.
 //  Copyright © 2016年 LHB. All rights reserved.
 //
-
+#import "LHBRecommendTagsTableViewController.h"
 #import "LHBEssenceViewController.h"
-#import "LHBTestVC.h"
 @interface LHBEssenceViewController ()
 
 @end
@@ -33,15 +32,15 @@
     
 
     
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImageNormalName:@"MainTagSubIcon" andHeightLightImageName:@"MainTagSubIconClick" target:self andAction:nil];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImageNormalName:@"MainTagSubIcon" andHeightLightImageName:@"MainTagSubIconClick" target:self andAction:@selector(leftTagsClick)];
     
     
     self.view.backgroundColor = LHBRGBColor(223, 223, 233);
 }
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+- (void)leftTagsClick
 {
-    LHBTestVC *vc = [[LHBTestVC alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+    LHBRecommendTagsTableViewController *tags = [[LHBRecommendTagsTableViewController alloc] init];
+    [self.navigationController pushViewController:tags animated:YES];
 }
+
 @end
