@@ -23,6 +23,8 @@
 @property (nonatomic,strong) NSArray *rightDataArr;
 @property (weak, nonatomic) IBOutlet UITableView *catgoryTableView;
 @property (weak, nonatomic) IBOutlet UITableView *rightUserTableView;
+@property (nonatomic,strong) NSMutableDictionary *pramDic;
+@property (nonatomic,strong) AFHTTPSessionManager *manger;
 
 @end
 
@@ -31,40 +33,62 @@
 static NSString * const leftRuseCellid = @"cellId";
 static NSString *const  rightRuseCellid = @"user";
 
+- (AFHTTPSessionManager *)manger
+{
+    if (_manger == nil) {
+        _manger = [AFHTTPSessionManager manager];
+    }
+    return _manger;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = LHBRGBColor(223, 223, 223);
+    self.navigationItem.title = @"推荐关注";
     [self setupTableView];
     [self setupRefresh];
-    self.navigationItem.title = @"推荐关注";
-    self.view.backgroundColor = LHBRGBColor(223, 223, 223);
-    
+    [self loadLeftCatgory];
+}
+
+- (void)loadLeftCatgory
+{
     [SVProgressHUD showWithStatus:@"正在加载"];
     
-    AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
-    manger.requestSerializer.timeoutInterval = 10.0;
+    self.manger.requestSerializer.timeoutInterval = 10.0;
     NSMutableDictionary *pramDic = [NSMutableDictionary dictionary];
     pramDic[@"a"] = @"category";
     pramDic[@"c"] = @"subscribe";
     
-    [manger GET:@"http://api.budejie.com/api/api_open.php" parameters:pramDic progress:^(NSProgress * _Nonnull downloadProgress) {
+    //保存请求参数
+    self.pramDic = pramDic;
+    
+    
+    [self.manger GET:@"http://api.budejie.com/api/api_open.php" parameters:pramDic progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (self.pramDic != pramDic) {//block对外部的变量又一个引用的话，就会将上一个成员变量拿过来，这个pramdic就是请求前的pramDic
+            return ;
+        }
+        
         [SVProgressHUD dismiss];
         //responseObject[@"lsit"]
         self.leftDataArr = [LHBRecommendModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
-
+        
         [self.catgoryTableView reloadData];
         
         //刷新完表格，默认选中第一行.UITableViewScrollPositionTop是显示到最顶部
         [self.catgoryTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionTop];
+        //默认选中左侧第一行的数据后，刷新这一行的数据就行了
+        [self.rightUserTableView.mj_header beginRefreshing];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [SVProgressHUD showWithStatus:@"加载失败"];
         [SVProgressHUD dismissWithDelay:1.0];
-
+        
     }];
     
+
 }
+
 - (void)setupRefresh
 {
     //头部
@@ -81,6 +105,14 @@ static NSString *const  rightRuseCellid = @"user";
 #pragma mark - 加载最新数据
 - (void)loadNewData
 {
+    //下拉刷新，两种方案
+//    一、把要刷新的第一条数据的id给服务器，服务器返回比这条id更大的id的数据
+//    二、根据页码刷新，刷新的都是第一页
+    
+//    上啦加载，两种方案
+    //    一、把要加载的最后一条数据的id给服务器，服务器返回比这条id更小的id的数据
+    //    二、根据页码加载，加载的都是比上一页大一页的数据
+    
     LHBRecommendModel *model = self.leftDataArr[self.catgoryTableView.indexPathForSelectedRow.row];
     model.currentPage = 1;
     //再请求数据
@@ -89,13 +121,15 @@ static NSString *const  rightRuseCellid = @"user";
     pramDic[@"c"] = @"subscribe";
     pramDic[@"category_id"] = @(model.id);
     pramDic[@"page"] =@( model.currentPage);
-    // 点击哪个分类，就根据哪个分类的id去加载数据
-    AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
     
-    [manger GET:@"http://api.budejie.com/api/api_open.php" parameters:pramDic progress:^(NSProgress * _Nonnull downloadProgress) {
+    self.pramDic = pramDic;
+    
+    // 点击哪个分类，就根据哪个分类的id去加载数据
+    
+    [self.manger GET:@"http://api.budejie.com/api/api_open.php" parameters:pramDic progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
+       
         NSArray *userArr = [LHBRecommendRightModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
         //添加之前先清掉老数据
         [model.leftModelDataArr removeAllObjects];
@@ -103,6 +137,11 @@ static NSString *const  rightRuseCellid = @"user";
         [model.leftModelDataArr addObjectsFromArray:userArr];
         //保存总页数
         model.total = [responseObject[@"total"] integerValue];
+        
+        //不是最后一次请求，没资格刷新
+        if (self.pramDic != pramDic) {
+            return ;
+        }
         //刷新右边表格
         [self.rightUserTableView reloadData];
         //结束刷新
@@ -110,6 +149,11 @@ static NSString *const  rightRuseCellid = @"user";
         //假如本来就一页数据活着刷新一下总共就这些数据，那么底部控件也应该有相应的状态
         [self cheakFootState];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        if (self.pramDic != pramDic) {
+            return ;
+        }
+        
         [SVProgressHUD showWithStatus:@"刷新失败"];
         [self.rightUserTableView.mj_header endRefreshing];
     }];
@@ -135,10 +179,14 @@ static NSString *const  rightRuseCellid = @"user";
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
+        
         NSArray *userArr = [LHBRecommendRightModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
         
         [model.leftModelDataArr addObjectsFromArray:userArr];
-        
+        //不是最后一次请求，没资格刷新
+        if (self.pramDic != pramDic) {
+            return ;
+        }
         [self.rightUserTableView reloadData];
         
         [self cheakFootState];
@@ -207,6 +255,9 @@ static NSString *const  rightRuseCellid = @"user";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (tableView == self.catgoryTableView) {
+        //先结束刷新，防止网络比较慢时，连续点击几个按钮，会造成已存在的数据还要去刷新
+        [self.rightUserTableView.mj_header endRefreshing];
+        [self.rightUserTableView.mj_footer   endRefreshing];
         LHBRecommendModel *model = self.leftDataArr[indexPath.row];
         if (model.leftModelDataArr.count) {
             [self.rightUserTableView reloadData];
@@ -233,8 +284,13 @@ static NSString *const  rightRuseCellid = @"user";
     }
 }
 
-
-
+#pragma mark - 控制器的销毁
+//如果一个控制器请求正在发送，突然把这个控制器销毁的处理方法
+- (void)dealloc
+{
+    //用同一个manger的好处是都会把请求加入到operationqueue中。这样可以统一处理
+    [self.manger.operationQueue cancelAllOperations];
+}
 
 
 
