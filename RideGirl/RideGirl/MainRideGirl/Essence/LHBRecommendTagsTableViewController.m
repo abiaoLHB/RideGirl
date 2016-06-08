@@ -48,6 +48,7 @@ static NSString *const TAGSCELLID = @"tags";
 {
     self.navigationItem.title = @"推荐标签";
     self.tableView.rowHeight = 70;
+    self.tableView.backgroundColor = [UIColor lightGrayColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([LHBRecommendTagsTableViewCell class]) bundle:nil] forCellReuseIdentifier:TAGSCELLID];
 }
@@ -71,9 +72,6 @@ static NSString *const TAGSCELLID = @"tags";
         
     }];
 }
-
-
-
 
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

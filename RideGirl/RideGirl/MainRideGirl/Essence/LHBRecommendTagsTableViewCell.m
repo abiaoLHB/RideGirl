@@ -21,7 +21,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -47,4 +46,22 @@
     }
     self.subNumLabel.text = subNumber;
 }
+
+
+- (void)setFrame:(CGRect)frame
+{
+ //实现带有间隔的cell，有三种实现方案
+//    1、在cell的contentView上放一个view，让这个view略小于contentView
+//    2、直接改cell的contentView，让contentView往里面缩
+//    3、本方法，直接更改cell的尺寸。一般用这个就行了
+    frame.origin.x = 5;
+    frame.size.width -= 2*frame.origin.x;
+    frame.size.height -= 1;
+    [super setFrame:frame];
+ 
+}
+
+//如果不想让外部的数据改更一个控件的frame，就重写- (void)setFrame:(CGRect)frame方法
+//如果不想让外部的数据改更一个控件的bounds，就重写- (void)setBounds:(CGRect)bounds方法
+
 @end

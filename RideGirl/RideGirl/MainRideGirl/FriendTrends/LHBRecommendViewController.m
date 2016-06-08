@@ -139,9 +139,9 @@ static NSString *const  rightRuseCellid = @"user";
         model.total = [responseObject[@"total"] integerValue];
         
         //不是最后一次请求，没资格刷新
-        if (self.pramDic != pramDic) {
-            return ;
-        }
+//        if (self.pramDic != pramDic) {
+//            return ;
+//        }
         //刷新右边表格
         [self.rightUserTableView reloadData];
         //结束刷新
@@ -184,9 +184,9 @@ static NSString *const  rightRuseCellid = @"user";
         
         [model.leftModelDataArr addObjectsFromArray:userArr];
         //不是最后一次请求，没资格刷新
-        if (self.pramDic != pramDic) {
-            return ;
-        }
+//        if (self.pramDic != pramDic) {
+//            return ;
+//        }
         [self.rightUserTableView reloadData];
         
         [self cheakFootState];
