@@ -8,6 +8,7 @@
 
 #import "LHBFriendTrendsViewController.h"
 #import "LHBRecommendViewController.h"
+#import "LHBLoginRegisterViewController.h"
 
 @interface LHBFriendTrendsViewController ()
 
@@ -29,6 +30,14 @@
 {
     LHBRecommendViewController *recommendVC = [[LHBRecommendViewController alloc] init];
     [self.navigationController pushViewController:recommendVC animated:YES];
+}
+
+- (IBAction)loginRegister:(id)sender {
+    NSLog(@"登录");
+    LHBLoginRegisterViewController *logInVc = [[LHBLoginRegisterViewController alloc] init];
+    [self.navigationController presentViewController:logInVc animated:YES completion:nil];
+    
+    
 }
 
 
