@@ -10,7 +10,9 @@
 
 @interface LHBLoginRegisterViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *loginOrRegisterBtn;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *inputBgViewLeftLeading;
 
 @end
 
@@ -19,28 +21,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    改变UITextField的placeholder的颜色
-//    通过富文本
-    
-    //文字属性(一般)
-//    NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
-//    attrs[NSForegroundColorAttributeName] = [UIColor blueColor];
-//    NSAttributedString *placeholderStr = [[NSAttributedString alloc] initWithString:@"手机号" attributes:attrs];
-//    self.phoneTextField.attributedPlaceholder = placeholderStr;
-    
-    
-    //文字属性（高级）
-    NSMutableAttributedString *placeholder = [[NSMutableAttributedString alloc] initWithString:@"手机号"];
-    [placeholder setAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor],
-                                 NSFontAttributeName : [UIFont systemFontOfSize:20]
-                                 } range:NSMakeRange(0, 1)];
-    [placeholder setAttributes:@{NSForegroundColorAttributeName : [UIColor blueColor]} range:NSMakeRange(1, 1)];
-    [placeholder setAttributes:@{NSForegroundColorAttributeName : [UIColor yellowColor]} range:NSMakeRange(2, 1)];
-    self.phoneTextField.attributedPlaceholder = placeholder;
 }
 
 
+- (IBAction)loginOrRegisterBtnClick:(UIButton *)sender {
+    
+    if (self.inputBgViewLeftLeading.constant == 0) {
+        self.inputBgViewLeftLeading.constant = -self.view.width;
+        sender.selected = YES;
+    }else{
+        self.inputBgViewLeftLeading.constant = 0;
+        sender.selected = NO;
+    }
+    [UIView animateWithDuration:0.25 animations:^{
+        [self.view layoutIfNeeded];
 
+    }];
+}
+
+- (IBAction)back {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (UIStatusBarStyle)preferredStatusBarStyle
 {

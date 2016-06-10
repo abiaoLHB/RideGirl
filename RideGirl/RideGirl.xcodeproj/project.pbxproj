@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9F97ED90D251420C1EB932F5 /* Pods_RideGirl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36F7713304DB02680F4305B9 /* Pods_RideGirl.framework */; };
+		EF062A281D0A7F4E00F189C1 /* LHBCusTomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = EF062A271D0A7F4E00F189C1 /* LHBCusTomTextField.m */; };
 		EF09C7081CFF156D00F95B28 /* LHBFriendTrendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF09C7071CFF156D00F95B28 /* LHBFriendTrendsViewController.xib */; };
 		EF09C70C1CFF1D5800F95B28 /* LHBRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF09C70A1CFF1D5800F95B28 /* LHBRecommendViewController.m */; };
 		EF09C70D1CFF1D5800F95B28 /* LHBRecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF09C70B1CFF1D5800F95B28 /* LHBRecommendViewController.xib */; };
@@ -61,6 +62,8 @@
 		36F7713304DB02680F4305B9 /* Pods_RideGirl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideGirl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18E73453938C145A53A055B /* Pods-RideGirl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideGirl.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideGirl/Pods-RideGirl.release.xcconfig"; sourceTree = "<group>"; };
 		D3068E2231FA0651355DB87D /* Pods-RideGirl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideGirl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideGirl/Pods-RideGirl.debug.xcconfig"; sourceTree = "<group>"; };
+		EF062A261D0A7F4E00F189C1 /* LHBCusTomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBCusTomTextField.h; sourceTree = "<group>"; };
+		EF062A271D0A7F4E00F189C1 /* LHBCusTomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBCusTomTextField.m; sourceTree = "<group>"; };
 		EF09C7071CFF156D00F95B28 /* LHBFriendTrendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBFriendTrendsViewController.xib; sourceTree = "<group>"; };
 		EF09C7091CFF1D5800F95B28 /* LHBRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBRecommendViewController.h; sourceTree = "<group>"; };
 		EF09C70A1CFF1D5800F95B28 /* LHBRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBRecommendViewController.m; sourceTree = "<group>"; };
@@ -201,6 +204,8 @@
 				EF69DC8B1D008E96007CE788 /* LHBRecommendRightCell.xib */,
 				EF1691661D09B08200913827 /* LHBAutoLoginBtn.h */,
 				EF1691671D09B08200913827 /* LHBAutoLoginBtn.m */,
+				EF062A261D0A7F4E00F189C1 /* LHBCusTomTextField.h */,
+				EF062A271D0A7F4E00F189C1 /* LHBCusTomTextField.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -573,6 +578,7 @@
 				EFA7CBA81CFED8D00097FA52 /* LHBTabBar.m in Sources */,
 				EFA135C61D0725A500FB6964 /* LHBRecommendTagsModel.m in Sources */,
 				EF69DC881D008D76007CE788 /* LHBRecommendRightModel.m in Sources */,
+				EF062A281D0A7F4E00F189C1 /* LHBCusTomTextField.m in Sources */,
 				EF1691631D0997EE00913827 /* LHBLoginRegisterViewController.m in Sources */,
 				EFA7CBAC1CFED8D00097FA52 /* LHBMeViewController.m in Sources */,
 				EFA135C01D07203900FB6964 /* LHBRecommendTagsTableViewController.m in Sources */,
