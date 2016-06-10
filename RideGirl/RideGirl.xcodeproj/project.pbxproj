@@ -39,6 +39,8 @@
 		EFA7CBAD1CFED8D00097FA52 /* LHBNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CBA51CFED8D00097FA52 /* LHBNewViewController.m */; };
 		EFA7CBB01CFED90D0097FA52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CBAF1CFED90D0097FA52 /* AppDelegate.m */; };
 		EFA7CBB31CFEE2370097FA52 /* LHBUINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CBB21CFEE2370097FA52 /* LHBUINavigationController.m */; };
+		EFFD033D1D0AFEFB00762237 /* LHBPushGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFFD033C1D0AFEFB00762237 /* LHBPushGuideView.m */; };
+		EFFD033F1D0AFF0900762237 /* LHBPushGuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFFD033E1D0AFF0900762237 /* LHBPushGuideView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +123,9 @@
 		EFA7CBAF1CFED90D0097FA52 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EFA7CBB11CFEE2370097FA52 /* LHBUINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBUINavigationController.h; sourceTree = "<group>"; };
 		EFA7CBB21CFEE2370097FA52 /* LHBUINavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBUINavigationController.m; sourceTree = "<group>"; };
+		EFFD033B1D0AFEFB00762237 /* LHBPushGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBPushGuideView.h; sourceTree = "<group>"; };
+		EFFD033C1D0AFEFB00762237 /* LHBPushGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBPushGuideView.m; sourceTree = "<group>"; };
+		EFFD033E1D0AFF0900762237 /* LHBPushGuideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBPushGuideView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +333,7 @@
 				EFA7CB9D1CFED8D00097FA52 /* FriendTrends */,
 				EFA7CBA01CFED8D00097FA52 /* Me */,
 				EFA7CBA31CFED8D00097FA52 /* New */,
+				EFFD033A1D0AFED700762237 /* Other */,
 			);
 			path = MainRideGirl;
 			sourceTree = "<group>";
@@ -382,6 +388,17 @@
 				EFA7CBA41CFED8D00097FA52 /* LHBNewViewController.h */,
 				EFA7CBA51CFED8D00097FA52 /* LHBNewViewController.m */,
 			);
+			path = New;
+			sourceTree = "<group>";
+		};
+		EFFD033A1D0AFED700762237 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				EFFD033B1D0AFEFB00762237 /* LHBPushGuideView.h */,
+				EFFD033C1D0AFEFB00762237 /* LHBPushGuideView.m */,
+				EFFD033E1D0AFF0900762237 /* LHBPushGuideView.xib */,
+			);
+			name = Other;
 			path = New;
 			sourceTree = "<group>";
 		};
@@ -499,6 +516,7 @@
 				EF09C7151CFF2C8E00F95B28 /* LHBRecommendCell.xib in Resources */,
 				EFA135CB1D07272F00FB6964 /* LHBRecommendTagsTableViewCell.xib in Resources */,
 				EF69DC8D1D008E96007CE788 /* LHBRecommendRightCell.xib in Resources */,
+				EFFD033F1D0AFF0900762237 /* LHBPushGuideView.xib in Resources */,
 				EF1691651D09984B00913827 /* LHBLoginRegisterViewController.xib in Resources */,
 				EF09C7081CFF156D00F95B28 /* LHBFriendTrendsViewController.xib in Resources */,
 				EF09C70D1CFF1D5800F95B28 /* LHBRecommendViewController.xib in Resources */,
@@ -577,6 +595,7 @@
 				EFA7CBB31CFEE2370097FA52 /* LHBUINavigationController.m in Sources */,
 				EFA7CBA81CFED8D00097FA52 /* LHBTabBar.m in Sources */,
 				EFA135C61D0725A500FB6964 /* LHBRecommendTagsModel.m in Sources */,
+				EFFD033D1D0AFEFB00762237 /* LHBPushGuideView.m in Sources */,
 				EF69DC881D008D76007CE788 /* LHBRecommendRightModel.m in Sources */,
 				EF062A281D0A7F4E00F189C1 /* LHBCusTomTextField.m in Sources */,
 				EF1691631D0997EE00913827 /* LHBLoginRegisterViewController.m in Sources */,

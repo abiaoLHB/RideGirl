@@ -24,8 +24,9 @@
 }
 
 
-- (IBAction)loginOrRegisterBtnClick:(UIButton *)sender {
-    
+- (IBAction)loginOrRegisterBtnClick:(UIButton *)sender
+{
+    [self.view endEditing:YES];
     if (self.inputBgViewLeftLeading.constant == 0) {
         self.inputBgViewLeftLeading.constant = -self.view.width;
         sender.selected = YES;

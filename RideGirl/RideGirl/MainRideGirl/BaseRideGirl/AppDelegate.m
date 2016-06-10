@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "LHBPushGuideView.h"
 #import "LHBTabBarViewController.h"
 
 @interface AppDelegate ()
@@ -24,6 +25,8 @@
     self.window.rootViewController = [[LHBTabBarViewController alloc] init];
 
     [self.window makeKeyAndVisible];
+
+    [LHBPushGuideView show];
     
     return YES;
 }
