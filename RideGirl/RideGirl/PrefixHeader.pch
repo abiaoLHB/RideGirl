@@ -12,6 +12,8 @@
 
 #ifdef __OBJC__
 
+#import "LHBConst.h"
+
 #ifdef DEBUG
 #define LHBLog(...) NSLog(__VA_ARGS__)
 #else  

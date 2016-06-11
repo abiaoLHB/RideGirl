@@ -7,13 +7,22 @@
 //
 #import "LHBRecommendTagsTableViewController.h"
 #import "LHBEssenceViewController.h"
+#import "LHBAllViewController.h"
+#import "LHBVideoViewController.h"
+#import "LHBVoiceViewController.h"
+#import "LHBPictureViewController.h"
+#import "LHBWordViewController.h"
 
-@interface LHBEssenceViewController ()
+
+@interface LHBEssenceViewController ()<UIScrollViewDelegate>
 //底部指示器view
 @property (nonatomic,weak) UIView *indicatorView;
 //当前选中的button
 @property (nonatomic,strong) UIButton *selectBtn;
 
+@property (nonatomic,strong) UIView *titlesView;
+
+@property (nonatomic,strong) UIScrollView *contentView;
 
 @end
 
@@ -22,8 +31,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupNav];
+    [self setuChildVces];
     [self setupTitlesView];
-    
+    [self setupContentView];
 }
 #pragma mark - 初始化导航条
 - (void)setupNav
@@ -44,20 +54,20 @@
     //半透明方案二
     //titlesView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.5];
     //半透明防范三
-    titlesView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5];
+    titlesView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.8];
     //不推荐方案(里面所有的子控件都会半透明)
     //titlesView.alpha = 0.5;
     titlesView.width = self.view.width;
-    titlesView.height = 35;
-    titlesView.y = 64;
+    titlesView.height = LHBTitlesViewH;
+    titlesView.y = LHBTitlesViewY;
     [self.view addSubview:titlesView];
+    self.titlesView = titlesView;
   
     //底部指示器view(放到前面，后面可以使用它的尺寸)
     UIView *indicatorView = [[UIView alloc] init];
     indicatorView.backgroundColor = [UIColor redColor];
     indicatorView.height = 2;
     indicatorView.y = titlesView.height - indicatorView.height;
-    [titlesView addSubview:indicatorView];
     self.indicatorView = indicatorView;
     
     //内部的子控件
@@ -68,6 +78,7 @@
         UIButton *button = [[UIButton alloc]  init];
         button.height = height;
         button.width = width;
+        button.tag = i;
         button.x = i * width;
         [button setTitle:titles[i] forState:UIControlStateNormal];
 //        强制布局（强制更新子控件的frame，此时就可以拿到真正的fram）
@@ -88,12 +99,14 @@
             
             //让按钮内部的label根据文字内容来计算尺寸
             [button.titleLabel sizeToFit];
-            self.indicatorView.width = button.titleLabel.width;
+             self.indicatorView.width = button.titleLabel.width;
+            //或者
+            //self.indicatorView.width = [titles[i] sizeWithAttributes:@{NSFontAttributeName : button.titleLabel.font}].width;
             self.indicatorView.centerX = button.centerX;
         }
     }
-    
-    
+    //防止滑动是吧indicatorView当成五个按钮中的某个按钮访问
+    [titlesView addSubview:indicatorView];
 }
 
 - (void)titilBtnClick:(UIButton *)button
@@ -111,8 +124,47 @@
         self.indicatorView.width = button.titleLabel.width;
         self.indicatorView.centerX = button.centerX;
     }];
+    
+    //滚动
+    CGPoint offset = self.contentView.contentOffset;
+    offset.x = button.tag * self.contentView.width;
+    [self.contentView setContentOffset:offset animated:YES];
 }
 
+#pragma mark - 初始化底部的scrollView
+- (void)setupContentView
+{
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    UIScrollView *contentView = [[UIScrollView alloc] init];
+    contentView.frame = self.view.bounds;
+    contentView.delegate = self;
+    contentView.pagingEnabled = YES;
+    //没用addsubView，因为要用到titllsView的高度，而这时titilVew还没创建好
+    [self.view insertSubview:contentView atIndex:0];
+    contentView.contentSize = CGSizeMake(contentView.width * self.childViewControllers.count, 0);
+    self.contentView = contentView;
+    //初始化完毕后默认加载第一个控制器
+    [self scrollViewDidEndScrollingAnimation:contentView];
+}
+
+#pragma mark - 初始化5个控制器
+- (void)setuChildVces
+{
+    LHBAllViewController *allVc = [[LHBAllViewController alloc] init];
+    [self addChildViewController:allVc];
+    
+    LHBVideoViewController *videoVc = [[LHBVideoViewController alloc] init];
+    [self addChildViewController:videoVc];
+    
+    LHBVoiceViewController *voiceVc = [[LHBVoiceViewController alloc] init];
+    [self addChildViewController:voiceVc];
+    
+    LHBPictureViewController *pictureVc = [[LHBPictureViewController alloc] init];
+    [self addChildViewController:pictureVc];
+    
+    LHBWordViewController *wordVc = [[LHBWordViewController alloc] init];
+    [self addChildViewController:wordVc];
+}
 
 - (void)leftTagsClick
 {
@@ -122,6 +174,29 @@
 
 
 
+#pragma mark - <UIScrollViewDelegate>
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    //当前索引
+    NSInteger index = scrollView.contentOffset.x / scrollView.width;
+    
+    //停止滚动后，加载控制器的view
+    UIViewController *vc = self.childViewControllers[index];
+    vc.view.x = scrollView.contentOffset.x;
+    vc.view.y = 0;//设置控制器view的y值为0，默认是20
+    vc.view.height = scrollView.height;// 设置控制器view的height值为整个屏幕的高度(默认是比屏幕高度少个20)
+    [scrollView addSubview:vc.view];
+    
+    
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [self scrollViewDidEndScrollingAnimation:scrollView];
+    //点击按钮
+    NSInteger index = scrollView.contentOffset.x / scrollView.width;
+    [self titilBtnClick:self.titlesView.subviews[index]];
+}
 
 
 

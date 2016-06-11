@@ -148,7 +148,7 @@
                             <rect key="frame" x="167" y="117" width="266" height="40"/>
                             <state key="normal" title="登录" backgroundImage="login_register_button"/>
                             <state key="selected" backgroundImage="login_register_button_click"/>
-                            <state key="highlighted" backgroundImage="loginBtnBgClick"/>
+                            <state key="highlighted" backgroundImage="login_register_button_click"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                     <integer key="value" value="5"/>

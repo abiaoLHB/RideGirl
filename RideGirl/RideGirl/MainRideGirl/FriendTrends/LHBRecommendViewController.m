@@ -99,8 +99,8 @@ static NSString *const  rightRuseCellid = @"user";
 //    }];
     //也可以
     self.rightUserTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-    
-    self.rightUserTableView.mj_footer.hidden= YES;
+//    可以省略，因为试图出来，会先走数据源方法，在数据源方法根据数组长度已经处理隐藏了
+//    self.rightUserTableView.mj_footer.hidden= YES;
 }
 #pragma mark - 加载最新数据
 - (void)loadNewData
