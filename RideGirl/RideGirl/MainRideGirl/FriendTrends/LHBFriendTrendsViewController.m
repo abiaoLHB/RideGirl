@@ -24,7 +24,6 @@
     
     self.view.backgroundColor = LHBRGBColor(223, 223, 233);
 
-
 }
 - (void)friendLeftBtnDown
 {

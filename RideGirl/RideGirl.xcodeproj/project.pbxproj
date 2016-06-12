@@ -20,6 +20,7 @@
 		EF1691681D09B08200913827 /* LHBAutoLoginBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1691671D09B08200913827 /* LHBAutoLoginBtn.m */; };
 		EF1E06671D0C58F10083570E /* LHBConst.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1E06661D0C58F10083570E /* LHBConst.m */; };
 		EF1E06681D0C5D8A0083570E /* LHBWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC598201D0C04D300BA2153 /* LHBWordViewController.m */; };
+		EF27B4581D0DC19D004A2E33 /* NSDate+LHBDateExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EF27B4571D0DC19D004A2E33 /* NSDate+LHBDateExtension.m */; };
 		EF3602D21CFDCC0000ABD8AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602D11CFDCC0000ABD8AD /* main.m */; };
 		EF3602EB1CFDCC0000ABD8AD /* RideGirlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602EA1CFDCC0000ABD8AD /* RideGirlTests.m */; };
 		EF3602F61CFDCC0000ABD8AD /* RideGirlUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602F51CFDCC0000ABD8AD /* RideGirlUITests.m */; };
@@ -46,6 +47,8 @@
 		EFC598181D0C047E00BA2153 /* LHBVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC598171D0C047E00BA2153 /* LHBVideoViewController.m */; };
 		EFC5981B1D0C04A900BA2153 /* LHBVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC5981A1D0C04A900BA2153 /* LHBVoiceViewController.m */; };
 		EFC5981E1D0C04BB00BA2153 /* LHBPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC5981D1D0C04BB00BA2153 /* LHBPictureViewController.m */; };
+		EFDB07DA1D0D9C220035303F /* LHBWordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDB07D81D0D9C220035303F /* LHBWordTableViewCell.m */; };
+		EFDB07DB1D0D9C220035303F /* LHBWordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFDB07D91D0D9C220035303F /* LHBWordTableViewCell.xib */; };
 		EFFD033D1D0AFEFB00762237 /* LHBPushGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFFD033C1D0AFEFB00762237 /* LHBPushGuideView.m */; };
 		EFFD033F1D0AFF0900762237 /* LHBPushGuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFFD033E1D0AFF0900762237 /* LHBPushGuideView.xib */; };
 /* End PBXBuildFile section */
@@ -89,6 +92,8 @@
 		EF1691671D09B08200913827 /* LHBAutoLoginBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBAutoLoginBtn.m; sourceTree = "<group>"; };
 		EF1E06651D0C58F10083570E /* LHBConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBConst.h; sourceTree = "<group>"; };
 		EF1E06661D0C58F10083570E /* LHBConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBConst.m; sourceTree = "<group>"; };
+		EF27B4561D0DC19D004A2E33 /* NSDate+LHBDateExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+LHBDateExtension.h"; sourceTree = "<group>"; };
+		EF27B4571D0DC19D004A2E33 /* NSDate+LHBDateExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+LHBDateExtension.m"; sourceTree = "<group>"; };
 		EF3602CD1CFDCC0000ABD8AD /* RideGirl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideGirl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3602D11CFDCC0000ABD8AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EF3602E11CFDCC0000ABD8AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -144,6 +149,9 @@
 		EFC5981D1D0C04BB00BA2153 /* LHBPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBPictureViewController.m; sourceTree = "<group>"; };
 		EFC5981F1D0C04D300BA2153 /* LHBWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBWordViewController.h; sourceTree = "<group>"; };
 		EFC598201D0C04D300BA2153 /* LHBWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBWordViewController.m; sourceTree = "<group>"; };
+		EFDB07D71D0D9C220035303F /* LHBWordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBWordTableViewCell.h; sourceTree = "<group>"; };
+		EFDB07D81D0D9C220035303F /* LHBWordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBWordTableViewCell.m; sourceTree = "<group>"; };
+		EFDB07D91D0D9C220035303F /* LHBWordTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBWordTableViewCell.xib; sourceTree = "<group>"; };
 		EFFD033B1D0AFEFB00762237 /* LHBPushGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBPushGuideView.h; sourceTree = "<group>"; };
 		EFFD033C1D0AFEFB00762237 /* LHBPushGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBPushGuideView.m; sourceTree = "<group>"; };
 		EFFD033E1D0AFF0900762237 /* LHBPushGuideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBPushGuideView.xib; sourceTree = "<group>"; };
@@ -325,8 +333,9 @@
 				EFA135C71D07272F00FB6964 /* LHBRecommendTagsTableViewCell.h */,
 				EFA135C81D07272F00FB6964 /* LHBRecommendTagsTableViewCell.m */,
 				EFA135C91D07272F00FB6964 /* LHBRecommendTagsTableViewCell.xib */,
-				EF85D06F1D0C40B000547377 /* LHBWordModel.h */,
-				EF85D0701D0C40B000547377 /* LHBWordModel.m */,
+				EFDB07D71D0D9C220035303F /* LHBWordTableViewCell.h */,
+				EFDB07D81D0D9C220035303F /* LHBWordTableViewCell.m */,
+				EFDB07D91D0D9C220035303F /* LHBWordTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -336,6 +345,8 @@
 			children = (
 				EFA135C41D0725A500FB6964 /* LHBRecommendTagsModel.h */,
 				EFA135C51D0725A500FB6964 /* LHBRecommendTagsModel.m */,
+				EF85D06F1D0C40B000547377 /* LHBWordModel.h */,
+				EF85D0701D0C40B000547377 /* LHBWordModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -347,6 +358,8 @@
 				EFA7CB901CFED8D00097FA52 /* UIBarButtonItem+LHBUIBarButtonItemExtension.m */,
 				EFA7CB911CFED8D00097FA52 /* UIView+LHBFrameExtension.h */,
 				EFA7CB921CFED8D00097FA52 /* UIView+LHBFrameExtension.m */,
+				EF27B4561D0DC19D004A2E33 /* NSDate+LHBDateExtension.h */,
+				EF27B4571D0DC19D004A2E33 /* NSDate+LHBDateExtension.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -555,6 +568,7 @@
 				EF1691651D09984B00913827 /* LHBLoginRegisterViewController.xib in Resources */,
 				EF09C7081CFF156D00F95B28 /* LHBFriendTrendsViewController.xib in Resources */,
 				EF09C70D1CFF1D5800F95B28 /* LHBRecommendViewController.xib in Resources */,
+				EFDB07DB1D0D9C220035303F /* LHBWordTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,12 +656,14 @@
 				EFC598181D0C047E00BA2153 /* LHBVideoViewController.m in Sources */,
 				EF09C7131CFF2C5D00F95B28 /* LHBRecommendCell.m in Sources */,
 				EFA7CBAA1CFED8D00097FA52 /* LHBEssenceViewController.m in Sources */,
+				EF27B4581D0DC19D004A2E33 /* NSDate+LHBDateExtension.m in Sources */,
 				EF09C7181CFF2CD500F95B28 /* LHBRecommendModel.m in Sources */,
 				EFA7CBAD1CFED8D00097FA52 /* LHBNewViewController.m in Sources */,
 				EF1E06681D0C5D8A0083570E /* LHBWordViewController.m in Sources */,
 				EF69DC8C1D008E96007CE788 /* LHBRecommendRightCell.m in Sources */,
 				EFA135CA1D07272F00FB6964 /* LHBRecommendTagsTableViewCell.m in Sources */,
 				EFA7CBB01CFED90D0097FA52 /* AppDelegate.m in Sources */,
+				EFDB07DA1D0D9C220035303F /* LHBWordTableViewCell.m in Sources */,
 				EFA7CBA61CFED8D00097FA52 /* UIBarButtonItem+LHBUIBarButtonItemExtension.m in Sources */,
 				EFC5981E1D0C04BB00BA2153 /* LHBPictureViewController.m in Sources */,
 				EF3602D21CFDCC0000ABD8AD /* main.m in Sources */,

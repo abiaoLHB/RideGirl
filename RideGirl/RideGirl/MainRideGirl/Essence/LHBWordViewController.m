@@ -12,6 +12,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <MJRefresh/MJRefresh.h>
 #import "LHBWordModel.h"
+#import "LHBWordTableViewCell.h"
 
 @interface LHBWordViewController ()
 
@@ -50,6 +51,9 @@
     //添加刷新控件
     [self setupRefresh];
 }
+
+static NSString *const LHBWordCellID = @"word";
+
 #pragma mark - 初始化tableView参数
 - (void)setupTableView
 {
@@ -57,8 +61,12 @@
     CGFloat bottom = self.tabBarController.tabBar.height;
     CGFloat top = LHBTitlesViewY+LHBTitlesViewH;
     self.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     //设置滚动条的内边距
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    //给cell注册个cell
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([LHBWordTableViewCell class]) bundle:nil] forCellReuseIdentifier:LHBWordCellID];
 }
 
 #pragma mark -  初始化刷新控件
@@ -166,19 +174,20 @@
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    static NSString *cellID = @"cellId";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-    }
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LHBWordTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:LHBWordCellID];
+   
     LHBWordModel *model = self.dataArr[indexPath.row];
-    
-    cell.textLabel.text = model.text;
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:model.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    //把模型传进去
+    cell.wordModel = model;
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 200;
 }
 
 /*
