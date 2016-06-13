@@ -14,4 +14,13 @@
  */
 - (NSDateComponents *)daltaFrom:(NSDate *)fromDate;
 
+- (BOOL)isThisYear;
+
+- (BOOL)isToday;
+
+- (BOOL)isYesterday;
+
+
+
+
 @end

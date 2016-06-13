@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *caiBtn;
 @property (weak, nonatomic) IBOutlet UIButton *shareBtn;
 @property (weak, nonatomic) IBOutlet UIButton *commentBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *sina_vImageView;
 
 @end
 
@@ -31,7 +32,14 @@
     UIImageView *bgImageView = [[UIImageView alloc] init];
     bgImageView.image = [UIImage imageNamed:@"mainCellBackground"];
     self.backgroundView = bgImageView;
+
+    self.headerImageView.layer.cornerRadius = self.headerImageView.size.width*0.5;
+    self.headerImageView.clipsToBounds = YES;
+
 }
+
+
+
 - (void)setFrame:(CGRect)frame
 {
     static CGFloat margin = 10;
@@ -42,17 +50,34 @@
     [super setFrame:frame];
 }
 
-
+/**
+ 今年
+ 今天
+ 1分钟内
+ 刚刚
+ 1小时内
+ xx分钟前
+ 其他
+ xx小时前
+ 昨天
+ 昨天 18:56:34
+ 其他
+ 06-23 19:56:23
+ 
+ 非今年
+ 2014-05-08 18:45:30
+ */
 - (void)setWordModel:(LHBWordModel *)wordModel
 {
     _wordModel = wordModel;
+    //设置头像
     [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:wordModel.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    //设置名字
     self.nameLabel.text = wordModel.name;
+    //设置帖子的创建时间
     self.timeLabel.text = wordModel.create_time;
     
-    LHBLog(@"%@",wordModel.create_time);
-    
-    [self testData:wordModel.create_time];
+    self.sina_vImageView.hidden = !wordModel.sina_v;
     
     
     [self setButtonTitle:self.dingBtn count:wordModel.ding placeholdStr:@"顶"];
@@ -64,17 +89,9 @@
 
 - (void)testData:(NSString *)creat_time
 {
-    //日期格式化类
-    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
-    //设置日期格式
-    fmt.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-    //当前时间
-    NSDate *now = [NSDate date];
-    //发帖时间
-    NSDate *creatTime = [fmt dateFromString:creat_time];
-   
     
-    LHBLog(@"%@",[now daltaFrom:creatTime] );
+    
+    
     
     
    
