@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *shareBtn;
 @property (weak, nonatomic) IBOutlet UIButton *commentBtn;
 @property (weak, nonatomic) IBOutlet UIImageView *sina_vImageView;
+@property (weak, nonatomic) IBOutlet UILabel *detalTextLabel;
 
 @end
 
@@ -79,6 +80,7 @@
     
     self.sina_vImageView.hidden = !wordModel.sina_v;
     
+    self.detalTextLabel.text = wordModel.text;
     
     [self setButtonTitle:self.dingBtn count:wordModel.ding placeholdStr:@"顶"];
     [self setButtonTitle:self.caiBtn count:wordModel.cai placeholdStr:@"踩"];
