@@ -43,6 +43,8 @@
 		EFA7CBAD1CFED8D00097FA52 /* LHBNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CBA51CFED8D00097FA52 /* LHBNewViewController.m */; };
 		EFA7CBB01CFED90D0097FA52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CBAF1CFED90D0097FA52 /* AppDelegate.m */; };
 		EFA7CBB31CFEE2370097FA52 /* LHBUINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CBB21CFEE2370097FA52 /* LHBUINavigationController.m */; };
+		EFB3B0741D11AAC70016EB15 /* LHBWordPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB3B0731D11AAC70016EB15 /* LHBWordPictureView.m */; };
+		EFB3B0761D11AB120016EB15 /* LHBWordPictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB3B0751D11AB120016EB15 /* LHBWordPictureView.xib */; };
 		EFC598151D0C046900BA2153 /* LHBAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC598141D0C046900BA2153 /* LHBAllViewController.m */; };
 		EFC598181D0C047E00BA2153 /* LHBVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC598171D0C047E00BA2153 /* LHBVideoViewController.m */; };
 		EFC5981B1D0C04A900BA2153 /* LHBVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC5981A1D0C04A900BA2153 /* LHBVoiceViewController.m */; };
@@ -140,6 +142,9 @@
 		EFA7CBAF1CFED90D0097FA52 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EFA7CBB11CFEE2370097FA52 /* LHBUINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBUINavigationController.h; sourceTree = "<group>"; };
 		EFA7CBB21CFEE2370097FA52 /* LHBUINavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBUINavigationController.m; sourceTree = "<group>"; };
+		EFB3B0721D11AAC70016EB15 /* LHBWordPictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBWordPictureView.h; sourceTree = "<group>"; };
+		EFB3B0731D11AAC70016EB15 /* LHBWordPictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBWordPictureView.m; sourceTree = "<group>"; };
+		EFB3B0751D11AB120016EB15 /* LHBWordPictureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBWordPictureView.xib; sourceTree = "<group>"; };
 		EFC598131D0C046900BA2153 /* LHBAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBAllViewController.h; sourceTree = "<group>"; };
 		EFC598141D0C046900BA2153 /* LHBAllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBAllViewController.m; sourceTree = "<group>"; };
 		EFC598161D0C047E00BA2153 /* LHBVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBVideoViewController.h; sourceTree = "<group>"; };
@@ -337,6 +342,9 @@
 				EFDB07D71D0D9C220035303F /* LHBWordTableViewCell.h */,
 				EFDB07D81D0D9C220035303F /* LHBWordTableViewCell.m */,
 				EFDB07D91D0D9C220035303F /* LHBWordTableViewCell.xib */,
+				EFB3B0721D11AAC70016EB15 /* LHBWordPictureView.h */,
+				EFB3B0731D11AAC70016EB15 /* LHBWordPictureView.m */,
+				EFB3B0751D11AB120016EB15 /* LHBWordPictureView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -565,6 +573,7 @@
 				EF09C7151CFF2C8E00F95B28 /* LHBRecommendCell.xib in Resources */,
 				EFA135CB1D07272F00FB6964 /* LHBRecommendTagsTableViewCell.xib in Resources */,
 				EF69DC8D1D008E96007CE788 /* LHBRecommendRightCell.xib in Resources */,
+				EFB3B0761D11AB120016EB15 /* LHBWordPictureView.xib in Resources */,
 				EFFD033F1D0AFF0900762237 /* LHBPushGuideView.xib in Resources */,
 				EF1691651D09984B00913827 /* LHBLoginRegisterViewController.xib in Resources */,
 				EF09C7081CFF156D00F95B28 /* LHBFriendTrendsViewController.xib in Resources */,
@@ -660,6 +669,7 @@
 				EF27B4581D0DC19D004A2E33 /* NSDate+LHBDateExtension.m in Sources */,
 				EF09C7181CFF2CD500F95B28 /* LHBRecommendModel.m in Sources */,
 				EFA7CBAD1CFED8D00097FA52 /* LHBNewViewController.m in Sources */,
+				EFB3B0741D11AAC70016EB15 /* LHBWordPictureView.m in Sources */,
 				EF1E06681D0C5D8A0083570E /* LHBWordViewController.m in Sources */,
 				EF69DC8C1D008E96007CE788 /* LHBRecommendRightCell.m in Sources */,
 				EFA135CA1D07272F00FB6964 /* LHBRecommendTagsTableViewCell.m in Sources */,

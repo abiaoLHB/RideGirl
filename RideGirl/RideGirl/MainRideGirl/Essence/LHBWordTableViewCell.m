@@ -10,6 +10,7 @@
 #import "LHBWordModel.h"
 #import "NSDate+LHBDateExtension.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "LHBWordPictureView.h"
 
 @interface LHBWordTableViewCell ()
 
@@ -24,9 +25,23 @@
 @property (weak, nonatomic) IBOutlet UIImageView *sina_vImageView;
 @property (weak, nonatomic) IBOutlet UILabel *detalTextLabel;
 
+//图拍呢帖子中间的view
+@property (nonatomic,weak) LHBWordPictureView  *pictureView;
+
+
 @end
 
 @implementation LHBWordTableViewCell
+
+- (LHBWordPictureView *)pictureView
+{
+    if (_pictureView == nil) {
+        LHBWordPictureView  *pictureView = [LHBWordPictureView creatLHBWordPictureView];
+        [self.contentView addSubview:pictureView];
+        _pictureView = pictureView;
+    }
+    return _pictureView;
+}
 
 - (void)awakeFromNib
 {
@@ -86,6 +101,12 @@
     [self setButtonTitle:self.caiBtn count:wordModel.cai placeholdStr:@"踩"];
     [self setButtonTitle:self.shareBtn count:wordModel.repost placeholdStr:@"分享"];
     [self setButtonTitle:self.commentBtn count:wordModel.comment placeholdStr:@"评论"];
+    
+    //中间时图片
+    if (wordModel.type == LHBWordTypePicture) {
+        self.pictureView.wordModel = wordModel;
+        self.pictureView.frame = wordModel.imageFrame;
+    }
 
 }
 

@@ -8,8 +8,32 @@
 
 #import "LHBWordModel.h"
 #import "NSDate+LHBDateExtension.h"
+#import <MJExtension/MJExtension.h>
 
 @implementation LHBWordModel
+{
+    CGFloat _cellH;
+    CGRect  _imageFrame;
+}
+//<MJExtension/MJExtension.h> 自定义的属性代替真实的model属性
++ (NSDictionary *)mj_replacedKeyFromPropertyName
+{
+    return @{
+             @"small_image" : @"image0",
+             @"large_image" : @"image1",
+             @"middle_image" : @"image2"
+             };
+}
+//另一种方式
+//+ (NSString *)mj_replacedKeyFromPropertyName121:(NSString *)propertyName
+//{
+//    if ([propertyName isEqualToString:@"small_image"]) {
+//        return @"image0";
+//    }
+//    return propertyName;
+//}
+
+
 
 - (NSString *)create_time
 {
@@ -41,5 +65,29 @@
     } else { // 非今年
         return _create_time;
     }
+}
+
+- (CGFloat)cellH
+{
+    if (!_cellH) {
+        
+        NSLog(@"%s",__func__);
+        
+        CGFloat textY = 55;
+        CGSize maxSize = CGSizeMake([UIScreen mainScreen].bounds.size.width-40, MAXFLOAT);
+        CGFloat textH = [self.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:14]} context:nil].size.height;
+        //段子cell的高度，最基本的
+        _cellH= textY + textH +64 ;
+        if (self.type == LHBWordTypePicture) {
+            //图片等比例显示，因为图片的宽高可能大于或者小于屏款
+            CGFloat imageW = maxSize.width;//和文字同宽
+            CGFloat imageH = imageW * self.height / self.width;
+            //计算图片的frame
+            _imageFrame = CGRectMake(10, textY+textH+10, imageW, imageH);
+            
+            _cellH += imageH + 10;
+        }
+    }
+    return _cellH;
 }
 @end

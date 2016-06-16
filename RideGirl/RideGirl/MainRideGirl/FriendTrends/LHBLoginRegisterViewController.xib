@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -22,13 +22,13 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_register_background" translatesAutoresizingMaskIntoConstraints="NO" id="BRh-wL-fjh">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nlI-7w-Ol4" userLabel="关闭按钮">
-                    <rect key="frame" x="15" y="40" width="16" height="16"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nlI-7w-Ol4" userLabel="关闭按钮">
+                    <rect key="frame" x="15" y="40" width="30" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="16" id="4oA-pb-dUw"/>
-                        <constraint firstAttribute="height" constant="16" id="hpR-d5-bCv"/>
+                        <constraint firstAttribute="width" constant="30" id="4oA-pb-dUw"/>
+                        <constraint firstAttribute="height" constant="30" id="hpR-d5-bCv"/>
                     </constraints>
-                    <state key="normal" backgroundImage="login_close_icon"/>
+                    <state key="normal" image="login_close_icon"/>
                     <connections>
                         <action selector="back" destination="-1" eventType="touchUpInside" id="L3t-AB-zCx"/>
                     </connections>
@@ -105,7 +105,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t16-mq-6EF" userLabel="登录大背景">
-                    <rect key="frame" x="0.0" y="136" width="600" height="250"/>
+                    <rect key="frame" x="0.0" y="150" width="600" height="250"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bln-jn-2t9" userLabel="输入小背景">
                             <rect key="frame" x="167" y="0.0" width="266" height="92"/>
@@ -176,7 +176,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DIx-bH-h92" userLabel="注册大背景">
-                    <rect key="frame" x="600" y="136" width="600" height="250"/>
+                    <rect key="frame" x="600" y="150" width="600" height="250"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDZ-Vr-NGc" userLabel="输入小背景">
                             <rect key="frame" x="167" y="0.0" width="266" height="92"/>
