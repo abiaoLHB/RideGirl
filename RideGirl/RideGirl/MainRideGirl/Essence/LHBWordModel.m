@@ -82,6 +82,10 @@
             //图片等比例显示，因为图片的宽高可能大于或者小于屏款
             CGFloat imageW = maxSize.width;//和文字同宽
             CGFloat imageH = imageW * self.height / self.width;
+            if (imageH >= LHBWordPictureMaxH) {
+                imageH = LHBWordPictureNormalH;
+                self.bigPicture = YES;
+            }
             //计算图片的frame
             _imageFrame = CGRectMake(10, textY+textH+10, imageW, imageH);
             

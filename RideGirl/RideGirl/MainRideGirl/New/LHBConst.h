@@ -21,3 +21,6 @@ typedef enum {
 
 UIKIT_EXTERN CGFloat const LHBTitlesViewH;
 UIKIT_EXTERN CGFloat const LHBTitlesViewY;
+
+UIKIT_EXTERN CGFloat const LHBWordPictureMaxH;
+UIKIT_EXTERN CGFloat const LHBWordPictureNormalH;

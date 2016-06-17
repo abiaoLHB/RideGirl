@@ -36,4 +36,7 @@
 //图片的frame
 @property (nonatomic,assign,readonly) CGRect imageFrame;
 
+//辅助属性，是否已经处理过图片长度
+@property (nonatomic,assign,getter=isBigPicture) BOOL bigPicture;
+
 @end
