@@ -33,6 +33,8 @@
 		EFA135C61D0725A500FB6964 /* LHBRecommendTagsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA135C51D0725A500FB6964 /* LHBRecommendTagsModel.m */; };
 		EFA135CA1D07272F00FB6964 /* LHBRecommendTagsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA135C81D07272F00FB6964 /* LHBRecommendTagsTableViewCell.m */; };
 		EFA135CB1D07272F00FB6964 /* LHBRecommendTagsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFA135C91D07272F00FB6964 /* LHBRecommendTagsTableViewCell.xib */; };
+		EFA351911D1ADE7A00AAE9B7 /* LHBShowPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA3518F1D1ADE7A00AAE9B7 /* LHBShowPictureViewController.m */; };
+		EFA351921D1ADE7A00AAE9B7 /* LHBShowPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFA351901D1ADE7A00AAE9B7 /* LHBShowPictureViewController.xib */; };
 		EFA7CBA61CFED8D00097FA52 /* UIBarButtonItem+LHBUIBarButtonItemExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CB901CFED8D00097FA52 /* UIBarButtonItem+LHBUIBarButtonItemExtension.m */; };
 		EFA7CBA71CFED8D00097FA52 /* UIView+LHBFrameExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CB921CFED8D00097FA52 /* UIView+LHBFrameExtension.m */; };
 		EFA7CBA81CFED8D00097FA52 /* LHBTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CB971CFED8D00097FA52 /* LHBTabBar.m */; };
@@ -121,6 +123,9 @@
 		EFA135C71D07272F00FB6964 /* LHBRecommendTagsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBRecommendTagsTableViewCell.h; sourceTree = "<group>"; };
 		EFA135C81D07272F00FB6964 /* LHBRecommendTagsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBRecommendTagsTableViewCell.m; sourceTree = "<group>"; };
 		EFA135C91D07272F00FB6964 /* LHBRecommendTagsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBRecommendTagsTableViewCell.xib; sourceTree = "<group>"; };
+		EFA3518E1D1ADE7A00AAE9B7 /* LHBShowPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBShowPictureViewController.h; sourceTree = "<group>"; };
+		EFA3518F1D1ADE7A00AAE9B7 /* LHBShowPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBShowPictureViewController.m; sourceTree = "<group>"; };
+		EFA351901D1ADE7A00AAE9B7 /* LHBShowPictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBShowPictureViewController.xib; sourceTree = "<group>"; };
 		EFA7CB841CFEB9300097FA52 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		EFA7CB8F1CFED8D00097FA52 /* UIBarButtonItem+LHBUIBarButtonItemExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+LHBUIBarButtonItemExtension.h"; sourceTree = "<group>"; };
 		EFA7CB901CFED8D00097FA52 /* UIBarButtonItem+LHBUIBarButtonItemExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+LHBUIBarButtonItemExtension.m"; sourceTree = "<group>"; };
@@ -329,6 +334,9 @@
 				EFC598201D0C04D300BA2153 /* LHBWordViewController.m */,
 				EFA135BE1D07203900FB6964 /* LHBRecommendTagsTableViewController.h */,
 				EFA135BF1D07203900FB6964 /* LHBRecommendTagsTableViewController.m */,
+				EFA3518E1D1ADE7A00AAE9B7 /* LHBShowPictureViewController.h */,
+				EFA3518F1D1ADE7A00AAE9B7 /* LHBShowPictureViewController.m */,
+				EFA351901D1ADE7A00AAE9B7 /* LHBShowPictureViewController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -579,6 +587,7 @@
 				EF09C7081CFF156D00F95B28 /* LHBFriendTrendsViewController.xib in Resources */,
 				EF09C70D1CFF1D5800F95B28 /* LHBRecommendViewController.xib in Resources */,
 				EFDB07DB1D0D9C220035303F /* LHBWordTableViewCell.xib in Resources */,
+				EFA351921D1ADE7A00AAE9B7 /* LHBShowPictureViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +675,7 @@
 				EFC598181D0C047E00BA2153 /* LHBVideoViewController.m in Sources */,
 				EF09C7131CFF2C5D00F95B28 /* LHBRecommendCell.m in Sources */,
 				EFA7CBAA1CFED8D00097FA52 /* LHBEssenceViewController.m in Sources */,
+				EFA351911D1ADE7A00AAE9B7 /* LHBShowPictureViewController.m in Sources */,
 				EF27B4581D0DC19D004A2E33 /* NSDate+LHBDateExtension.m in Sources */,
 				EF09C7181CFF2CD500F95B28 /* LHBRecommendModel.m in Sources */,
 				EFA7CBAD1CFED8D00097FA52 /* LHBNewViewController.m in Sources */,

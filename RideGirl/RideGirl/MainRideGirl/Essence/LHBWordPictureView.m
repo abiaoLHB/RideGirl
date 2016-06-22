@@ -8,6 +8,8 @@
 
 #import "LHBWordPictureView.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <DACircularProgress/DALabeledCircularProgressView.h>
+#import "LHBShowPictureViewController.h"
 #import "LHBWordModel.h"
 @interface LHBWordPictureView ()
 
@@ -15,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *wordPicture;
 @property (weak, nonatomic) IBOutlet UIImageView *gitImageView;
 @property (weak, nonatomic) IBOutlet UIButton *seeBigBtn;
+@property (weak, nonatomic) IBOutlet DALabeledCircularProgressView *progressView;
 
 @end
 
@@ -25,7 +28,25 @@
     //关掉自动布局
     //如果明明把尺寸设置对了，然而却不是想要的效果，一般都是autoresizing的伸缩属性影响了。导致宽度变来变去
     self.autoresizingMask = UIViewAutoresizingNone;
+    //设置进度条控件的圆角
+    self.progressView.roundedCorners = 2.0;
+    self.progressView.progressLabel.textColor = [UIColor whiteColor];
+    
+    //图片能点击，看大图或者保存操作
+    //imageView默认是不接受事件的，会穿透传给后面的控件。
+    self.wordPicture.userInteractionEnabled = YES;
+    [self.wordPicture addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showPicture)]];
+   
 }
+//点击cell上的图片(让显示大图按钮也能调用这个方法)
+//另一做法，就是让这个显示大图按钮不能被点击，不是设置enabled = no,这样回事按钮图片状态发生改变。而是要设置userInteractionEnabled的状态＝NO，不改变按钮颜色。
+- (IBAction)showPicture
+{
+    LHBShowPictureViewController *showPictureVC = [[LHBShowPictureViewController alloc] init];
+    //model进去，这里是view，不是控制器，没有present方法。可以拿到window的控制器，来model，这样在app的任何地方都能model
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:showPictureVC animated:YES completion:nil];
+}
+
 
 + (instancetype)creatLHBWordPictureView
 {
@@ -37,7 +58,23 @@
     _wordModel = wordModel;
     
     //iOS默认是不支持gif的，sdWebImage默认做了这件事情。零用iamgeIO框架解析成N个iamge对象,利用animationImages对象播放
-    [self.wordPicture sd_setImageWithURL:[NSURL URLWithString:wordModel.large_image] placeholderImage:nil];
+    //如果需要显示进度条的话，就不要用这个方法了
+//    [self.wordPicture sd_setImageWithURL:[NSURL URLWithString:wordModel.large_image] placeholderImage:nil];
+    [self.wordPicture sd_setImageWithURL:[NSURL URLWithString:wordModel.large_image] placeholderImage:nil options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {//频繁调用
+        //进度条
+        self.progressView.hidden = NO;
+        //算进度
+        CGFloat progress = 1.0 * receivedSize / expectedSize;
+    
+        [self.progressView setProgress:progress];//animated:YES
+        self.progressView.progressLabel.text = [NSString stringWithFormat:@"%d%%",(int)(progress * 100)];
+        
+    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        //下载完以后，进度条控件应该隐藏
+        self.progressView.hidden = YES;
+    }];
+    
+    
     //如果是gif还得显示gif小图标
     //拿到这张图片的扩展名
     NSString *extension = wordModel.large_image.pathExtension;

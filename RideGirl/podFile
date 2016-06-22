@@ -6,5 +6,6 @@ target 'RideGirl' do
 	pod 'SDWebImage'
 	pod 'MJExtension'
 	pod 'MJRefresh'
+	pod 'DACircularProgress'
 	pod 'SVProgressHUD'
 end
