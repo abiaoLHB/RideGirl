@@ -39,4 +39,7 @@
 //辅助属性，是否已经处理过图片长度
 @property (nonatomic,assign,getter=isBigPicture) BOOL bigPicture;
 
+//图片的下载进度
+@property (nonatomic,assign) CGFloat imageViewProgress;
+
 @end

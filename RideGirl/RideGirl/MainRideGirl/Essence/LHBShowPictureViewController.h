@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class LHBWordModel;
+
 @interface LHBShowPictureViewController : UIViewController
+
+@property (nonatomic,strong) LHBWordModel *wordModel;
 
 @end
