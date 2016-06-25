@@ -17,6 +17,9 @@ static CGFloat const LHBAnimationDelay = 0.05;
 
 @property (nonatomic,strong) UIImageView *sloganImageView;
 
+//属性block的写法
+@property (nonatomic,copy) void  (^completionBlock)();
+
 @end
 
 @implementation LHBPublishViewController
@@ -40,6 +43,8 @@ static CGFloat const LHBAnimationDelay = 0.05;
     CGFloat xMargin = (LHBScreenW - 2 * buttonStartX - maxCols * buttonW) / (maxCols - 1);
     for (int i = 0; i<images.count; i++) {
         LHBAutoLoginBtn *button = [[LHBAutoLoginBtn alloc] init];
+        [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+        button.tag = i;
         // 设置内容
         button.titleLabel.font = [UIFont systemFontOfSize:14];
         [button setTitle:titles[i] forState:UIControlStateNormal];
@@ -99,12 +104,74 @@ static CGFloat const LHBAnimationDelay = 0.05;
 
 - (IBAction)cancleBtnClick
 {
-    
-    
-    [self dismissViewControllerAnimated:NO completion:nil];
+    //只是让控件掉下去，别的事情不做，没有block
+    [self cancelWithCompletionBlock:nil];
+}
+
+/**
+ *  点击空白处也要退出
+ */
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self cancleBtnClick];
 }
 
 
+- (void)buttonClick:(UIButton *)btn
+{
+  [self cancelWithCompletionBlock:^{
+      if (btn.tag == 0) {
+          LHBLog(@"发视频");
+      }else if (btn.tag == 1){
+          LHBLog(@"发图片");
+      }
+  }];
+}
+
+//参数block属性的写法
+- (void)cancelWithCompletionBlock:(void (^)())completionBlock
+{
+    self.view.userInteractionEnabled = NO;
+    int beginIndex = 2;
+    
+    for (NSInteger i=0; i<self.view.subviews.count; i++) {
+        UIView *subView = self.view.subviews[i];
+        
+        //基本动画，控制器都要死了，不要弹了
+        POPBasicAnimation *anmi = [POPBasicAnimation animationWithPropertyNamed:kPOPViewCenter];
+        CGFloat centerEndY = subView.centerY + LHBScreenH;
+        //起始位置会是当前默认位置
+        //终点位置
+        anmi.toValue = [NSValue valueWithCGPoint:CGPointMake(subView.centerX, centerEndY)];
+        anmi.beginTime = CACurrentMediaTime() + (i-beginIndex)*LHBAnimationDelay;
+        //动画执行节奏(先慢后快 )
+        //anmi.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+        [subView pop_addAnimation:anmi forKey:nil];
+        
+        if (i == self.view.subviews.count-1) {//最后一个动画
+            [anmi setCompletionBlock:^(POPAnimation *animation, BOOL finished) {
+                [self dismissViewControllerAnimated:NO completion:nil];
+                
+                //执行传进来的completionBlock参数
+                //一定要判断是不是空block，空的话直接报错
+                if (completionBlock) {
+                    completionBlock();
+                }
+                //装逼写法
+                //!completionBlock ? : completionBlock();
+            }];
+        }
+    }
+    
+
+}
+
+
+
+
+
+
+//／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／／
 /**
  *  测试：可以通过延时来给每一按钮添加动画，以达到挨着落的效果
  */
@@ -131,7 +198,8 @@ static CGFloat const LHBAnimationDelay = 0.05;
 /**
  *  pop动画介绍
  */
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+- (void)testPop
+
 {
     //往view上添加动画
     //[self addPopAnimationToView];
