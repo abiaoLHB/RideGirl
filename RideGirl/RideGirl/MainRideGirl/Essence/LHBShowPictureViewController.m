@@ -98,6 +98,8 @@
  用UIImageWriteToSavedPhotosAlbum(self.imageView.image, self, @selector(saveSucess), nil);方法保存成功，还会崩溃的原因：
  reason: '-[NSInvocation setArgument:atIndex:]: index (2) out of bounds [-1, 1]'
  原因：NSInvocation是回调，Argument是越界。方法参数越界，也就是这个方法提供的参数不够。所以此时的这个@selector(saveSucess)不能乱写，得有一个它传给你的参数。所以此时保存成功方法最好用苹果给你提供的方法
+ 
+ delelop
  */
 
 
