@@ -27,8 +27,8 @@
 #import "UIView+LHBFrameExtension.h"
 #import "UIBarButtonItem+LHBUIBarButtonItemExtension.h"
 
-
-
+#define LHBScreenW [[UIScreen mainScreen] bounds].size.width
+#define LHBScreenH [[UIScreen mainScreen] bounds].size.height
 
 
 

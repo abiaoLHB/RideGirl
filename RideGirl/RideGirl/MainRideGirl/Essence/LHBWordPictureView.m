@@ -78,6 +78,26 @@
     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         //下载完以后，进度条控件应该隐藏
         self.progressView.hidden = YES;
+        //如果是大图片，才处理
+        if (wordModel.isBigPicture) {
+            //处理显示图片顶部，用画图知识
+            //开启图形上下文
+            UIGraphicsBeginImageContextWithOptions(wordModel.imageFrame.size, YES, 0.0);
+            //将下载完成的image对象绘制到图形上下文
+            //这个方法是被粘贴图片的大小，从0，0画，被粘贴的画的图多大，就画多大。不一定能把要花图片画完全。比如要画的图片尺寸是100x100，而要粘贴的图是90x90，那么是画不完全的。所谓这个方法不适用。
+            //[image drawAtPoint:CGPointMake(0, 0)];
+            
+            //新画的图会填充这个穿进去的矩形框
+            CGFloat width = wordModel.imageFrame.size.width;
+            CGFloat height = width * image.size.height / image.size.width;
+            [image drawInRect:CGRectMake(0, 0, width, height)];
+            
+            //获得图片
+            self.wordPicture.image = UIGraphicsGetImageFromCurrentImageContext();
+            //结束图形上下文
+            UIGraphicsEndImageContext();
+        }
+        
     }];
     
     

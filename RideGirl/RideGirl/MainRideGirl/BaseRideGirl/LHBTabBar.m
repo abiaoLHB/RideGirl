@@ -7,6 +7,7 @@
 //
 
 #import "LHBTabBar.h"
+#import "LHBPublishViewController.h"
 
 @interface LHBTabBar ()
 
@@ -26,11 +27,16 @@
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_icon"] forState:UIControlStateNormal];
         [btn setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:UIControlStateHighlighted];
+        [btn addTarget:self action:@selector(publishBtnClick) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn];
-        
         self.publishButton = btn;
     }
     return self;
+}
+- (void)publishBtnClick
+{
+    LHBPublishViewController *publishVC = [[LHBPublishViewController alloc] init];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:publishVC animated:NO completion:nil];
 }
 
 //重写布局方法
