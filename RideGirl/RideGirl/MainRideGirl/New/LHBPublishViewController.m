@@ -83,7 +83,7 @@ static CGFloat const LHBAnimationDelay = 0.05;
     //添加标题
     UIImageView *sloganImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_slogan"]];
 //    sloganImageView.y = LHBScreenH * 0.2;
-//    //从xib中创建出来的view，不建议用view.frame来取出尺寸
+//    //从xib中创建出来的view，xib中多大，加载出来就是多大！！！不建议用view.frame来取出尺寸
 //    sloganImageView.centerX = LHBScreenW * 0.5;
     [self.view addSubview:sloganImageView];
     self.sloganImageView = sloganImageView;
