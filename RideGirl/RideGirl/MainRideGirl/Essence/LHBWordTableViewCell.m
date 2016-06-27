@@ -11,6 +11,7 @@
 #import "NSDate+LHBDateExtension.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "LHBWordPictureView.h"
+#import "LHBWordVoiceView.h"
 
 @interface LHBWordTableViewCell ()
 
@@ -25,8 +26,12 @@
 @property (weak, nonatomic) IBOutlet UIImageView *sina_vImageView;
 @property (weak, nonatomic) IBOutlet UILabel *detalTextLabel;
 
-//图拍呢帖子中间的view
+//图片帖子中间的view
 @property (nonatomic,weak) LHBWordPictureView  *pictureView;
+
+//声音帖子中间的view
+@property (nonatomic,weak) LHBWordVoiceView *voiceView;
+
 
 
 @end
@@ -41,6 +46,16 @@
         _pictureView = pictureView;
     }
     return _pictureView;
+}
+
+- (LHBWordVoiceView *)voiceView
+{
+    if (_voiceView == nil) {
+        LHBWordVoiceView *voiceView = [LHBWordVoiceView creatLHBVoicePictureView];
+        [self.contentView addSubview:voiceView];
+        _voiceView = voiceView;
+    }
+    return _voiceView;
 }
 
 - (void)awakeFromNib
@@ -106,6 +121,10 @@
     if (wordModel.type == LHBWordTypePicture) {
         self.pictureView.wordModel = wordModel;
         self.pictureView.frame = wordModel.imageFrame;
+    }else if (wordModel.type == LHBWordTypeVoice){
+        self.voiceView.wordModel = wordModel;
+        self.voiceView.frame = wordModel.voiceFrame;
+    
     }
 
 }
