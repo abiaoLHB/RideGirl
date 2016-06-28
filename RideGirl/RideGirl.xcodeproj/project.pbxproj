@@ -53,6 +53,8 @@
 		EFC598181D0C047E00BA2153 /* LHBVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC598171D0C047E00BA2153 /* LHBVideoViewController.m */; };
 		EFC5981B1D0C04A900BA2153 /* LHBVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC5981A1D0C04A900BA2153 /* LHBVoiceViewController.m */; };
 		EFC5981E1D0C04BB00BA2153 /* LHBPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC5981D1D0C04BB00BA2153 /* LHBPictureViewController.m */; };
+		EFCEB6501D22BC1B00E58D28 /* LHBWordVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCEB64F1D22BC1B00E58D28 /* LHBWordVideoView.m */; };
+		EFCEB6521D22BC4700E58D28 /* LHBWordVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFCEB6511D22BC4700E58D28 /* LHBWordVideoView.xib */; };
 		EFDA037C1D2174F4005C6CD0 /* LHBWordVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFDA037B1D2174F4005C6CD0 /* LHBWordVoiceView.xib */; };
 		EFDA037F1D217516005C6CD0 /* LHBWordVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDA037E1D217516005C6CD0 /* LHBWordVoiceView.m */; };
 		EFDB07DA1D0D9C220035303F /* LHBWordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDB07D81D0D9C220035303F /* LHBWordTableViewCell.m */; };
@@ -168,6 +170,9 @@
 		EFC5981D1D0C04BB00BA2153 /* LHBPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBPictureViewController.m; sourceTree = "<group>"; };
 		EFC5981F1D0C04D300BA2153 /* LHBWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBWordViewController.h; sourceTree = "<group>"; };
 		EFC598201D0C04D300BA2153 /* LHBWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBWordViewController.m; sourceTree = "<group>"; };
+		EFCEB64E1D22BC1B00E58D28 /* LHBWordVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBWordVideoView.h; sourceTree = "<group>"; };
+		EFCEB64F1D22BC1B00E58D28 /* LHBWordVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBWordVideoView.m; sourceTree = "<group>"; };
+		EFCEB6511D22BC4700E58D28 /* LHBWordVideoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBWordVideoView.xib; sourceTree = "<group>"; };
 		EFDA037B1D2174F4005C6CD0 /* LHBWordVoiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBWordVoiceView.xib; sourceTree = "<group>"; };
 		EFDA037D1D217516005C6CD0 /* LHBWordVoiceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBWordVoiceView.h; sourceTree = "<group>"; };
 		EFDA037E1D217516005C6CD0 /* LHBWordVoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBWordVoiceView.m; sourceTree = "<group>"; };
@@ -371,6 +376,9 @@
 				EFDA037D1D217516005C6CD0 /* LHBWordVoiceView.h */,
 				EFDA037E1D217516005C6CD0 /* LHBWordVoiceView.m */,
 				EFDA037B1D2174F4005C6CD0 /* LHBWordVoiceView.xib */,
+				EFCEB64E1D22BC1B00E58D28 /* LHBWordVideoView.h */,
+				EFCEB64F1D22BC1B00E58D28 /* LHBWordVideoView.m */,
+				EFCEB6511D22BC4700E58D28 /* LHBWordVideoView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -627,6 +635,7 @@
 				EFB3B2F31D1EC0260030CAB4 /* LHBPublishViewController.xib in Resources */,
 				EF09C7151CFF2C8E00F95B28 /* LHBRecommendCell.xib in Resources */,
 				EFA135CB1D07272F00FB6964 /* LHBRecommendTagsTableViewCell.xib in Resources */,
+				EFCEB6521D22BC4700E58D28 /* LHBWordVideoView.xib in Resources */,
 				EF69DC8D1D008E96007CE788 /* LHBRecommendRightCell.xib in Resources */,
 				EFB3B0761D11AB120016EB15 /* LHBWordPictureView.xib in Resources */,
 				EFFD033F1D0AFF0900762237 /* LHBPushGuideView.xib in Resources */,
@@ -732,6 +741,7 @@
 				EFB3B0741D11AAC70016EB15 /* LHBWordPictureView.m in Sources */,
 				EF1E06681D0C5D8A0083570E /* LHBWordViewController.m in Sources */,
 				EF69DC8C1D008E96007CE788 /* LHBRecommendRightCell.m in Sources */,
+				EFCEB6501D22BC1B00E58D28 /* LHBWordVideoView.m in Sources */,
 				EFA135CA1D07272F00FB6964 /* LHBRecommendTagsTableViewCell.m in Sources */,
 				EFA7CBB01CFED90D0097FA52 /* AppDelegate.m in Sources */,
 				EFDB07DA1D0D9C220035303F /* LHBWordTableViewCell.m in Sources */,

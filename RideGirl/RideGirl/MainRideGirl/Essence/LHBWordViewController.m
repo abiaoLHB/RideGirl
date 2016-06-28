@@ -189,17 +189,7 @@ static NSString *const LHBWordCellID = @"word";
 {
     //在这里算高度不好，跳用频繁
     LHBWordModel *model = self.dataArr[indexPath.row];
-//    
-//    CGFloat textY = 55;
-//    CGSize maxSize = CGSizeMake([UIScreen mainScreen].bounds.size.width-40, MAXFLOAT);
-////    过期
-////    CGFloat textH = [model.text sizeWithFont:[UIFont systemFontOfSize:14]constrainedToSize:maxSize].height;
-//    CGFloat textH = [model.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:14]} context:nil].size.height;
-//    
-//    
-//    CGFloat cellH = textY + textH +64;
-//    
-    
+
     return model.cellH;
 }
 

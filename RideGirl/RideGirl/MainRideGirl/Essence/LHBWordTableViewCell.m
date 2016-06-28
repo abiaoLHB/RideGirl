@@ -12,6 +12,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "LHBWordPictureView.h"
 #import "LHBWordVoiceView.h"
+#import "LHBWordVideoView.h"
 
 @interface LHBWordTableViewCell ()
 
@@ -32,7 +33,8 @@
 //声音帖子中间的view
 @property (nonatomic,weak) LHBWordVoiceView *voiceView;
 
-
+//视频帖子中间的view
+@property (nonatomic,weak) LHBWordVideoView *videoView;
 
 @end
 
@@ -53,9 +55,19 @@
     if (_voiceView == nil) {
         LHBWordVoiceView *voiceView = [LHBWordVoiceView creatLHBVoicePictureView];
         [self.contentView addSubview:voiceView];
-        _voiceView = voiceView;
+        _voiceView = voiceView;//0 0; 306 264
     }
     return _voiceView;
+}
+
+- (LHBWordVideoView *)videoView
+{
+    if (_videoView == nil) {
+        LHBWordVideoView *videoView = [LHBWordVideoView creatLHBVideoView];
+        [self.contentView addSubview:videoView];
+        _videoView = videoView;//0 0; 277 228
+    }
+    return _videoView;
 }
 
 - (void)awakeFromNib
@@ -118,25 +130,37 @@
     [self setButtonTitle:self.commentBtn count:wordModel.comment placeholdStr:@"评论"];
     
     //中间时图片
+    //hidden的yes、no是处理cell复用的
     if (wordModel.type == LHBWordTypePicture) {
+        self.pictureView.hidden = NO;
         self.pictureView.wordModel = wordModel;
         self.pictureView.frame = wordModel.imageFrame;
+        self.videoView.hidden = YES;
+        self.voiceView.hidden = YES;
     }else if (wordModel.type == LHBWordTypeVoice){
+        self.voiceView.hidden = NO;
         self.voiceView.wordModel = wordModel;
+        //(origin = (x = 0, y = 0), size = (width = 306, height = 264))
         self.voiceView.frame = wordModel.voiceFrame;
-    
+        self.pictureView.hidden = YES;
+        self.videoView.hidden = YES;
+    }else if (wordModel.type == LHBWordTypeVideo){
+        self.videoView.hidden = NO;
+        self.videoView.wordModel = wordModel;
+        //(origin = (x = 0, y = 0), size = (width = 277, height = 228))
+        self.videoView.frame = wordModel.videoFrame;
+        self.pictureView.hidden = YES;
+        self.voiceView.hidden = YES;
+    }else{//段子
+        self.videoView.hidden = YES;
+        self.voiceView.hidden = YES;
+        self.pictureView.hidden = YES;
     }
-
 }
 
 - (void)testData:(NSString *)creat_time
 {
-    
-    
-    
-    
-    
-   
+
 }
 
 

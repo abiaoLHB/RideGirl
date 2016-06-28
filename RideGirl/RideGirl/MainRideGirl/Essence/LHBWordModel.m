@@ -99,6 +99,13 @@
             CGFloat voiceH = voiceW * self.height / self.width;
             _voiceFrame = CGRectMake(voiceX, voiceY, voiceW, voiceH);
             _cellH += voiceH + 10;
+        }else if (self.type == LHBWordTypeVideo){//视频
+            CGFloat videoX = 10;
+            CGFloat videoY = textY+textH+10;
+            CGFloat videoW = maxSize.width;
+            CGFloat videoH = videoW * self.height / self.width;
+            _videoFrame = CGRectMake(videoX, videoY, videoW, videoH);
+            _cellH += videoH + 10;
         }
     }
     return _cellH;
