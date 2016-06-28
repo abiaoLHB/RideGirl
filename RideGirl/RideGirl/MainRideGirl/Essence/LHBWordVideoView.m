@@ -1,35 +1,35 @@
 //
-//  LHBWordVoiceView.m
+//  LHBWordVideoView.m
 //  RideGirl
 //
-//  Created by LHB on 16/6/27.
+//  Created by LHB on 16/6/28.
 //  Copyright © 2016年 LHB. All rights reserved.
 //
 
-#import "LHBWordVoiceView.h"
+#import "LHBWordVideoView.h"
 #import "LHBWordModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "LHBShowPictureViewController.h"
 
-@interface LHBWordVoiceView ()
+@interface LHBWordVideoView ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UILabel *playLengthLabel;
 @property (weak, nonatomic) IBOutlet UILabel *playCountLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *playTimeLabel;
 
 @end
 
-@implementation LHBWordVoiceView
+@implementation LHBWordVideoView
 
-+ (instancetype)creatLHBVoicePictureView
++ (instancetype)creatLHBVideoView
 {
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
 }
 - (void)awakeFromNib
 {
     self.autoresizingMask = UIViewAutoresizingNone;
-
+    
     self.imageView.userInteractionEnabled = YES;
     [self.imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showPicture)]];
     
@@ -43,6 +43,7 @@
     showPictureVC.wordModel = self.wordModel;
     [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:showPictureVC animated:YES completion:nil];
 }
+
 - (void)setWordModel:(LHBWordModel *)wordModel
 {
     _wordModel = wordModel;
@@ -51,9 +52,10 @@
     //播放次数
     self.playCountLabel.text = [NSString stringWithFormat:@"%zd播放",wordModel.playcount];
     //播放时长
-    NSInteger minute = wordModel.voicetime / 60;
-    NSInteger second = wordModel.voicetime % 60;
+    NSInteger minute = wordModel.videotime / 60;
+    NSInteger second = wordModel.videotime % 60;
     //  2zd 保留2位，不足用0代替
-    self.playLengthLabel.text = [NSString stringWithFormat:@"%02zd:%02zd",minute,second];
+    self.playTimeLabel.text = [NSString stringWithFormat:@"%02zd:%02zd",minute,second];
 }
+
 @end
