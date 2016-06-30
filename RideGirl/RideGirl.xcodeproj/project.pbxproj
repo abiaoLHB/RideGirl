@@ -25,6 +25,8 @@
 		EF3602EB1CFDCC0000ABD8AD /* RideGirlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602EA1CFDCC0000ABD8AD /* RideGirlTests.m */; };
 		EF3602F61CFDCC0000ABD8AD /* RideGirlUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602F51CFDCC0000ABD8AD /* RideGirlUITests.m */; };
 		EF3603071CFDCD6C00ABD8AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF3603061CFDCD6C00ABD8AD /* Assets.xcassets */; };
+		EF58DA301D255DB700E883D8 /* LHBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = EF58DA2F1D255DB700E883D8 /* LHBUser.m */; };
+		EF58DA331D255FEB00E883D8 /* LHBComment.m in Sources */ = {isa = PBXBuildFile; fileRef = EF58DA321D255FEB00E883D8 /* LHBComment.m */; };
 		EF69DC881D008D76007CE788 /* LHBRecommendRightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF69DC871D008D76007CE788 /* LHBRecommendRightModel.m */; };
 		EF69DC8C1D008E96007CE788 /* LHBRecommendRightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF69DC8A1D008E96007CE788 /* LHBRecommendRightCell.m */; };
 		EF69DC8D1D008E96007CE788 /* LHBRecommendRightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF69DC8B1D008E96007CE788 /* LHBRecommendRightCell.xib */; };
@@ -116,6 +118,10 @@
 		EF3602F51CFDCC0000ABD8AD /* RideGirlUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RideGirlUITests.m; sourceTree = "<group>"; };
 		EF3602F71CFDCC0000ABD8AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF3603061CFDCD6C00ABD8AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF58DA2E1D255DB700E883D8 /* LHBUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBUser.h; sourceTree = "<group>"; };
+		EF58DA2F1D255DB700E883D8 /* LHBUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBUser.m; sourceTree = "<group>"; };
+		EF58DA311D255FEB00E883D8 /* LHBComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBComment.h; sourceTree = "<group>"; };
+		EF58DA321D255FEB00E883D8 /* LHBComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBComment.m; sourceTree = "<group>"; };
 		EF69DC861D008D76007CE788 /* LHBRecommendRightModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBRecommendRightModel.h; sourceTree = "<group>"; };
 		EF69DC871D008D76007CE788 /* LHBRecommendRightModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBRecommendRightModel.m; sourceTree = "<group>"; };
 		EF69DC891D008E96007CE788 /* LHBRecommendRightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBRecommendRightCell.h; sourceTree = "<group>"; };
@@ -390,6 +396,10 @@
 				EFA135C51D0725A500FB6964 /* LHBRecommendTagsModel.m */,
 				EF85D06F1D0C40B000547377 /* LHBWordModel.h */,
 				EF85D0701D0C40B000547377 /* LHBWordModel.m */,
+				EF58DA2E1D255DB700E883D8 /* LHBUser.h */,
+				EF58DA2F1D255DB700E883D8 /* LHBUser.m */,
+				EF58DA311D255FEB00E883D8 /* LHBComment.h */,
+				EF58DA321D255FEB00E883D8 /* LHBComment.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -716,6 +726,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF58DA331D255FEB00E883D8 /* LHBComment.m in Sources */,
 				EFA7CBB31CFEE2370097FA52 /* LHBUINavigationController.m in Sources */,
 				EFA7CBA81CFED8D00097FA52 /* LHBTabBar.m in Sources */,
 				EFE5D90A1D1C1ADA0029E0FF /* LHBProgressView.m in Sources */,
@@ -726,6 +737,7 @@
 				EF85D0711D0C40B000547377 /* LHBWordModel.m in Sources */,
 				EF062A281D0A7F4E00F189C1 /* LHBCusTomTextField.m in Sources */,
 				EFDA037F1D217516005C6CD0 /* LHBWordVoiceView.m in Sources */,
+				EF58DA301D255DB700E883D8 /* LHBUser.m in Sources */,
 				EF1691631D0997EE00913827 /* LHBLoginRegisterViewController.m in Sources */,
 				EFC598151D0C046900BA2153 /* LHBAllViewController.m in Sources */,
 				EFA7CBAC1CFED8D00097FA52 /* LHBMeViewController.m in Sources */,

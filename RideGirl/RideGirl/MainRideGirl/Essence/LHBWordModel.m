@@ -33,6 +33,13 @@
 //    return propertyName;
 //}
 
+/**
+ * 字典数组转模型数组.就是数组里面要放什么模型
+ */
++ (NSDictionary *)mj_objectClassInArray
+{
+    return @{@"top_cmt" : @"LHBComment"};
+}
 
 
 - (NSString *)create_time
