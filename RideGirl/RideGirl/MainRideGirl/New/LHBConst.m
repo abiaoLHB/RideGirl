@@ -14,3 +14,12 @@ CGFloat const LHBTitlesViewY = 64;
 CGFloat const LHBWordPictureMaxH = 1000;
 /*精华cell图片过长时显示默认长度，*/
 CGFloat const LHBWordPictureNormalH = 250;
+
+/**
+ *  XMUser模型性别属性值
+ */
+/**
+ *  XMUser模型性别属性值
+ */
+UIKIT_EXTERN NSString * const  LHBUserSexMale = @"m";
+UIKIT_EXTERN NSString * const  LHBUserSexFemale = @"f";

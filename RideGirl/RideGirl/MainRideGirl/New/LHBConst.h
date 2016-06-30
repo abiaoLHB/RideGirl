@@ -24,3 +24,8 @@ UIKIT_EXTERN CGFloat const LHBTitlesViewY;
 
 UIKIT_EXTERN CGFloat const LHBWordPictureMaxH;
 UIKIT_EXTERN CGFloat const LHBWordPictureNormalH;
+/**
+ *  XMUser模型性别属性值
+ */
+UIKIT_EXTERN NSString * const  LHBUserSexMale;
+UIKIT_EXTERN NSString * const  LHBUserSexFemale;
