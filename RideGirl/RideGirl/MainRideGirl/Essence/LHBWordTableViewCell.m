@@ -13,6 +13,10 @@
 #import "LHBWordPictureView.h"
 #import "LHBWordVoiceView.h"
 #import "LHBWordVideoView.h"
+//评论模型
+#import "LHBComment.h"
+//包含用户模型
+#import "LHBUser.h"
 
 @interface LHBWordTableViewCell ()
 
@@ -35,6 +39,10 @@
 
 //视频帖子中间的view
 @property (nonatomic,weak) LHBWordVideoView *videoView;
+//热门评论内容
+@property (weak, nonatomic) IBOutlet UILabel *topCmtCommentLabel;
+//热门评论父控件
+@property (weak, nonatomic) IBOutlet UIView *topCmtView;
 
 @end
 
@@ -156,6 +164,19 @@
         self.voiceView.hidden = YES;
         self.pictureView.hidden = YES;
     }
+    //设置热门评论
+    //从评论模型数组里取出第一个评论
+    LHBComment *cmtModel = wordModel.top_cmt.firstObject;
+    if (cmtModel) {//如果这个模型有值，说明是有热门评论的
+        self.topCmtView.hidden = NO;
+        //取出具体评论内容,并拼接上用户名
+        self.topCmtCommentLabel.text = [NSString stringWithFormat:@"%@ : %@",cmtModel.user.username,cmtModel.content];
+    }else{
+        self.topCmtView.hidden = YES;
+    }
+    
+    
+    
 }
 
 - (void)testData:(NSString *)creat_time

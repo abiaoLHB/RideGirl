@@ -13,6 +13,7 @@
 #import <MJRefresh/MJRefresh.h>
 #import "LHBWordModel.h"
 #import "LHBWordTableViewCell.h"
+#import "LHBCommentViewController.h"
 
 @interface LHBWordViewController ()
 
@@ -192,7 +193,11 @@ static NSString *const LHBWordCellID = @"word";
 
     return model.cellH;
 }
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LHBCommentViewController *commentVc = [[LHBCommentViewController alloc] init];
+    [self.navigationController pushViewController:commentVc animated:YES];
+}
 /*
 - (void)testInfo
 {

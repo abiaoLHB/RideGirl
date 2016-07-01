@@ -9,6 +9,8 @@
 #import "LHBWordModel.h"
 #import "NSDate+LHBDateExtension.h"
 #import <MJExtension/MJExtension.h>
+#import "LHBComment.h"
+#import "LHBUser.h"
 
 @implementation LHBWordModel
 {
@@ -114,6 +116,17 @@
             _videoFrame = CGRectMake(videoX, videoY, videoW, videoH);
             _cellH += videoH + 10;
         }
+        
+        LHBComment *cmt = [self.top_cmt firstObject];
+        if (cmt) {//有评论就加上评论的高度
+            //设定热门评论标题label高为20
+            //先拿到文字
+            NSString *content = [NSString stringWithFormat:@"%@ : %@",cmt.user.username,cmt.content];
+            CGFloat contentH = [content boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12]} context:nil].size.height;
+            
+            _cellH += contentH + 20;//上下间距
+        }
+        
     }
     return _cellH;
 }
