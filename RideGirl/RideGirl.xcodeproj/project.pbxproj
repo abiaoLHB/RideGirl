@@ -63,7 +63,6 @@
 		EFDB07DB1D0D9C220035303F /* LHBWordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFDB07D91D0D9C220035303F /* LHBWordTableViewCell.xib */; };
 		EFE214C71D0EFD1700DCABAA /* LHBWordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDB07D81D0D9C220035303F /* LHBWordTableViewCell.m */; };
 		EFE5D90A1D1C1ADA0029E0FF /* LHBProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE5D9091D1C1ADA0029E0FF /* LHBProgressView.m */; };
-		EFFCC46F1D26BDB500FF1715 /* LHBCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFFCC46D1D26BDB500FF1715 /* LHBCommentViewController.m */; };
 		EFFCC4701D26BDB500FF1715 /* LHBCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFFCC46E1D26BDB500FF1715 /* LHBCommentViewController.xib */; };
 		EFFD033D1D0AFEFB00762237 /* LHBPushGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFFD033C1D0AFEFB00762237 /* LHBPushGuideView.m */; };
 		EFFD033F1D0AFF0900762237 /* LHBPushGuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFFD033E1D0AFF0900762237 /* LHBPushGuideView.xib */; };
