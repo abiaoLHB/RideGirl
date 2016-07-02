@@ -39,8 +39,11 @@
                             <constraint firstAttribute="height" constant="20" id="ZrP-pf-WtG"/>
                             <constraint firstAttribute="width" constant="19" id="xzw-1P-E6c"/>
                         </constraints>
-                        <state key="normal" backgroundImage="cellFollowIcon"/>
-                        <state key="highlighted" backgroundImage="cellFollowClickIcon"/>
+                        <state key="normal" image="cellmorebtnnormal"/>
+                        <state key="highlighted" image="cellmorebtnclick"/>
+                        <connections>
+                            <action selector="more" destination="KGk-i7-Jjw" eventType="touchUpInside" id="W2l-85-uHA"/>
+                        </connections>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dgH-Ui-48a" userLabel="底部工具条">
                         <rect key="frame" x="0.0" y="266" width="317" height="35"/>
@@ -237,8 +240,8 @@
     <resources>
         <image name="Profile_AddV_authen" width="14" height="14"/>
         <image name="cell-button-line" width="1" height="29"/>
-        <image name="cellFollowClickIcon" width="19" height="20"/>
-        <image name="cellFollowIcon" width="19" height="20"/>
+        <image name="cellmorebtnclick" width="24" height="20"/>
+        <image name="cellmorebtnnormal" width="24" height="20"/>
         <image name="mainCellCai" width="20" height="20"/>
         <image name="mainCellCaiClick" width="20" height="20"/>
         <image name="mainCellComment" width="20" height="20"/>

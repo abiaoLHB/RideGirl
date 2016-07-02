@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LHBCommentViewController">
             <connections>
                 <outlet property="bottomSpace" destination="p9b-JL-NHX" id="FDa-z1-JV8"/>
+                <outlet property="tableView" destination="RVc-IW-B93" id="gtw-qw-ac1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,6 +17,14 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RVc-IW-B93">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="6pv-3G-YDY"/>
+                        <outlet property="delegate" destination="-1" id="e47-Vv-g5E"/>
+                    </connections>
+                </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hIo-Yz-hTZ" userLabel="工具条">
                     <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                     <subviews>
@@ -64,14 +73,6 @@
                         <constraint firstItem="Wwx-WC-kyF" firstAttribute="top" secondItem="hIo-Yz-hTZ" secondAttribute="top" id="y0I-LM-mKN"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RVc-IW-B93">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="6pv-3G-YDY"/>
-                        <outlet property="delegate" destination="-1" id="e47-Vv-g5E"/>
-                    </connections>
-                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>

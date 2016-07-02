@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class LHBWordModel;
+
 @interface LHBCommentViewController : UIViewController
+
+@property (nonatomic,strong) LHBWordModel *wordModel;
 
 @end

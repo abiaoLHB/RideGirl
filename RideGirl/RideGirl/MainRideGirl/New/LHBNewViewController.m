@@ -25,7 +25,7 @@
    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImageNormalName:@"MainTagSubIcon" andHeightLightImageName:@"MainTagSubIconClick" target:self andAction:nil];    //纯文字情况下可以设置文字并添加事件
     //    se.navigationItem.leftBarButtonItem  = [[UIBarButtonItem alloc] initWithTitle:<#(nullable NSString *)#> style:<#(UIBarButtonItemStyle)#> target:<#(nullable id)#> action:<#(nullable SEL)#>];
     
-    self.view.backgroundColor = LHBRGBColor(223, 223, 233);
+    self.view.backgroundColor = LHBGlobalColor;
 
 
 }

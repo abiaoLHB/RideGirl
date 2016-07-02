@@ -25,7 +25,7 @@
     self.navigationItem.rightBarButtonItems = @[settingRightBtnItem,moonRightBtnItem];
     
     
-    self.view.backgroundColor = LHBRGBColor(223, 223, 233);
+    self.view.backgroundColor = LHBGlobalColor;
 
 
 }
