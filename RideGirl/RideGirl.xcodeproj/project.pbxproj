@@ -52,6 +52,7 @@
 		EFB3B0761D11AB120016EB15 /* LHBWordPictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB3B0751D11AB120016EB15 /* LHBWordPictureView.xib */; };
 		EFB3B2F21D1EC0260030CAB4 /* LHBPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB3B2F01D1EC0260030CAB4 /* LHBPublishViewController.m */; };
 		EFB3B2F31D1EC0260030CAB4 /* LHBPublishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB3B2F11D1EC0260030CAB4 /* LHBPublishViewController.xib */; };
+		EFB7C12B1D27F8F200605CA9 /* LHBCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFFCC46D1D26BDB500FF1715 /* LHBCommentViewController.m */; };
 		EFC598151D0C046900BA2153 /* LHBAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC598141D0C046900BA2153 /* LHBAllViewController.m */; };
 		EFC598181D0C047E00BA2153 /* LHBVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC598171D0C047E00BA2153 /* LHBVideoViewController.m */; };
 		EFC5981B1D0C04A900BA2153 /* LHBVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC5981A1D0C04A900BA2153 /* LHBVoiceViewController.m */; };
@@ -739,6 +740,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFB7C12B1D27F8F200605CA9 /* LHBCommentViewController.m in Sources */,
 				EF58DA331D255FEB00E883D8 /* LHBComment.m in Sources */,
 				EFA7CBB31CFEE2370097FA52 /* LHBUINavigationController.m in Sources */,
 				EFA7CBA81CFED8D00097FA52 /* LHBTabBar.m in Sources */,
@@ -764,7 +766,6 @@
 				EF27B4581D0DC19D004A2E33 /* NSDate+LHBDateExtension.m in Sources */,
 				EF09C7181CFF2CD500F95B28 /* LHBRecommendModel.m in Sources */,
 				EFA7CBAD1CFED8D00097FA52 /* LHBNewViewController.m in Sources */,
-				EFFCC46F1D26BDB500FF1715 /* LHBCommentViewController.m in Sources */,
 				EFB3B0741D11AAC70016EB15 /* LHBWordPictureView.m in Sources */,
 				EF1E06681D0C5D8A0083570E /* LHBWordViewController.m in Sources */,
 				EF69DC8C1D008E96007CE788 /* LHBRecommendRightCell.m in Sources */,
