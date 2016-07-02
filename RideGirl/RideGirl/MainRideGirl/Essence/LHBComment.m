@@ -7,7 +7,15 @@
 //
 
 #import "LHBComment.h"
+#import <MJExtension/MJExtension.h>
 
 @implementation LHBComment
+
++ (NSDictionary *)mj_replacedKeyFromPropertyName
+{
+    return @{@"ID" : @"id"
+             
+             };
+}
 
 @end

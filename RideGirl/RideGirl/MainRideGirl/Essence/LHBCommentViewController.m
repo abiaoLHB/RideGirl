@@ -14,7 +14,9 @@
 #import <MJExtension/MJExtension.h>
 #import "LHBComment.h"
 #import "LHBCommentHeaderView.h"
+#import "LHBCommentCell.h"
 
+static NSString *const LHBCommentCellID = @"commentID";
 
 @interface LHBCommentViewController ()<UITableViewDelegate,UITableViewDataSource>
 /**
@@ -29,6 +31,10 @@
 @property (nonatomic,strong) NSMutableArray *hotCommentsDataMutArr;
 //最新评论数据源
 @property (nonatomic,strong) NSMutableArray *latesCommentsDataMutArr;
+//保存帖子的top_cmt,最热评论数组
+@property (nonatomic,strong) NSArray *savedTopCmt;
+/**当前页码*/
+@property (nonatomic,assign) NSInteger currentPage;
 
 @end
 
@@ -68,8 +74,23 @@
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImageNormalName:@"comment_nav_item_share_icon" andHeightLightImageName:nil target:nil andAction:nil];
     //注册键盘弹出、隐藏通知。尽量用UIKeyboardWillChangeFrameNotification方法，因为既包含弹出，也包含隐藏
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
-    
     self.tableView.backgroundColor = LHBGlobalColor;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+     //iOS8以后的方法：让cell自动算高度。xib中，评论内容据父控件底部为10
+    //简单的cell自动算就行了，复杂的尽量动态算
+    //自动算的条件 缺一不可
+    //条件一 给一个估计高度
+    self.tableView.estimatedRowHeight = 44;
+    //条件二 自动算  AutomaticDimension －> 自动尺寸
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    //tableView内边距，让tableView底部距离工具条有点距离，显得好看
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 10, 0);
+    
+    //注册cell
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([LHBCommentCell class]) bundle:nil] forCellReuseIdentifier:LHBCommentCellID];
+    
 }
 
 
@@ -78,6 +99,16 @@
 {
     //设置header
     UIView *headerView = [[UIView alloc] init];
+    
+    // 如果有热门评论，评论详情页面就不要在显示了
+    if (self.wordModel.top_cmt.count) {
+        //保存热门评论数组
+        self.savedTopCmt = self.wordModel.top_cmt;
+        //清空top_cmt
+        self.wordModel.top_cmt = nil;
+        //readOnlay,通过kvc改
+        [self.wordModel setValue:@0 forKey:@"cellH"];
+    }
     
     //往headerView上添加cell
     LHBWordTableViewCell *cell = [LHBWordTableViewCell creatWordTabelViewCell];
@@ -96,12 +127,21 @@
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewComments)];
     //一进来就刷新数据
     [self.tableView.mj_header beginRefreshing];
+    
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreCommets)];
+    //因为是从xib加载的tableView，所有刚进来不走数据源方法，根据数据长度来判断foot是否不行。这里硬性隐藏
+    self.tableView.mj_footer.hidden = YES;
 }
 /**
  *  加载新数据
  */
 - (void)loadNewComments
 {
+    //结束之前的请求，防止刷新、加载一起搞
+    //tasks数组中的所有任务都取消操作。任务取消会来到failure方法
+    [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
+    
+    
     NSMutableDictionary *parm = [NSMutableDictionary dictionary];
     parm[@"a"] = @"dataList";
     parm[@"c"] = @"comment";
@@ -117,11 +157,21 @@
         //最新评论
         self.latesCommentsDataMutArr = [LHBComment mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
         
+        //下拉刷新成功，回到第一页
+        self.currentPage = 1;
+        
         //刷新表格
         [self.tableView reloadData];
         
         //不管请求成功失败，都要结束刷新
         [self.tableView.mj_header endRefreshing];
+        
+        //控制footer状态
+        NSInteger total = [responseObject[@"total"] integerValue];
+        if (self.latesCommentsDataMutArr.count >= total) {//百思的total不太准
+            self.tableView.mj_footer.hidden = YES;
+        }
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
         
@@ -130,7 +180,57 @@
     }];
     
 }
+/**
+ *  加载更多数据
+ */
+- (void)loadMoreCommets
+{
+    //结束之前的请求，防止刷新、加载一起搞
+    //tasks数组中的所有任务都取消操作。任务取消会来到failure方法
+    [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
+    
+    //取出当前页码页码
+    NSInteger page = self.currentPage;
+    
+    NSMutableDictionary *parm = [NSMutableDictionary dictionary];
+    parm[@"a"] = @"dataList";
+    parm[@"c"] = @"comment";
+    parm[@"data_id"] = self.wordModel.ID;
+    parm[@"page"] = @(page);
+    
+    LHBComment *cmt = self.latesCommentsDataMutArr.lastObject;
+    parm[@"lastcid"] = cmt.ID;
+    
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:parm progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        //最新评论
+        NSArray *newCommentsDataArr = [LHBComment mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+        [self.latesCommentsDataMutArr addObjectsFromArray:newCommentsDataArr];
+        
+        //加载成功，页码才加1
+        self.currentPage = page + 1;
+        
+        //刷新表格
+        [self.tableView reloadData];
+        
+        //控制footer状态
+        NSInteger total = [responseObject[@"total"] integerValue];
+        if (self.latesCommentsDataMutArr.count >= total) {//百思的total不太准
+            self.tableView.mj_footer.hidden = YES;
+        }else{
+            //不管请求成功失败，都要结束刷新
+            [self.tableView.mj_footer endRefreshing];
+            self.currentPage = page;
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        //不管请求成功失败，都要结束刷新
+        [self.tableView.mj_header endRefreshing];
+    }];
+    
 
+}
 
 /**
  *  返回第section组的评论数据
@@ -170,7 +270,8 @@
 {
     NSInteger hotCount = self.hotCommentsDataMutArr.count;
     NSInteger latestCount = self.latesCommentsDataMutArr.count;
-    
+    //隐藏更多控件
+    tableView.mj_footer.hidden = (latestCount == 0);
     if (section == 0) {
         return hotCount ? hotCount : latestCount;
     }
@@ -242,13 +343,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellId = @"cellID";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-    }
-    LHBComment *comment = [self commentInIndexPath:indexPath];
-    cell.textLabel.text = comment.content;
+    
+    LHBCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:LHBCommentCellID];
+    cell.commentModel = [self commentInIndexPath:indexPath];
+    
     return cell;
 }
 
@@ -287,6 +385,19 @@
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    //恢复帖子的top_cmt
+    if (self.savedTopCmt.count) {
+        self.wordModel.top_cmt = self.savedTopCmt;
+        //重算一遍
+        //kvc会自动找cellH这个属性，没有在找 _cellH 这个成员变量
+        [self.wordModel setValue:@0 forKey:@"cellH"];
+    }
+    
+    //取消所有任务 防止控制器死掉，求情数据还回来造成坏内存访问
+    //[self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
+    [self.manager invalidateSessionCancelingTasks:YES];
+
 }
 
 @end
