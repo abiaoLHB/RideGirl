@@ -10,7 +10,8 @@
 #import <UIKit/UIKit.h>
 
 @interface LHBWordModel : NSObject
-
+//帖子id
+@property (nonatomic,copy) NSString *ID;
 @property (nonatomic,copy) NSString *name;
 @property (nonatomic,copy) NSString *profile_image;
 @property (nonatomic,copy) NSString *create_time;

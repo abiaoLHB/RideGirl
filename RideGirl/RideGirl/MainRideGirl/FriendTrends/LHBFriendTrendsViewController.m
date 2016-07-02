@@ -22,7 +22,7 @@
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImageNormalName:@"friendsRecommentIcon" andHeightLightImageName:@"friendsRecommentIcon-click" target:self andAction:@selector(friendLeftBtnDown)];
     
-    self.view.backgroundColor = LHBRGBColor(223, 223, 233);
+    self.view.backgroundColor = LHBGlobalColor;
 
 }
 - (void)friendLeftBtnDown

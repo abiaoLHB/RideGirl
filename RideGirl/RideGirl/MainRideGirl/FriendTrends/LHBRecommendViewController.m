@@ -43,7 +43,7 @@ static NSString *const  rightRuseCellid = @"user";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = LHBRGBColor(223, 223, 223);
+    self.view.backgroundColor = LHBGlobalColor;
     self.navigationItem.title = @"推荐关注";
     [self setupTableView];
     [self setupRefresh];
