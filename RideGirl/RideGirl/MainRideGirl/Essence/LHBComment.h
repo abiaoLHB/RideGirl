@@ -12,9 +12,17 @@
 
 @interface LHBComment : NSObject
 /**
+ *   评论的id
+ */
+@property (nonatomic,copy) NSString *ID;
+/**
  *  音频文件的时长
  */
 @property (nonatomic,assign) NSInteger voicetime;
+/**
+ *  音频文件的路径
+ */
+@property (nonatomic,copy) NSString *voiceurl;
 /**
  *  评论的文字内容
  */

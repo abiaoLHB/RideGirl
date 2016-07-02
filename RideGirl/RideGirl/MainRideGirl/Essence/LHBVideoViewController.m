@@ -13,6 +13,7 @@
 #import <MJRefresh/MJRefresh.h>
 #import "LHBWordModel.h"
 #import "LHBWordTableViewCell.h"
+#import "LHBCommentViewController.h"
 
 @interface LHBVideoViewController ()
 
@@ -190,6 +191,12 @@ static NSString *const LHBWordCellID = @"word";
     LHBWordModel *model = self.dataArr[indexPath.row];
  
     return model.cellH;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LHBCommentViewController *commentVc = [[LHBCommentViewController alloc] init];
+    commentVc.wordModel = self.dataArr[indexPath.row];
+    [self.navigationController pushViewController:commentVc animated:YES];
 }
 
 @end
