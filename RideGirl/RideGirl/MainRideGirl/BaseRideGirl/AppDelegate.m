@@ -28,10 +28,7 @@
     [self.window makeKeyAndVisible];
 
     [LHBPushGuideView show];
-    
-    // 添加一个window, 点击这个window, 可以让屏幕上的scrollView滚到最顶部
-    [LHBTopWindow showWindow];
-    
+
     return YES;
 }
 

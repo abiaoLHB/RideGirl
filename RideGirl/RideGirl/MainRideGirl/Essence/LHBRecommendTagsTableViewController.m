@@ -47,10 +47,11 @@ static NSString *const TAGSCELLID = @"tags";
 - (void)setupTableView
 {
     self.navigationItem.title = @"推荐标签";
-    self.tableView.rowHeight = 70;
-    self.tableView.backgroundColor = [UIColor lightGrayColor];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([LHBRecommendTagsTableViewCell class]) bundle:nil] forCellReuseIdentifier:TAGSCELLID];
+    self.tableView.rowHeight = 70;
+    self.tableView.backgroundColor = LHBGlobalColor;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
 }
 
 - (void)loadTas
@@ -69,7 +70,7 @@ static NSString *const TAGSCELLID = @"tags";
         self.dataArr = [LHBRecommendTagsModel mj_objectArrayWithKeyValuesArray:responseObject];
         [self.tableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+        [SVProgressHUD showErrorWithStatus:@"加载失败"];
     }];
 }
 

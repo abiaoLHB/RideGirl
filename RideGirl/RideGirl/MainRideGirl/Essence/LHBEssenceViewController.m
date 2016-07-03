@@ -12,6 +12,8 @@
 #import "LHBVoiceViewController.h"
 #import "LHBPictureViewController.h"
 #import "LHBWordViewController.h"
+//试试显示window
+#import "LHBTopWindow.h"
 
 
 @interface LHBEssenceViewController ()<UIScrollViewDelegate>
@@ -34,6 +36,9 @@
     [self setuChildVces];
     [self setupTitlesView];
     [self setupContentView];
+    
+    //在这个地方显示滚动window吧，在appdelegate会崩溃
+    [LHBTopWindow showWindow];
 }
 #pragma mark - 初始化导航条
 - (void)setupNav

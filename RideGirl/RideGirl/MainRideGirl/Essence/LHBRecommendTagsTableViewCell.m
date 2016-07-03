@@ -34,7 +34,12 @@
 {
     _model = model;
     
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:model.image_list] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    //设置头像
+    UIImage *placeholder = [[UIImage imageNamed:@"defaultUserIcon"] circleImage];
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:model.image_list] placeholderImage:placeholder completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        //看看有没有头像，没有就显示默认
+        self.imageView.image = image ? [image circleImage] : placeholder;
+    } ];
     self.titleNameLabel.text = model.theme_name;
     
     NSString *subNumber = nil;

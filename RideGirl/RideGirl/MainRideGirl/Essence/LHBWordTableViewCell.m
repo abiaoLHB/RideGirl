@@ -88,10 +88,10 @@
     UIImageView *bgImageView = [[UIImageView alloc] init];
     bgImageView.image = [UIImage imageNamed:@"mainCellBackground"];
     self.backgroundView = bgImageView;
-
-    self.headerImageView.layer.cornerRadius = self.headerImageView.size.width*0.5;
-    self.headerImageView.clipsToBounds = YES;
-
+    
+    //弊端：如果对cell的图层做过多处理，会造成很卡，一般不这样。一般通过绘图的只是做出来：下载完正方形的头像图片后，进行处理，cell上直接显示圆形的图片
+//    self.headerImageView.layer.cornerRadius = self.headerImageView.size.width*0.5;
+//    self.headerImageView.clipsToBounds = YES;
 }
 
 
@@ -129,8 +129,14 @@
 - (void)setWordModel:(LHBWordModel *)wordModel
 {
     _wordModel = wordModel;
-    //设置头像
-    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:wordModel.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    //设置头像 占位图片也是圆的了
+    UIImage *placeholder = [[UIImage imageNamed:@"defaultUserIcon"] circleImage];
+
+    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:wordModel.profile_image] placeholderImage:placeholder completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        self.headerImageView.image = image ?[image circleImage] : placeholder;
+    }];
+    
+    
     //设置名字
     self.nameLabel.text = wordModel.name;
     //设置帖子的创建时间
