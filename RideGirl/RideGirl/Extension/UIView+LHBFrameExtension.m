@@ -96,4 +96,21 @@
     return self.center.y;
 }
 
+- (BOOL)isShowingOnKeyWindow
+{
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    
+    //转换坐标系。将subView.frame  从 subView.superview的坐标系转换成window的坐标系，并返回一个新的frame
+    CGRect newFrame = [keyWindow convertRect:self.frame fromView:self.superview];//nil默认就是window（屏幕坐标系）
+    //引申出另一个写法
+    // CGRect newFrame = [[UIApplication sharedApplication].keyWindow convertRect:-- toView:--];
+    
+    CGRect windowRect = keyWindow.bounds;
+    
+    //判断两个CGRect是否交叉
+    BOOL isIntersects = CGRectIntersectsRect(newFrame, windowRect);
+    
+    return (!self.hidden) && (self.alpha > 0.01) && (self.window == keyWindow) && isIntersects;
+}
+
 @end

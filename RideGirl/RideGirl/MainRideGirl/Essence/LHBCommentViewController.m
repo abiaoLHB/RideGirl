@@ -351,9 +351,72 @@ static NSString *const LHBCommentCellID = @"commentID";
 }
 
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // 创建menu菜单
+    UIMenuController *menu = [UIMenuController sharedMenuController];
+    //这样显示在cell的顶部
+    //[menu setTargetRect:cell.bounds inView:cell];
+    
+    //当点击的cell不再是第一响应者的时候，menu会自动消失
+    if (menu.isMenuVisible) {//正在显示
+        [menu setMenuVisible:NO animated:YES];
+        return;
+    }
+    
+    //被点击的cell
+    LHBCommentCell *cell = (LHBCommentCell *)[tableView cellForRowAtIndexPath:indexPath];
+    //让cell的控制器成为响应着
+    [cell becomeFirstResponder];
+    
+   
+    
+    //显示中间
+    CGRect menuRect = CGRectMake(0, cell.height*0.5, cell.width, cell.height*0.5);
+    [menu setTargetRect:menuRect inView:cell];
+    
+    UIMenuItem *ding = [[UIMenuItem alloc] initWithTitle:@"顶" action:@selector(ding:)];
+    UIMenuItem *replay = [[UIMenuItem alloc] initWithTitle:@"回复" action:@selector(replay:)];
+    UIMenuItem *report = [[UIMenuItem alloc] initWithTitle:@"举报" action:@selector(report:)];
+    //当menu要在别的控制器现实的时候，要清除掉这个数组
+    menu.menuItems = @[ding,replay,report];
+    
+    //通过动画出来
+    [menu setMenuVisible:YES animated:YES];
+}
+#pragma mark - MenuConotroller 处理
 /**
- *  键盘变化处理方法
+ *  顶
  */
+- (void)ding:(UIMenuController *)meun
+{
+    //顶哪一行评论
+    //虽然这个cell的selecd ＝ none了，但是还是会记着这个行号的，也就是说这个cell还是选中了，只是看不见选中的样式而已
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
+    
+    NSLog(@"ding,%zd",indexPath.row);
+}
+
+/**
+ *  顶
+ */
+- (void)replay:(UIMenuController *)meun
+{
+    NSLog(@"replay");
+}
+
+/**
+ *  举报
+ */
+- (void)report:(UIMenuController *)meun
+{
+    NSLog(@"report");
+}
+
+
+#pragma mark - 键盘变化处理方法
 - (void)keyboardWillChangeFrame:(NSNotification *)noti
 {
     //CGRectValue --> 对象转换成CGRectValue
@@ -379,6 +442,11 @@ static NSString *const LHBCommentCellID = @"commentID";
     //实时监听 不太好,调用太频繁
     //- (void)scrollViewDidScroll:(UIScrollView *)scrollView
     [self.view endEditing:YES];
+    
+    
+    //一准备滑动就让menu消失
+    UIMenuController *menu = [UIMenuController sharedMenuController];
+    [menu setMenuVisible:NO animated:YES];
 }
 
 

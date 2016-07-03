@@ -12,4 +12,6 @@
 
 + (void)showWindow;
 
++ (void)hiddenWindow;
+
 @end

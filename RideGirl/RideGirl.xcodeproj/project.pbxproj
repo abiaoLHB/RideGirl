@@ -28,6 +28,7 @@
 		EF38A5761D280605002BE631 /* LHBCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF38A5741D280605002BE631 /* LHBCommentCell.m */; };
 		EF38A5771D280605002BE631 /* LHBCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF38A5751D280605002BE631 /* LHBCommentCell.xib */; };
 		EF38A57A1D282947002BE631 /* LHBTopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = EF38A5791D282947002BE631 /* LHBTopWindow.m */; };
+		EF425E011D291DFA00905C95 /* UIImage+LHBUIImageExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EF425E001D291DFA00905C95 /* UIImage+LHBUIImageExtension.m */; };
 		EF58DA301D255DB700E883D8 /* LHBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = EF58DA2F1D255DB700E883D8 /* LHBUser.m */; };
 		EF58DA331D255FEB00E883D8 /* LHBComment.m in Sources */ = {isa = PBXBuildFile; fileRef = EF58DA321D255FEB00E883D8 /* LHBComment.m */; };
 		EF69DC881D008D76007CE788 /* LHBRecommendRightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF69DC871D008D76007CE788 /* LHBRecommendRightModel.m */; };
@@ -129,6 +130,8 @@
 		EF38A5751D280605002BE631 /* LHBCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBCommentCell.xib; sourceTree = "<group>"; };
 		EF38A5781D282947002BE631 /* LHBTopWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBTopWindow.h; sourceTree = "<group>"; };
 		EF38A5791D282947002BE631 /* LHBTopWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBTopWindow.m; sourceTree = "<group>"; };
+		EF425DFF1D291DFA00905C95 /* UIImage+LHBUIImageExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LHBUIImageExtension.h"; sourceTree = "<group>"; };
+		EF425E001D291DFA00905C95 /* UIImage+LHBUIImageExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LHBUIImageExtension.m"; sourceTree = "<group>"; };
 		EF58DA2E1D255DB700E883D8 /* LHBUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBUser.h; sourceTree = "<group>"; };
 		EF58DA2F1D255DB700E883D8 /* LHBUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBUser.m; sourceTree = "<group>"; };
 		EF58DA311D255FEB00E883D8 /* LHBComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBComment.h; sourceTree = "<group>"; };
@@ -439,6 +442,8 @@
 				EFA7CB921CFED8D00097FA52 /* UIView+LHBFrameExtension.m */,
 				EF27B4561D0DC19D004A2E33 /* NSDate+LHBDateExtension.h */,
 				EF27B4571D0DC19D004A2E33 /* NSDate+LHBDateExtension.m */,
+				EF425DFF1D291DFA00905C95 /* UIImage+LHBUIImageExtension.h */,
+				EF425E001D291DFA00905C95 /* UIImage+LHBUIImageExtension.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -793,6 +798,7 @@
 				EF38A5761D280605002BE631 /* LHBCommentCell.m in Sources */,
 				EF3602D21CFDCC0000ABD8AD /* main.m in Sources */,
 				EF1691681D09B08200913827 /* LHBAutoLoginBtn.m in Sources */,
+				EF425E011D291DFA00905C95 /* UIImage+LHBUIImageExtension.m in Sources */,
 				EF09C70C1CFF1D5800F95B28 /* LHBRecommendViewController.m in Sources */,
 				EF1E06671D0C58F10083570E /* LHBConst.m in Sources */,
 				EFA7CBA71CFED8D00097FA52 /* UIView+LHBFrameExtension.m in Sources */,
