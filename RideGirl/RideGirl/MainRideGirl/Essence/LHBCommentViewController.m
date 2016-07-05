@@ -151,6 +151,12 @@ static NSString *const LHBCommentCellID = @"commentID";
     [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:parm progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        //有时会给个数组，新帖中返回的就是数组，这里要是数组一定要return
+        if (![responseObject isKindOfClass:[NSDictionary class]] ) {
+            [self.tableView.mj_header endEditing:YES];
+            return ;
+        }
+        
         //最热评论
         self.hotCommentsDataMutArr = [LHBComment mj_objectArrayWithKeyValuesArray:responseObject[@"hot"]];
         
@@ -204,6 +210,12 @@ static NSString *const LHBCommentCellID = @"commentID";
     [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:parm progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        //有时会给个数组，新帖中返回的就是数组，这里要是数组一定要return
+        if (![responseObject isKindOfClass:[NSDictionary class]] ) {
+            [self.tableView.mj_header endEditing:YES];
+
+            return ;
+        }
         //最新评论
         NSArray *newCommentsDataArr = [LHBComment mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
         [self.latesCommentsDataMutArr addObjectsFromArray:newCommentsDataArr];

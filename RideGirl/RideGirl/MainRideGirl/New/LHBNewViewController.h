@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LHBEssenceViewController.h"
 
-@interface LHBNewViewController : UIViewController
+@interface LHBNewViewController : LHBEssenceViewController
 
 @end

@@ -14,6 +14,7 @@
 #import "LHBWordModel.h"
 #import "LHBWordTableViewCell.h"
 #import "LHBCommentViewController.h"
+#import "LHBNewViewController.h"
 
 @interface LHBAllViewController ()
 
@@ -103,6 +104,12 @@ static NSString *const LHBWordCellID = @"word";
     //    self.tableView.mj_footer.hidden = YES;//MJRefreshAutoNormalFooter
 }
 
+#pragma mark - a参数，为新帖继承准备
+- (NSString *)a
+{
+    return [self.parentViewController isKindOfClass:[LHBNewViewController class]] ? @"newlist" : @"list";
+    
+}
 #pragma mark - 加载新数据
 - (void)loadNewWord
 {
@@ -112,7 +119,7 @@ static NSString *const LHBWordCellID = @"word";
     self.page = 0;
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"a"] = @"list";
+    params[@"a"] = self.a;
     params[@"c"] = @"data";
     params[@"type"] =@"1";
     //存一下请求参数
@@ -154,7 +161,7 @@ static NSString *const LHBWordCellID = @"word";
     self.page ++;
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"a"] = @"list";
+    params[@"a"] = self.a;
     params[@"c"] = @"data";
     params[@"type"] =@"1";
     params[@"page"] = @(self.page);
