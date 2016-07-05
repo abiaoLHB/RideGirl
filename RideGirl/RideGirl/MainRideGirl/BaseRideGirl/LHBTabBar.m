@@ -69,6 +69,9 @@
     CGFloat width = self.width;
     CGFloat height = self.height;
     
+    //标记一下
+    static BOOL added = NO;
+    
     //设置发布按钮的frame
 //    self.publishButton.width = self.publishButton.currentBackgroundImage.size.width;
 //    self.publishButton.height = self.publishButton.currentBackgroundImage.size.height;
@@ -82,7 +85,7 @@
     CGFloat buttonW = width / 5;
     CGFloat buttonH = height;
     NSInteger index = 0;
-    for (UIView *button in self.subviews) {
+    for (UIControl *button in self.subviews) {
         //如果不是UITabBarButton类，跳出
         if (![button isKindOfClass:NSClassFromString(@"UITabBarButton")]) continue;{
 //另一种判断方式            
@@ -92,9 +95,17 @@
             CGFloat buttonX = buttonW *((index > 1)?(index + 1):index);
             button.frame = CGRectMake(buttonX, buttonY, buttonW, buttonH);
             index ++;
+            
+            if (added == NO) {
+                [button addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
+            }
         }
     }
+    added = YES;
 }
-
+- (void)buttonClick
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:LHBTabBarDidSelectNotification  object:nil userInfo:nil];
+}
 
 @end

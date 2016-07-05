@@ -21,5 +21,18 @@ CGFloat const LHBWordPictureNormalH = 250;
 /**
  *  XMUser模型性别属性值
  */
-UIKIT_EXTERN NSString * const  LHBUserSexMale = @"m";
-UIKIT_EXTERN NSString * const  LHBUserSexFemale = @"f";
+NSString * const  LHBUserSexMale = @"m";
+NSString * const  LHBUserSexFemale = @"f";
+
+/**
+ *  tabar被选中的通知名字
+ */
+NSString * const  LHBTabBarDidSelectNotification = @"LHBTabBarDidSelectNotification";
+/**
+ *  tabar被选中的通知 - 被选中的控制器的索引 key
+ */
+NSString * const  LHBSeletecControllerIndexKey = @"LHBSeletecControllerIndexKey";
+/**
+ *  tabar被选中的通知 - 被选中的控制器 key
+ */
+NSString * const  LHBSeletecControllerKey = @"LHBSeletecControllerKey";
