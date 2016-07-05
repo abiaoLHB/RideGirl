@@ -11,7 +11,7 @@
 #import "LHBTabBarViewController.h"
 #import "LHBTopWindow.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UITabBarControllerDelegate>
 
 @end
 
@@ -23,7 +23,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    self.window.rootViewController = [[LHBTabBarViewController alloc] init];
+    LHBTabBarViewController *tabBarVC = [[LHBTabBarViewController alloc] init];
+    //另一种做法，在tab里，给tabBarItem增加方法
+//    tabBarVC.delegate = self;
+    self.window.rootViewController =tabBarVC;
 
     [self.window makeKeyAndVisible];
 
@@ -31,6 +34,25 @@
 
     return YES;
 }
+#pragma mark - UITabBarControllerDelegate
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    //传viewController,可以通过下面这个方法得出是哪个控制器被点击
+    //[tabBarController.childViewControllers indexOfObject:viewController];
+    
+    //传索引,也可以拿到哪个控制器被点击(也可以两个都传)
+     //tabBarController.childViewControllers[索引]
+    
+//    控制器和索引都可以不用传，因为拿到tabbar，就知道了哪个控制器被点击
+//    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+//    userInfo[LHBSeletecControllerKey] = viewController;
+//    userInfo[LHBSeletecControllerIndexKey] = @(tabBarController.selectedIndex);
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:LHBTabBarDidSelectNotification  object:nil userInfo:nil];
+    
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

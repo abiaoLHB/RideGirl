@@ -26,6 +26,8 @@
 @property (nonatomic,copy) NSArray *maxtime;
 //上一次的请求参数，防止用户在网络慢的情况下，快速刷新＋加载数据，造成数据乱
 @property (nonatomic,strong) NSDictionary *params;
+
+@property (nonatomic,assign) NSInteger lastSelectedIndex;
 @end
 
 @implementation LHBWordViewController
@@ -68,6 +70,20 @@ static NSString *const LHBWordCellID = @"word";
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
     //给cell注册个cell
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([LHBWordTableViewCell class]) bundle:nil] forCellReuseIdentifier:LHBWordCellID];
+    //监听tabBar点击
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarSelect) name:LHBTabBarDidSelectNotification object:nil];
+}
+#pragma mark - tabBar点击
+- (void)tabBarSelect
+{
+    LHBLogFunc;
+    //如果是连续选中2次，直接刷新
+    if (self.lastSelectedIndex == self.tabBarController.selectedIndex && self.tabBarController.selectedViewController == self.navigationController && [self.view isShowingOnKeyWindow])
+    {
+        [self.tableView.mj_header beginRefreshing];
+    }
+    //记录这一次选中的索引
+    self.lastSelectedIndex = self.tabBarController.selectedIndex;
 }
 
 #pragma mark -  初始化刷新控件
