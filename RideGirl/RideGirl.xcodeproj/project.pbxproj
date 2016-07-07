@@ -15,6 +15,8 @@
 		EF09C7131CFF2C5D00F95B28 /* LHBRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF09C7121CFF2C5D00F95B28 /* LHBRecommendCell.m */; };
 		EF09C7151CFF2C8E00F95B28 /* LHBRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF09C7141CFF2C8E00F95B28 /* LHBRecommendCell.xib */; };
 		EF09C7181CFF2CD500F95B28 /* LHBRecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF09C7171CFF2CD500F95B28 /* LHBRecommendModel.m */; };
+		EF0AF9751D2E97F800E6CE11 /* LHBMeWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0AF9731D2E97F800E6CE11 /* LHBMeWebViewViewController.m */; };
+		EF0AF9761D2E97F800E6CE11 /* LHBMeWebViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF0AF9741D2E97F800E6CE11 /* LHBMeWebViewViewController.xib */; };
 		EF1691631D0997EE00913827 /* LHBLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1691621D0997EE00913827 /* LHBLoginRegisterViewController.m */; };
 		EF1691651D09984B00913827 /* LHBLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF1691641D09984B00913827 /* LHBLoginRegisterViewController.xib */; };
 		EF1691681D09B08200913827 /* LHBAutoLoginBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1691671D09B08200913827 /* LHBAutoLoginBtn.m */; };
@@ -68,6 +70,10 @@
 		EFDB07DB1D0D9C220035303F /* LHBWordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFDB07D91D0D9C220035303F /* LHBWordTableViewCell.xib */; };
 		EFE214C71D0EFD1700DCABAA /* LHBWordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDB07D81D0D9C220035303F /* LHBWordTableViewCell.m */; };
 		EFE5D90A1D1C1ADA0029E0FF /* LHBProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE5D9091D1C1ADA0029E0FF /* LHBProgressView.m */; };
+		EFE94E621D2D4284003283F8 /* LHBMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE94E611D2D4284003283F8 /* LHBMeCell.m */; };
+		EFE94E651D2D472D003283F8 /* LHBMeFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE94E641D2D472D003283F8 /* LHBMeFootView.m */; };
+		EFE94E681D2D4AB3003283F8 /* LHBMeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE94E671D2D4AB3003283F8 /* LHBMeModel.m */; };
+		EFE94E6B1D2D4F5F003283F8 /* LHBMeCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE94E6A1D2D4F5F003283F8 /* LHBMeCustomButton.m */; };
 		EFFCC46F1D26BDB500FF1715 /* LHBCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFFCC46D1D26BDB500FF1715 /* LHBCommentViewController.m */; };
 		EFFCC4701D26BDB500FF1715 /* LHBCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFFCC46E1D26BDB500FF1715 /* LHBCommentViewController.xib */; };
 		EFFD033D1D0AFEFB00762237 /* LHBPushGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFFD033C1D0AFEFB00762237 /* LHBPushGuideView.m */; };
@@ -106,6 +112,9 @@
 		EF09C7141CFF2C8E00F95B28 /* LHBRecommendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBRecommendCell.xib; sourceTree = "<group>"; };
 		EF09C7161CFF2CD500F95B28 /* LHBRecommendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBRecommendModel.h; sourceTree = "<group>"; };
 		EF09C7171CFF2CD500F95B28 /* LHBRecommendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBRecommendModel.m; sourceTree = "<group>"; };
+		EF0AF9721D2E97F800E6CE11 /* LHBMeWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBMeWebViewViewController.h; sourceTree = "<group>"; };
+		EF0AF9731D2E97F800E6CE11 /* LHBMeWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBMeWebViewViewController.m; sourceTree = "<group>"; };
+		EF0AF9741D2E97F800E6CE11 /* LHBMeWebViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBMeWebViewViewController.xib; sourceTree = "<group>"; };
 		EF1691611D0997EE00913827 /* LHBLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBLoginRegisterViewController.h; sourceTree = "<group>"; };
 		EF1691621D0997EE00913827 /* LHBLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBLoginRegisterViewController.m; sourceTree = "<group>"; };
 		EF1691641D09984B00913827 /* LHBLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBLoginRegisterViewController.xib; sourceTree = "<group>"; };
@@ -203,6 +212,14 @@
 		EFDB07D91D0D9C220035303F /* LHBWordTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBWordTableViewCell.xib; sourceTree = "<group>"; };
 		EFE5D9081D1C1ADA0029E0FF /* LHBProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBProgressView.h; sourceTree = "<group>"; };
 		EFE5D9091D1C1ADA0029E0FF /* LHBProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBProgressView.m; sourceTree = "<group>"; };
+		EFE94E601D2D4284003283F8 /* LHBMeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBMeCell.h; sourceTree = "<group>"; };
+		EFE94E611D2D4284003283F8 /* LHBMeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBMeCell.m; sourceTree = "<group>"; };
+		EFE94E631D2D472D003283F8 /* LHBMeFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBMeFootView.h; sourceTree = "<group>"; };
+		EFE94E641D2D472D003283F8 /* LHBMeFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBMeFootView.m; sourceTree = "<group>"; };
+		EFE94E661D2D4AB3003283F8 /* LHBMeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBMeModel.h; sourceTree = "<group>"; };
+		EFE94E671D2D4AB3003283F8 /* LHBMeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBMeModel.m; sourceTree = "<group>"; };
+		EFE94E691D2D4F5F003283F8 /* LHBMeCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBMeCustomButton.h; sourceTree = "<group>"; };
+		EFE94E6A1D2D4F5F003283F8 /* LHBMeCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBMeCustomButton.m; sourceTree = "<group>"; };
 		EFFCC46C1D26BDB500FF1715 /* LHBCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBCommentViewController.h; sourceTree = "<group>"; };
 		EFFCC46D1D26BDB500FF1715 /* LHBCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBCommentViewController.m; sourceTree = "<group>"; };
 		EFFCC46E1D26BDB500FF1715 /* LHBCommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBCommentViewController.xib; sourceTree = "<group>"; };
@@ -506,8 +523,9 @@
 		EFA7CBA01CFED8D00097FA52 /* Me */ = {
 			isa = PBXGroup;
 			children = (
-				EFA7CBA11CFED8D00097FA52 /* LHBMeViewController.h */,
-				EFA7CBA21CFED8D00097FA52 /* LHBMeViewController.m */,
+				EFE94E5F1D2D4264003283F8 /* Model */,
+				EFE94E5E1D2D425C003283F8 /* View */,
+				EFE94E5D1D2D4253003283F8 /* Controller */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -546,6 +564,40 @@
 		EFB3B2EE1D1EC0060030CAB4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EFE94E5D1D2D4253003283F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EFA7CBA11CFED8D00097FA52 /* LHBMeViewController.h */,
+				EFA7CBA21CFED8D00097FA52 /* LHBMeViewController.m */,
+				EF0AF9721D2E97F800E6CE11 /* LHBMeWebViewViewController.h */,
+				EF0AF9731D2E97F800E6CE11 /* LHBMeWebViewViewController.m */,
+				EF0AF9741D2E97F800E6CE11 /* LHBMeWebViewViewController.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		EFE94E5E1D2D425C003283F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EFE94E601D2D4284003283F8 /* LHBMeCell.h */,
+				EFE94E611D2D4284003283F8 /* LHBMeCell.m */,
+				EFE94E631D2D472D003283F8 /* LHBMeFootView.h */,
+				EFE94E641D2D472D003283F8 /* LHBMeFootView.m */,
+				EFE94E691D2D4F5F003283F8 /* LHBMeCustomButton.h */,
+				EFE94E6A1D2D4F5F003283F8 /* LHBMeCustomButton.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		EFE94E5F1D2D4264003283F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EFE94E661D2D4AB3003283F8 /* LHBMeModel.h */,
+				EFE94E671D2D4AB3003283F8 /* LHBMeModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -673,6 +725,7 @@
 			files = (
 				EFDA037C1D2174F4005C6CD0 /* LHBWordVoiceView.xib in Resources */,
 				EF3603071CFDCD6C00ABD8AD /* Assets.xcassets in Resources */,
+				EF0AF9761D2E97F800E6CE11 /* LHBMeWebViewViewController.xib in Resources */,
 				EFB3B2F31D1EC0260030CAB4 /* LHBPublishViewController.xib in Resources */,
 				EF09C7151CFF2C8E00F95B28 /* LHBRecommendCell.xib in Resources */,
 				EFA135CB1D07272F00FB6964 /* LHBRecommendTagsTableViewCell.xib in Resources */,
@@ -766,8 +819,10 @@
 				EFA135C61D0725A500FB6964 /* LHBRecommendTagsModel.m in Sources */,
 				EFFD033D1D0AFEFB00762237 /* LHBPushGuideView.m in Sources */,
 				EFB3B2F21D1EC0260030CAB4 /* LHBPublishViewController.m in Sources */,
+				EFE94E651D2D472D003283F8 /* LHBMeFootView.m in Sources */,
 				EF69DC881D008D76007CE788 /* LHBRecommendRightModel.m in Sources */,
 				EF85D0711D0C40B000547377 /* LHBWordModel.m in Sources */,
+				EFE94E6B1D2D4F5F003283F8 /* LHBMeCustomButton.m in Sources */,
 				EF062A281D0A7F4E00F189C1 /* LHBCusTomTextField.m in Sources */,
 				EF38A57A1D282947002BE631 /* LHBTopWindow.m in Sources */,
 				EFDA037F1D217516005C6CD0 /* LHBWordVoiceView.m in Sources */,
@@ -790,6 +845,8 @@
 				EF1E06681D0C5D8A0083570E /* LHBWordViewController.m in Sources */,
 				EF69DC8C1D008E96007CE788 /* LHBRecommendRightCell.m in Sources */,
 				EFCEB6501D22BC1B00E58D28 /* LHBWordVideoView.m in Sources */,
+				EF0AF9751D2E97F800E6CE11 /* LHBMeWebViewViewController.m in Sources */,
+				EFE94E681D2D4AB3003283F8 /* LHBMeModel.m in Sources */,
 				EFA135CA1D07272F00FB6964 /* LHBRecommendTagsTableViewCell.m in Sources */,
 				EFA7CBB01CFED90D0097FA52 /* AppDelegate.m in Sources */,
 				EFDB07DA1D0D9C220035303F /* LHBWordTableViewCell.m in Sources */,
@@ -803,6 +860,7 @@
 				EF1E06671D0C58F10083570E /* LHBConst.m in Sources */,
 				EFA7CBA71CFED8D00097FA52 /* UIView+LHBFrameExtension.m in Sources */,
 				EFA7CBA91CFED8D00097FA52 /* LHBTabBarViewController.m in Sources */,
+				EFE94E621D2D4284003283F8 /* LHBMeCell.m in Sources */,
 				EFA7CBAB1CFED8D00097FA52 /* LHBFriendTrendsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

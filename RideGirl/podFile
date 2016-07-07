@@ -9,4 +9,5 @@ target 'RideGirl' do
 	pod 'DACircularProgress'
 	pod 'pop'
 	pod 'SVProgressHUD'
+	pod 'NJKWebViewProgress'
 end
