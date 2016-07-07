@@ -118,7 +118,7 @@
     
     [self setupChildVc:[[LHBFriendTrendsViewController alloc] init] title:@"关注" image:@"tabBar_friendTrends_icon" selecteImage:@"tabBar_friendTrends_click_icon"];
     
-    [self setupChildVc:[[LHBMeViewController alloc] init] title:@"我" image:@"tabBar_me_icon" selecteImage:@"tabBar_me_click_icon"];
+    [self setupChildVc:[[LHBMeViewController alloc] initWithStyle:UITableViewStyleGrouped] title:@"我" image:@"tabBar_me_icon" selecteImage:@"tabBar_me_click_icon"];
     
     
     //当系统tabbar不能满足需求时，比如这个tabbar中间是个加号按钮，通过一般的方法是不能搞定的，这是需要继承系统的tabar，做一些自定义，来替换系统的tabbar，而系统的tabbar是只读的，不能直接替换，可以通过kvc方式去替换。
