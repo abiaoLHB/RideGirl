@@ -10,8 +10,16 @@
 #import "LHBWordModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "LHBShowPictureViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
-@interface LHBWordVoiceView ()
+
+@interface LHBWordVoiceView ()<AVAudioPlayerDelegate>
+{
+    AVAudioPlayer *_avAudioPlayer;
+    UIProgressView *_progressView;
+    UISlider *_volumeslider;
+    NSTimer *_timer;
+}
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *playLengthLabel;
@@ -56,4 +64,37 @@
     //  2zd 保留2位，不足用0代替
     self.playLengthLabel.text = [NSString stringWithFormat:@"%02zd:%02zd",minute,second];
 }
+
+- (IBAction)playVoiceClick:(LHBVoicePlayBtn *)sender
+{
+    UITabBarController *tabBarVC = (UITabBarController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
+    UINavigationController *nav = tabBarVC.selectedViewController;
+    
+    //要知道点击了那个模型
+    NSString *urlStr = sender.wordModel.weixin_url;
+    //用一个音频URL初始化音频播放器
+    _avAudioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL URLWithString:urlStr] error:nil];
+    //设置代理
+    _avAudioPlayer.delegate = self;
+    //初始音量
+    _avAudioPlayer.volume = 1.0;
+    // 单曲循环
+    _avAudioPlayer.numberOfLoops = -1;
+    //预播放
+    [_avAudioPlayer prepareToPlay];
+    
+   
+}
+
+//改变播放进度
+- (void)playProgress
+{
+    LHBLogFunc;
+}
+//改变音量
+- (void)volumeChange
+{
+    LHBLogFunc;
+}
+
 @end

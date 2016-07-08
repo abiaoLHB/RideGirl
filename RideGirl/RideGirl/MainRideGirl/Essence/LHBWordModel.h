@@ -42,7 +42,8 @@
 //视频播放地址
 @property(nonatomic,copy)NSString *videouri;
 
-
+//音频播放地址
+@property(nonatomic,copy)NSString *weixin_url;
 
 
 /*额外的属性*/

@@ -25,6 +25,7 @@
 		EF27B4581D0DC19D004A2E33 /* NSDate+LHBDateExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EF27B4571D0DC19D004A2E33 /* NSDate+LHBDateExtension.m */; };
 		EF3477C01D2F7C7A0023CD3D /* LHBVideoPlayBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3477BF1D2F7C7A0023CD3D /* LHBVideoPlayBtn.m */; };
 		EF3477C51D2F86880023CD3D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3477C41D2F86880023CD3D /* MediaPlayer.framework */; };
+		EF3478091D2F99A70023CD3D /* LHBVoicePlayBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3478081D2F99A70023CD3D /* LHBVoicePlayBtn.m */; };
 		EF3602D21CFDCC0000ABD8AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602D11CFDCC0000ABD8AD /* main.m */; };
 		EF3602EB1CFDCC0000ABD8AD /* RideGirlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602EA1CFDCC0000ABD8AD /* RideGirlTests.m */; };
 		EF3602F61CFDCC0000ABD8AD /* RideGirlUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602F51CFDCC0000ABD8AD /* RideGirlUITests.m */; };
@@ -129,6 +130,8 @@
 		EF3477BE1D2F7C7A0023CD3D /* LHBVideoPlayBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBVideoPlayBtn.h; sourceTree = "<group>"; };
 		EF3477BF1D2F7C7A0023CD3D /* LHBVideoPlayBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBVideoPlayBtn.m; sourceTree = "<group>"; };
 		EF3477C41D2F86880023CD3D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		EF3478071D2F99A70023CD3D /* LHBVoicePlayBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBVoicePlayBtn.h; sourceTree = "<group>"; };
+		EF3478081D2F99A70023CD3D /* LHBVoicePlayBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBVoicePlayBtn.m; sourceTree = "<group>"; };
 		EF3602CD1CFDCC0000ABD8AD /* RideGirl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideGirl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3602D11CFDCC0000ABD8AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EF3602E11CFDCC0000ABD8AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -438,6 +441,8 @@
 				EF38A5751D280605002BE631 /* LHBCommentCell.xib */,
 				EF3477BE1D2F7C7A0023CD3D /* LHBVideoPlayBtn.h */,
 				EF3477BF1D2F7C7A0023CD3D /* LHBVideoPlayBtn.m */,
+				EF3478071D2F99A70023CD3D /* LHBVoicePlayBtn.h */,
+				EF3478081D2F99A70023CD3D /* LHBVoicePlayBtn.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -831,6 +836,7 @@
 				EFE94E651D2D472D003283F8 /* LHBMeFootView.m in Sources */,
 				EF69DC881D008D76007CE788 /* LHBRecommendRightModel.m in Sources */,
 				EF85D0711D0C40B000547377 /* LHBWordModel.m in Sources */,
+				EF3478091D2F99A70023CD3D /* LHBVoicePlayBtn.m in Sources */,
 				EFE94E6B1D2D4F5F003283F8 /* LHBMeCustomButton.m in Sources */,
 				EF062A281D0A7F4E00F189C1 /* LHBCusTomTextField.m in Sources */,
 				EF38A57A1D282947002BE631 /* LHBTopWindow.m in Sources */,
@@ -999,12 +1005,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = RideGirl/PrefixHeader.pch;
 				INFOPLIST_FILE = RideGirl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lhb.companycompany;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1016,12 +1024,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = RideGirl/PrefixHeader.pch;
 				INFOPLIST_FILE = RideGirl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lhb.companycompany;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
