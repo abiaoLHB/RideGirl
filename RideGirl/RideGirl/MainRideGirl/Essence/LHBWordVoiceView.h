@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LHBVoicePlayBtn.h"
 
 @class LHBWordModel;
 
 @interface LHBWordVoiceView : UIView
 
 @property (nonatomic,strong) LHBWordModel *wordModel;
+
+@property (weak, nonatomic) IBOutlet LHBVoicePlayBtn *voicePlayBtn;
 
 + (instancetype)creatLHBVoicePictureView;
 

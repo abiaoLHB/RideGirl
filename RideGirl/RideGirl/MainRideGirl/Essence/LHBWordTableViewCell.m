@@ -162,6 +162,7 @@
     }else if (wordModel.type == LHBWordTypeVoice){//音频
         self.voiceView.hidden = NO;
         self.voiceView.wordModel = wordModel;
+        self.voiceView.voicePlayBtn.wordModel = wordModel;
         //(origin = (x = 0, y = 0), size = (width = 306, height = 264))
         self.voiceView.frame = wordModel.voiceFrame;
         self.pictureView.hidden = YES;
