@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LHBVideoPlayBtn.h"
 
 @class LHBWordModel;
 
 @interface LHBWordVideoView : UIView
 
 @property (nonatomic,strong) LHBWordModel *wordModel;
+//播放按钮
+@property (weak, nonatomic) IBOutlet LHBVideoPlayBtn *videoPlayButton;
 
 + (instancetype)creatLHBVideoView;
 

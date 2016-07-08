@@ -10,17 +10,27 @@
 #import "LHBWordModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "LHBShowPictureViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
+#import <AVFoundation/AVFoundation.h>
+#import <AVKit/AVKit.h>
+
 
 @interface LHBWordVideoView ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 @property (weak, nonatomic) IBOutlet UILabel *playCountLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *playTimeLabel;
 
+@property(nonatomic,strong)MPMoviePlayerViewController *moviePlayerController;
+
+
 @end
 
 @implementation LHBWordVideoView
+
+
 
 + (instancetype)creatLHBVideoView
 {
@@ -56,6 +66,56 @@
     NSInteger second = wordModel.videotime % 60;
     //  2zd 保留2位，不足用0代替
     self.playTimeLabel.text = [NSString stringWithFormat:@"%02zd:%02zd",minute,second];
+    
 }
 
+
+- (IBAction)goPlayVideoBtnClick:(LHBVideoPlayBtn *)sender
+{
+    
+    UITabBarController *tabBarVC = (UITabBarController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
+    UINavigationController *nav = tabBarVC.selectedViewController;
+    
+    //要知道点击了那个模型
+    NSString *urlStr = sender.wordModel.videouri;//A座608、609
+
+    _moviePlayerController=[[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL URLWithString:urlStr]];
+    //本地文件播放要设置视频资源为文件类型资源，若设置为stream 则会错误
+    _moviePlayerController.moviePlayer.movieSourceType = MPMovieSourceTypeFile;
+    //播放界面类型
+    _moviePlayerController.moviePlayer.controlStyle = MPMovieControlStyleFullscreen;
+    
+    //准备播放
+    [_moviePlayerController.moviePlayer prepareToPlay];
+ 
+    [nav presentMoviePlayerViewControllerAnimated:_moviePlayerController];
+}
+
+
+//- (IBAction)goPlayVideoBtnClick:(LHBVideoPlayBtn *)sender 
+//{
+//    UITabBarController *tabBarVC = (UITabBarController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
+//    UINavigationController *nav = tabBarVC.selectedViewController;
+//    
+//    //要知道点击了那个模型
+//    NSString *urlStr = sender.wordModel.videouri;
+//    
+//    NSURL *sourceMovieURL = [NSURL URLWithString:urlStr];
+//    
+//    AVAsset *movieAsset = [AVURLAsset URLAssetWithURL:sourceMovieURL options:nil];
+//    
+//    AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:movieAsset];
+//    
+//    AVPlayer *player = [AVPlayer playerWithPlayerItem:playerItem];
+//    
+//    AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:player];
+//    
+//    playerLayer.frame = nav.view.layer.bounds;
+//    
+//    playerLayer.videoGravity = AVLayerVideoGravityResizeAspect;
+//    
+//    [nav.view.layer addSublayer:playerLayer];
+//    
+//    [player play];
+//}
 @end

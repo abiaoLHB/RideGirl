@@ -39,7 +39,8 @@
 //最热评论
 @property (nonatomic,strong) NSArray *top_cmt;
 
-
+//视频播放地址
+@property(nonatomic,copy)NSString *videouri;
 
 
 
