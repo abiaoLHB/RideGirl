@@ -153,22 +153,24 @@
     
     //中间时图片
     //hidden的yes、no是处理cell复用的
-    if (wordModel.type == LHBWordTypePicture) {
+    if (wordModel.type == LHBWordTypePicture) {//图片
         self.pictureView.hidden = NO;
         self.pictureView.wordModel = wordModel;
         self.pictureView.frame = wordModel.imageFrame;
         self.videoView.hidden = YES;
         self.voiceView.hidden = YES;
-    }else if (wordModel.type == LHBWordTypeVoice){
+    }else if (wordModel.type == LHBWordTypeVoice){//音频
         self.voiceView.hidden = NO;
         self.voiceView.wordModel = wordModel;
         //(origin = (x = 0, y = 0), size = (width = 306, height = 264))
         self.voiceView.frame = wordModel.voiceFrame;
         self.pictureView.hidden = YES;
         self.videoView.hidden = YES;
-    }else if (wordModel.type == LHBWordTypeVideo){
+    }else if (wordModel.type == LHBWordTypeVideo){//视频
         self.videoView.hidden = NO;
         self.videoView.wordModel = wordModel;
+        //给播放视频按钮绑定一个模型
+        self.videoView.videoPlayButton.wordModel = wordModel;
         //(origin = (x = 0, y = 0), size = (width = 277, height = 228))
         self.videoView.frame = wordModel.videoFrame;
         self.pictureView.hidden = YES;
@@ -191,11 +193,6 @@
     
     
     
-}
-
-- (void)testData:(NSString *)creat_time
-{
-
 }
 
 

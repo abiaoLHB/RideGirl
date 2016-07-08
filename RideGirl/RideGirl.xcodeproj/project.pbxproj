@@ -23,6 +23,8 @@
 		EF1E06671D0C58F10083570E /* LHBConst.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1E06661D0C58F10083570E /* LHBConst.m */; };
 		EF1E06681D0C5D8A0083570E /* LHBWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC598201D0C04D300BA2153 /* LHBWordViewController.m */; };
 		EF27B4581D0DC19D004A2E33 /* NSDate+LHBDateExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EF27B4571D0DC19D004A2E33 /* NSDate+LHBDateExtension.m */; };
+		EF3477C01D2F7C7A0023CD3D /* LHBVideoPlayBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3477BF1D2F7C7A0023CD3D /* LHBVideoPlayBtn.m */; };
+		EF3477C51D2F86880023CD3D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3477C41D2F86880023CD3D /* MediaPlayer.framework */; };
 		EF3602D21CFDCC0000ABD8AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602D11CFDCC0000ABD8AD /* main.m */; };
 		EF3602EB1CFDCC0000ABD8AD /* RideGirlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602EA1CFDCC0000ABD8AD /* RideGirlTests.m */; };
 		EF3602F61CFDCC0000ABD8AD /* RideGirlUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3602F51CFDCC0000ABD8AD /* RideGirlUITests.m */; };
@@ -124,6 +126,9 @@
 		EF1E06661D0C58F10083570E /* LHBConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LHBConst.m; path = ../MainRideGirl/New/LHBConst.m; sourceTree = "<group>"; };
 		EF27B4561D0DC19D004A2E33 /* NSDate+LHBDateExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+LHBDateExtension.h"; sourceTree = "<group>"; };
 		EF27B4571D0DC19D004A2E33 /* NSDate+LHBDateExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+LHBDateExtension.m"; sourceTree = "<group>"; };
+		EF3477BE1D2F7C7A0023CD3D /* LHBVideoPlayBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBVideoPlayBtn.h; sourceTree = "<group>"; };
+		EF3477BF1D2F7C7A0023CD3D /* LHBVideoPlayBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBVideoPlayBtn.m; sourceTree = "<group>"; };
+		EF3477C41D2F86880023CD3D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		EF3602CD1CFDCC0000ABD8AD /* RideGirl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideGirl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3602D11CFDCC0000ABD8AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EF3602E11CFDCC0000ABD8AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -233,6 +238,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF3477C51D2F86880023CD3D /* MediaPlayer.framework in Frameworks */,
 				9F97ED90D251420C1EB932F5 /* Pods_RideGirl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,6 +272,7 @@
 		8BD8DBB746901FD207C0E279 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EF3477C41D2F86880023CD3D /* MediaPlayer.framework */,
 				36F7713304DB02680F4305B9 /* Pods_RideGirl.framework */,
 			);
 			name = Frameworks;
@@ -429,6 +436,8 @@
 				EF38A5731D280605002BE631 /* LHBCommentCell.h */,
 				EF38A5741D280605002BE631 /* LHBCommentCell.m */,
 				EF38A5751D280605002BE631 /* LHBCommentCell.xib */,
+				EF3477BE1D2F7C7A0023CD3D /* LHBVideoPlayBtn.h */,
+				EF3477BF1D2F7C7A0023CD3D /* LHBVideoPlayBtn.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -837,6 +846,7 @@
 				EFA7CBAA1CFED8D00097FA52 /* LHBEssenceViewController.m in Sources */,
 				EF6E85631D27E33600867CC5 /* LHBCommentHeaderView.m in Sources */,
 				EFA351911D1ADE7A00AAE9B7 /* LHBShowPictureViewController.m in Sources */,
+				EF3477C01D2F7C7A0023CD3D /* LHBVideoPlayBtn.m in Sources */,
 				EF27B4581D0DC19D004A2E33 /* NSDate+LHBDateExtension.m in Sources */,
 				EF09C7181CFF2CD500F95B28 /* LHBRecommendModel.m in Sources */,
 				EFA7CBAD1CFED8D00097FA52 /* LHBNewViewController.m in Sources */,
