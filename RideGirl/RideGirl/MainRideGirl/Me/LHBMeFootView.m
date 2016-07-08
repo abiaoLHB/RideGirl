@@ -1,4 +1,4 @@
- //
+//
 //  LHBMeFootView.m
 //  RideGirl
 //
@@ -19,6 +19,7 @@
 
 @property (nonatomic,strong) AFHTTPSessionManager *manager;
 
+
 @end
 
 @implementation LHBMeFootView
@@ -26,9 +27,9 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-     
+        
         [self getData];
-
+        
     }
     return self;
 }
@@ -47,62 +48,64 @@
     params[@"a"] = @"square";
     params[@"c"] = @"topic";
     
-    
     [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-  
+        
         NSArray *quauresArr = [LHBMeModel mj_objectArrayWithKeyValuesArray:responseObject[@"square_list"]];
         
         [self creatSquares:quauresArr];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-       
-   
+        
+        
     }];
-
+    
 }
 
 - (void)creatSquares:(NSArray *)squaresArr
 {
-        // 一行最多4列
-        int maxCols = 4;
-        
-        // 宽度和高度
-        CGFloat buttonW = LHBScreenW / maxCols;
-        CGFloat buttonH = buttonW;
-        
-        for (int i = 0; i<squaresArr.count; i++) {
-            // 创建按钮
-            LHBMeCustomButton *button = [LHBMeCustomButton buttonWithType:UIButtonTypeCustom];
-            // 监听点击
-            [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-            // 传递模型
-            button.model = squaresArr[i];
-            
-            [self addSubview:button];
-            
-            // 计算frame
-            int col = i % maxCols;
-            int row = i / maxCols;
-            
-            button.x = col * buttonW;
-            button.y = row * buttonH;
-            button.width = buttonW;
-            button.height = buttonH;
-
-        }
+    // 一行最多4列
+    int maxCols = 4;
     
-        //万能公式
+    // 宽度和高度
+    CGFloat buttonW = LHBScreenW / maxCols;
+    CGFloat buttonH = buttonW;
+    
+    for (int i = 0; i<squaresArr.count; i++) {
+        // 创建按钮
+        LHBMeCustomButton *button = [LHBMeCustomButton buttonWithType:UIButtonTypeCustom];
+        // 监听点击
+        [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+        // 传递模型
+        button.model = squaresArr[i];
+        
+        // 计算frame
+        int col = i % maxCols;
+        int row = i / maxCols;
+        
+        button.x = col * buttonW;
+        button.y = row * buttonH;
+        button.width = buttonW;
+        button.height = buttonH;
+        
+        [self addSubview:button];
+    }
+    
+    //万能公式
     //总页数 ＝＝ （总个数 ＋ 每页的最大数 － 1）／ 每页最大数
-        NSUInteger rows = (squaresArr.count + maxCols - 1) / maxCols;
-        
-        // 计算footer的高度
-        self.height = rows * buttonH;
+    NSUInteger rows = (squaresArr.count + maxCols - 1) / maxCols;
     
-        // 重绘。就是说网络请求可能慢，而这时候设置设置高度已经晚了，所以重会一下
-        [self setNeedsDisplay];
+    // 计算footer的高度
+    self.height = rows * buttonH;
+    //    self.frame = CGRectMake(0, 0, 0, rows * buttonH);
+    
+    // 重绘。就是说网络请求可能慢，而这时候设置设置高度已经晚了，所以重会一下
+    [self setNeedsDisplay];
+    
+    
+    NSLog(@"真实footView的高度:self.height:%f,rows * buttonH:%f",self.height,rows * buttonH);
+    //  真实footView的高度:self.height:843.750000,rows * buttonH:843.750000
 }
-
 
 
 - (void)buttonClick:(LHBMeCustomButton *)btn
@@ -111,25 +114,20 @@
     UITabBarController *tabBarVC = (UITabBarController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
     UINavigationController *nav = (UINavigationController *)tabBarVC.selectedViewController;
     
-     LHBMeWebViewViewController *webViewVC = [[LHBMeWebViewViewController alloc] init];
+    LHBMeWebViewViewController *webViewVC = [[LHBMeWebViewViewController alloc] init];
     
     //要知道点击了哪个按钮对应的哪个模型，第一种做法，tag。第二种做法，给每个按钮绑定一个模型
     if (![btn.model.url hasPrefix:@"http"]) {
-//        [SVProgressHUD setMinimumDismissTimeInterval:0.3];
-//        [SVProgressHUD setBackgroundLayerColor:[[UIColor blackColor] colorWithAlphaComponent:0.5]];
-//        [SVProgressHUD showErrorWithStatus:@"暂无信息"];
-//
-        
-       webViewVC.url = @"http://www.budejie.com/tag/117/";
+        webViewVC.url = @"http://www.budejie.com/tag/117/";
         webViewVC.navigationItem.title = @"RideGirl";
         
     }else{
-       
+        
         webViewVC.url = btn.model.url;
         webViewVC.navigationItem.title = btn.model.name;
     }
     [nav pushViewController:webViewVC animated:YES];
-
+    
 }
 
 /**

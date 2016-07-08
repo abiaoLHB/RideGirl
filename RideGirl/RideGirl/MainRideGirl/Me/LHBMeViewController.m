@@ -52,8 +52,12 @@ static NSString *LHBMeCellID = @"me";
     self.tableView.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
     [self.tableView registerClass:[LHBMeCell class] forCellReuseIdentifier:LHBMeCellID];
 
-    self.tableView.tableFooterView = [[LHBMeFootView alloc] init];
+    LHBMeFootView *footView = [[LHBMeFootView alloc] init];
     
+    //数据还没请求完，就设置好footView了，导致footView的frame不对。这里暂时延时两秒,在设置footView，frame就对了
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.tableView.tableFooterView = footView;
+    });
 }
 
 - (void)settingRightBtnDown
