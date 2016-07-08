@@ -523,9 +523,9 @@
 		EFA7CBA01CFED8D00097FA52 /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				EFE94E5D1D2D4253003283F8 /* Controller */,
 				EFE94E5F1D2D4264003283F8 /* Model */,
 				EFE94E5E1D2D425C003283F8 /* View */,
-				EFE94E5D1D2D4253003283F8 /* Controller */,
 			);
 			path = Me;
 			sourceTree = "<group>";
