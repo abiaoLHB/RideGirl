@@ -7,6 +7,8 @@
 //
 
 #import "LHBPublishViewController.h"
+#import "LHBPostWordViewController.h"
+#import "LHBUINavigationController.h"
 #import "LHBAutoLoginBtn.h"
 #import <pop/POP.h>
 
@@ -124,6 +126,15 @@ static CGFloat const LHBAnimationDelay = 0.05;
           LHBLog(@"发视频");
       }else if (btn.tag == 1){
           LHBLog(@"发图片");
+      }else if (btn.tag == 2){
+          LHBPostWordViewController *postWordVC = [[LHBPostWordViewController alloc] init];
+          //这里不能用self去 present。因为 self 已经dismiss了
+          //[self presentViewController:postWordVC animated:YES completion:nil];
+          
+          UIViewController *tempVC = [[UIApplication sharedApplication] keyWindow].rootViewController;
+          //包装一个导航控制器
+          LHBUINavigationController *nav = [[LHBUINavigationController alloc] initWithRootViewController:postWordVC];
+          [tempVC presentViewController:nav animated:YES completion:nil];
       }
   }];
 }
