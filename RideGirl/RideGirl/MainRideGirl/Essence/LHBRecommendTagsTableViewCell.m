@@ -21,6 +21,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -68,5 +69,16 @@
 
 //如果不想让外部的数据改更一个控件的frame，就重写- (void)setFrame:(CGRect)frame方法
 //如果不想让外部的数据改更一个控件的bounds，就重写- (void)setBounds:(CGRect)bounds方法
+
+
+
+
+- (void)layoutSubviews
+{
+    self.imageView.x = 10;
+    self.imageView.centerY = self.contentView.height * 0.5;
+    self.imageView.width = 50;
+    self.imageView.height = 50;
+}
 
 @end
