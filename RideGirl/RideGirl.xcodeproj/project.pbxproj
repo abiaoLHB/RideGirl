@@ -74,6 +74,7 @@
 		EFDA037F1D217516005C6CD0 /* LHBWordVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDA037E1D217516005C6CD0 /* LHBWordVoiceView.m */; };
 		EFDB07DA1D0D9C220035303F /* LHBWordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDB07D81D0D9C220035303F /* LHBWordTableViewCell.m */; };
 		EFDB07DB1D0D9C220035303F /* LHBWordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFDB07D91D0D9C220035303F /* LHBWordTableViewCell.xib */; };
+		EFDE96871D30B66900AC6F84 /* LHBPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDE96861D30B66900AC6F84 /* LHBPlaceholderTextView.m */; };
 		EFE214C71D0EFD1700DCABAA /* LHBWordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDB07D81D0D9C220035303F /* LHBWordTableViewCell.m */; };
 		EFE5D90A1D1C1ADA0029E0FF /* LHBProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE5D9091D1C1ADA0029E0FF /* LHBProgressView.m */; };
 		EFE94E621D2D4284003283F8 /* LHBMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE94E611D2D4284003283F8 /* LHBMeCell.m */; };
@@ -224,6 +225,8 @@
 		EFDB07D71D0D9C220035303F /* LHBWordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBWordTableViewCell.h; sourceTree = "<group>"; };
 		EFDB07D81D0D9C220035303F /* LHBWordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBWordTableViewCell.m; sourceTree = "<group>"; };
 		EFDB07D91D0D9C220035303F /* LHBWordTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBWordTableViewCell.xib; sourceTree = "<group>"; };
+		EFDE96851D30B66900AC6F84 /* LHBPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBPlaceholderTextView.h; sourceTree = "<group>"; };
+		EFDE96861D30B66900AC6F84 /* LHBPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBPlaceholderTextView.m; sourceTree = "<group>"; };
 		EFE5D9081D1C1ADA0029E0FF /* LHBProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBProgressView.h; sourceTree = "<group>"; };
 		EFE5D9091D1C1ADA0029E0FF /* LHBProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBProgressView.m; sourceTree = "<group>"; };
 		EFE94E601D2D4284003283F8 /* LHBMeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBMeCell.h; sourceTree = "<group>"; };
@@ -436,6 +439,8 @@
 				EF40E6CB1D2FE5B10028F1DF /* LHBPushGuideView.h */,
 				EF40E6CC1D2FE5B10028F1DF /* LHBPushGuideView.m */,
 				EF40E6CD1D2FE5B10028F1DF /* LHBPushGuideView.xib */,
+				EFDE96851D30B66900AC6F84 /* LHBPlaceholderTextView.h */,
+				EFDE96861D30B66900AC6F84 /* LHBPlaceholderTextView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -854,6 +859,7 @@
 				EF58DA301D255DB700E883D8 /* LHBUser.m in Sources */,
 				EF40E6C21D2FE5970028F1DF /* LHBConst.m in Sources */,
 				EF1691631D0997EE00913827 /* LHBLoginRegisterViewController.m in Sources */,
+				EFDE96871D30B66900AC6F84 /* LHBPlaceholderTextView.m in Sources */,
 				EFC598151D0C046900BA2153 /* LHBAllViewController.m in Sources */,
 				EFA7CBAC1CFED8D00097FA52 /* LHBMeViewController.m in Sources */,
 				EFA135C01D07203900FB6964 /* LHBRecommendTagsTableViewController.m in Sources */,
