@@ -98,14 +98,14 @@
 
 - (void)setFrame:(CGRect)frame
 {
-    static CGFloat margin = 10;
+    static CGFloat margin = LHBMARGIN;
     frame.origin.x = margin;
     frame.origin.y += margin;
     frame.size.width -= margin * 2;
     //这个高度这样减的话，如果有tableHeaderView的话，会导致tableHeaderView的frame递减
     //frame.size.height -= margin;
     //用这个方法，就是用算出来cell的高度剪去一个间距，也是cell的真实高度，不会导致tableHeaderView的frame递减
-    frame.size.height = self.wordModel.cellH - 10;
+    frame.size.height = self.wordModel.cellH - LHBMARGIN;
     [super setFrame:frame];
 }
 

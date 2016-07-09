@@ -116,7 +116,7 @@ static NSString *const LHBCommentCellID = @"commentID";
     cell.size = CGSizeMake(LHBScreenW, self.wordModel.cellH);
     [headerView addSubview:cell];
     //headerView的高度
-    headerView.height = self.wordModel.cellH + 10;
+    headerView.height = self.wordModel.cellH + LHBMARGIN;
     
     //先设置frame和先设置HeaderView是有区别的！！先设置好headerView的高，在设置为tableHeaderView就没事.
     //直接拿一个cell当tableHeaderView会有各种各样的问题，因为cell高度为了满足cell的展示，高度都是算好的，而在拿cell当tableHeaderView ，高度就会改来改度的，一般做法是先包装一下，把cell放到一个view上，设置下frame就可以了

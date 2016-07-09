@@ -48,7 +48,7 @@ static NSString *LHBMeCellID = @"me";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     //调整tableView
     self.tableView.sectionHeaderHeight = 0;
-    self.tableView.sectionFooterHeight = 10;
+    self.tableView.sectionFooterHeight = LHBMARGIN;
     self.tableView.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
     [self.tableView registerClass:[LHBMeCell class] forCellReuseIdentifier:LHBMeCellID];
 

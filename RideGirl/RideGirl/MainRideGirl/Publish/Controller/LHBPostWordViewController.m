@@ -8,8 +8,13 @@
 
 #import "LHBPostWordViewController.h"
 #import "LHBPlaceholderTextView.h"
+#import "LHBAddTagsToolBar.h"
 
-@interface LHBPostWordViewController ()
+@interface LHBPostWordViewController ()<UITextViewDelegate>
+
+@property (nonatomic,weak) LHBPlaceholderTextView *textView;
+
+@property (nonatomic,weak) LHBAddTagsToolBar *toolBar;
 
 @end
 
@@ -21,7 +26,17 @@
     [self setupNav];
     
     [self setupTextView];
+    
+    [self setupToolBarView];
 }
+/**
+ *  完全显示出来在弹键盘
+ */
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self.textView becomeFirstResponder];
+}
+
 
 
 - (void)setupNav
@@ -84,22 +99,75 @@
     LHBPlaceholderTextView *textView = [[LHBPlaceholderTextView alloc] init];
     //虽然是self.view.bounds,但是textView继承自scrollView，默认从64开始
     textView.frame = self.view.bounds;
+    //自定义的textView没用代理而是用的通知，因为用代理会和外部的代理重复。这里监听发表按钮是否可点击，可以用通知也可以用代理，这里用代理实现
+    textView.delegate = self;
     textView.placeholder = @"把好玩的图片，好笑的段子或糗事发到这里，接受千万网友膜拜吧！发布违反国家法律内容的，我们将依法提交给有关部门处理。";
-    
     [self.view addSubview:textView];
+    self.textView = textView;
 }
 
 
-
+- (void)setupToolBarView
+{
+    LHBAddTagsToolBar *tooBar = [LHBAddTagsToolBar viewFromXib];
+    tooBar.width = LHBScreenW;
+    tooBar.y = self.view.height - tooBar.height;
+    [self.view addSubview:tooBar];
+    self.toolBar = tooBar;
+    
+    //监听键盘变化
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+}
+/**
+ *  监听键盘弹出和隐藏
+ */
+- (void)keyBoardWillChangeFrame:(NSNotification *)noti
+{
+    CGRect keyboardFrame = [noti.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    CGFloat duration = [noti.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    
+    [UIView animateWithDuration:duration animations:^{
+          self.toolBar.transform = CGAffineTransformMakeTranslation(0,keyboardFrame.origin.y - LHBScreenH );
+    }];
+  
+}
 
 - (void)canle
 {
+    [self.view endEditing:YES];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)publish
 {
   
 }
+
+
+#pragma mark - <UITextViewDelegate>
+
+- (void)textViewDidChange:(UITextView *)textView
+{
+    self.navigationItem.rightBarButtonItem.enabled = [textView hasText];
+    //注意：如果是通过代码改textView的文字，是不会触发代理方法的。需要手动改使能属性
+    //self.navigationItem.rightBarButtonItem.enabled = yes;
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [self.view endEditing:YES];
+}
+
+
+
+
+
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
+}
+
 /*
  UITextField *textField默认的情况
  1.只能显示一行文字

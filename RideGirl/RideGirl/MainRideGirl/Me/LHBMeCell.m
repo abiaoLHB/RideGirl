@@ -38,7 +38,7 @@
     self.imageView.height = 30;
     self.imageView.centerY = self.contentView.height * 0.5;
     
-    self.textLabel.x = CGRectGetMaxX(self.imageView.frame) + 10;
+    self.textLabel.x = CGRectGetMaxX(self.imageView.frame) + LHBMARGIN;
 }
 //- (void)setFrame:(CGRect)frame
 //{
