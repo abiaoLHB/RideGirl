@@ -864,11 +864,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
+
 				EFB7C12B1D27F8F200605CA9 /* LHBCommentViewController.m in Sources */,
-=======
+
 				EF40E6D01D2FE5B10028F1DF /* LHBPushGuideView.m in Sources */,
->>>>>>> develop
+
 				EF58DA331D255FEB00E883D8 /* LHBComment.m in Sources */,
 				EFA7CBB31CFEE2370097FA52 /* LHBUINavigationController.m in Sources */,
 				EFA7CBA81CFED8D00097FA52 /* LHBTabBar.m in Sources */,
