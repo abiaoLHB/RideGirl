@@ -31,7 +31,14 @@
 
 #define LHBScreenW [[UIScreen mainScreen] bounds].size.width
 #define LHBScreenH [[UIScreen mainScreen] bounds].size.height
-
+/**
+ *  通用间距
+ */
+#define LHBMARGIN 10
+/**
+ *  导航条高度
+ */
+#define LHBNAVHEIGHT 64
 
 
 

@@ -75,7 +75,7 @@
 
 - (void)layoutSubviews
 {
-    self.imageView.x = 10;
+    self.imageView.x = LHBMARGIN;
     self.imageView.centerY = self.contentView.height * 0.5;
     self.imageView.width = 50;
     self.imageView.height = 50;

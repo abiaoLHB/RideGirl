@@ -83,8 +83,8 @@
 
 - (void)setFrame:(CGRect)frame
 {
-    frame.origin.x = 10;
-    frame.size.width -= 20;
+    frame.origin.x = LHBMARGIN;
+    frame.size.width -= 2 * LHBMARGIN;
     
     [super setFrame:frame];
 }

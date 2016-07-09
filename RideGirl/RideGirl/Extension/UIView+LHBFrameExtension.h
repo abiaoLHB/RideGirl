@@ -36,6 +36,9 @@
 - (BOOL)isShowingOnKeyWindow;
 
 
-
+/**
+ *  从xib中加载一个控件，xib和类名名字一致
+ */
++ (instancetype)viewFromXib;
 
 @end

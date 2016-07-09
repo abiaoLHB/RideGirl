@@ -37,7 +37,7 @@
         //创建label
         UILabel *label = [[UILabel alloc] init];
         label.textColor = LHBRGBColor(67, 67, 67);
-        label.x = 10;
+        label.x = LHBMARGIN;
         label.font = [UIFont systemFontOfSize:14.0];
         label.width = 200;
         //不能这样设置

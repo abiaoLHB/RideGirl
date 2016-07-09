@@ -87,7 +87,7 @@
         CGSize maxSize = CGSizeMake([UIScreen mainScreen].bounds.size.width-40, MAXFLOAT);
         CGFloat textH = [self.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:14]} context:nil].size.height;
         //段子cell的高度，最基本的
-        _cellH= textY + textH +64 ;
+        _cellH= textY + textH + LHBNAVHEIGHT;
        
         //图片
         if (self.type == LHBWordTypePicture) {
@@ -99,23 +99,23 @@
                 self.bigPicture = YES;
             }
             //计算图片的frame
-            _imageFrame = CGRectMake(10, textY+textH+10, imageW, imageH);
+            _imageFrame = CGRectMake(LHBMARGIN, textY+textH+LHBMARGIN, imageW, imageH);
             
-            _cellH += imageH + 10;
+            _cellH += imageH + LHBMARGIN;
         }else if (self.type == LHBWordTypeVoice){// 声音
-            CGFloat voiceX = 10;
-            CGFloat voiceY = textY+textH+10;
+            CGFloat voiceX = LHBMARGIN;
+            CGFloat voiceY = textY+textH+LHBMARGIN;
             CGFloat voiceW = maxSize.width;
             CGFloat voiceH = voiceW * self.height / self.width;
             _voiceFrame = CGRectMake(voiceX, voiceY, voiceW, voiceH);
-            _cellH += voiceH + 10;
+            _cellH += voiceH + LHBMARGIN;
         }else if (self.type == LHBWordTypeVideo){//视频
-            CGFloat videoX = 10;
-            CGFloat videoY = textY+textH+10;
+            CGFloat videoX = LHBMARGIN;
+            CGFloat videoY = textY+textH+LHBMARGIN;
             CGFloat videoW = maxSize.width;
             CGFloat videoH = videoW * self.height / self.width;
             _videoFrame = CGRectMake(videoX, videoY, videoW, videoH);
-            _cellH += videoH + 10;
+            _cellH += videoH + LHBMARGIN;
         }
         
         LHBComment *cmt = [self.top_cmt firstObject];
@@ -125,7 +125,7 @@
             NSString *content = [NSString stringWithFormat:@"%@ : %@",cmt.user.username,cmt.content];
             CGFloat contentH = [content boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12]} context:nil].size.height;
             
-            _cellH += contentH + 20;//上下间距
+            _cellH += contentH + 2 * LHBMARGIN;//上下间距
         }
         
     }
