@@ -15,7 +15,10 @@
 {
     if (self = [super initWithFrame:frame]) {
         //给font赋值，否则不给它赋个值的话，font凭空为空，drewRect的时候，字典里面为空崩溃
+        //默认字体
         self.font = [UIFont systemFontOfSize:15];
+        //默认字体颜色
+        self.placeholderColor = [UIColor grayColor];
         
         //监听文字改变
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange) name:UITextViewTextDidChangeNotification object:nil];
@@ -54,7 +57,7 @@
     
     NSMutableDictionary *attris = [NSMutableDictionary dictionary];
     attris[NSFontAttributeName] = self.font;
-    attris[NSForegroundColorAttributeName] = [UIColor lightGrayColor];
+    attris[NSForegroundColorAttributeName] = self.placeholderColor;
     //注意⚠️：rect不对可能画不到正确的位置，导致看不见！
 //    [self.placeholder drawInRect:CGRectMake(0, 0, self.width, self.height) withAttributes:attris];
     
@@ -65,6 +68,44 @@
  第一种方案：可以在控制器里，遵守UITextView的代理协议，实现textDidChang方法，来监听textView中占位文字的显示与否。但是这个方案不太好，因为textView占位文字的显示与否，而且所有用到这个控制器的低昂，都得要处理控制器的占位文字，所以最好交给textView自己内部来实现。
  第一种方案：通知。只要textView的文字发生改变，就会发出通知。UITextField一样也会翻出通知
  */
+
+
+/**
+ *  重写一堆的set方法，防止外界改了属性而没有反应
+ */
+- (void)setPlaceholderColor:(UIColor *)placeholderColor
+{
+    _placeholderColor = placeholderColor;
+    [self setNeedsDisplay];
+}
+
+- (void)setPlaceholder:(NSString *)placeholder
+{
+    _placeholder = placeholder;
+    [self setNeedsDisplay];
+}
+/**
+ *  placeholder字体是实用的textView的字体，如果外界textView的字体变了，placeholder字体也得重画
+ *  这个是父类的属性，要调用super
+ */
+- (void)setFont:(UIFont *)font
+{
+    [super setFont:font];
+    [self setNeedsDisplay];
+}
+/**
+ *  通过代码改textView的文字，是不会发通知的
+ */
+- (void)setText:(NSString *)text
+{
+    [super setText:text];
+    [self setNeedsDisplay];
+}
+- (void)setAttributedText:(NSAttributedString *)attributedText
+{
+    [super setAttributedText:attributedText];
+    [self setNeedsDisplay];
+}
 
 
 -(void)dealloc
