@@ -7,6 +7,7 @@
 //
 
 #import "LHBAddTagsViewController.h"
+#import "LHBTagsBtn.h"
 
 @interface LHBAddTagsViewController ()<UITextFieldDelegate>
 /**
@@ -30,6 +31,7 @@
 
 @implementation LHBAddTagsViewController
 
+#pragma mark - 懒加载
 - (NSMutableArray *)tagsBtnArr
 {
     if (!_tagsBtnArr) {
@@ -57,7 +59,7 @@
     return _addBtn;
 }
 
-
+#pragma mark -  初始化
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupNav];
@@ -72,6 +74,25 @@
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]} forState:UIControlStateNormal];
 }
 /**
+ *  编辑标签的TextField
+ */
+- (void)setupTagsTextField
+{
+    UITextField *textField = [[UITextField alloc] init];
+    textField.width = self.bigTagsView.width;
+    textField.font = [UIFont systemFontOfSize:14];
+    textField.height = 25;
+    textField.delegate = self;
+    textField.placeholder = @"多个标签请用逗号或者回车隔开";
+    //设置在placeholder才起作用
+    [textField setValue:[UIColor grayColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [textField becomeFirstResponder];
+    [textField addTarget:self action:@selector(textDidChange) forControlEvents:UIControlEventEditingChanged];
+    [self.bigTagsView addSubview:textField];
+    self.textField = textField;
+}
+
+/**
  *  当作标签的容器view
  */
 - (void)setupBigTagsView
@@ -84,35 +105,40 @@
     [self.view addSubview:bigTagsVeiw];
     self.bigTagsView = bigTagsVeiw;
 }
-
 /**
- *  编辑标签的TextField
+ *  完成按钮
  */
-- (void)setupTagsTextField
+- (void)done
 {
-    UITextField *textField = [[UITextField alloc] init];
-    textField.width = self.bigTagsView.width;
-    textField.height = 25;
-    textField.delegate = self;
-    textField.placeholder = @"多个标签请用逗号或者回车隔开";
-    [textField becomeFirstResponder];
-    [textField addTarget:self action:@selector(textDidChange) forControlEvents:UIControlEventEditingChanged];
-    [self.bigTagsView addSubview:textField];
-    self.textField = textField;
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 //监听textField文字改变
 - (void)textDidChange
 {
     if (self.textField.hasText) {
+        //有文字才更新
+        //只影响textField的位置变化
+        [self updateTextFieldFrame];
+        
         self.addBtn.hidden = NO;
         self.addBtn.y = CGRectGetMaxY(self.textField.frame) + LHBMARGIN;
         [self.addBtn setTitle:self.textField.text forState:UIControlStateNormal];
         
+        //获得最后一个字符
+        NSString *text = self.textField.text;
+        NSUInteger length = text.length;
+        NSString *lastLetter = [text substringFromIndex:length - 1];
+        if ([lastLetter isEqualToString:@","] || [lastLetter isEqualToString:@"，"]) {
+            //取出逗号
+            self.textField.text = [text substringToIndex:length-1];
+            [self addBtnClick];
+        }
+        
     }else{
         self.addBtn.hidden = YES;
     }
-    //更新标签和文本框的frame
-    [self updateTagBtnFrame];
+    
 }
 /**
  *  添加标签按钮事件
@@ -120,12 +146,20 @@
 - (void)addBtnClick
 {
     //添加一个标签按钮
-    UIButton *tagButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    LHBTagsBtn *tagButton = [LHBTagsBtn buttonWithType:UIButtonTypeCustom];
     [tagButton setTitle:self.textField.text forState:UIControlStateNormal];
-    [tagButton setImage:[UIImage imageNamed:@"chose_tag_close_icon"] forState:UIControlStateNormal];
-    [tagButton setBackgroundColor:LHBTagsBtnColor];
+
+//    放自定义按钮里去了
+//    tagButton.layer.cornerRadius = 5;
+//    tagButton.clipsToBounds = YES;
+//    [tagButton setImage:[UIImage imageNamed:@"chose_tag_close_icon"] forState:UIControlStateNormal];
+//    [tagButton setBackgroundColor:LHBTagsBtnColor];
+
+    tagButton.height =self.textField.height;
     [tagButton addTarget:self action:@selector(tagBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [tagButton sizeToFit];
+    //sizeToFit 要放在设置后面，防止设置完字体又被算回去。。放自定义按钮里去了
+//    [tagButton sizeToFit];
+//    tagButton.titleLabel.font = self.textField.font;
     [self.bigTagsView addSubview:tagButton];
     [self.tagsBtnArr addObject:tagButton];
     
@@ -135,6 +169,8 @@
     self.addBtn.hidden = YES;
     //排序位置
     [self updateTagBtnFrame];
+    [self updateTextFieldFrame];
+
 }
 
 /**
@@ -144,7 +180,7 @@
 {
     //更新标签按钮的frame
     for (NSInteger i=0; i<self.tagsBtnArr.count; i++) {
-        UIButton *tagBtn = self.tagsBtnArr[i];
+        LHBTagsBtn *tagBtn = self.tagsBtnArr[i];
         
         if (i==0) {//最前面的按钮,第一个按钮
             tagBtn.x = 0;
@@ -164,8 +200,11 @@
             }
         }
     }
-    
-    UIButton *lastTagBtn = [self.tagsBtnArr lastObject];
+}
+
+- (void)updateTextFieldFrame
+{
+    LHBTagsBtn *lastTagBtn = [self.tagsBtnArr lastObject];
     //更新textField的frame
     if (self.bigTagsView.width - CGRectGetMaxX(lastTagBtn.frame) - LHBTAGBTNMARGIN >= [self textFieldTextWidth]) {
         self.textField.x = CGRectGetMaxX(lastTagBtn.frame) + LHBTAGBTNMARGIN;
@@ -174,7 +213,11 @@
         self.textField.x = 0;
         self.textField.y = CGRectGetMaxY([[self.tagsBtnArr lastObject]frame]) + LHBTAGBTNMARGIN;
     }
+
 }
+
+
+
 /**
  *   标签按钮本身的点击
  */
@@ -186,6 +229,7 @@
     //重新更新所有标签的frame
     [UIView animateWithDuration:0.3 animations:^{
         [self updateTagBtnFrame];
+        [self updateTextFieldFrame];
     }];
 }
 /**
@@ -199,10 +243,6 @@
 
 
 
-- (void)done
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 #pragma mark - UITextFieldDelegate
 /**
@@ -215,7 +255,19 @@
 //    return YES;
 //}
 
-
+/**
+ *  监听retureKey点击，用来添加标签按钮
+ 也可以通过自定义textField控件，重写- (void)insertText:(NSString *)text;
+方法来监听输入的回车键：\n
+ */
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if ([self.textField hasText]) {    
+        [self addBtnClick];
+    }
+    
+    return YES;
+}
 
 
 
