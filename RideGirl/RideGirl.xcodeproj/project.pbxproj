@@ -76,6 +76,7 @@
 		EFC598181D0C047E00BA2153 /* LHBVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC598171D0C047E00BA2153 /* LHBVideoViewController.m */; };
 		EFC5981B1D0C04A900BA2153 /* LHBVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC5981A1D0C04A900BA2153 /* LHBVoiceViewController.m */; };
 		EFC5981E1D0C04BB00BA2153 /* LHBPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC5981D1D0C04BB00BA2153 /* LHBPictureViewController.m */; };
+		EFCD950C1D32827A009337E8 /* LHBTagsBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCD950B1D32827A009337E8 /* LHBTagsBtn.m */; };
 		EFCEB6501D22BC1B00E58D28 /* LHBWordVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCEB64F1D22BC1B00E58D28 /* LHBWordVideoView.m */; };
 		EFCEB6521D22BC4700E58D28 /* LHBWordVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFCEB6511D22BC4700E58D28 /* LHBWordVideoView.xib */; };
 		EFDA037C1D2174F4005C6CD0 /* LHBWordVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFDA037B1D2174F4005C6CD0 /* LHBWordVoiceView.xib */; };
@@ -231,6 +232,8 @@
 		EFC5981D1D0C04BB00BA2153 /* LHBPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBPictureViewController.m; sourceTree = "<group>"; };
 		EFC5981F1D0C04D300BA2153 /* LHBWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBWordViewController.h; sourceTree = "<group>"; };
 		EFC598201D0C04D300BA2153 /* LHBWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBWordViewController.m; sourceTree = "<group>"; };
+		EFCD950A1D32827A009337E8 /* LHBTagsBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBTagsBtn.h; sourceTree = "<group>"; };
+		EFCD950B1D32827A009337E8 /* LHBTagsBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBTagsBtn.m; sourceTree = "<group>"; };
 		EFCEB64E1D22BC1B00E58D28 /* LHBWordVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBWordVideoView.h; sourceTree = "<group>"; };
 		EFCEB64F1D22BC1B00E58D28 /* LHBWordVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBWordVideoView.m; sourceTree = "<group>"; };
 		EFCEB6511D22BC4700E58D28 /* LHBWordVideoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBWordVideoView.xib; sourceTree = "<group>"; };
@@ -461,6 +464,8 @@
 				EF147D941D31111D00D9FC62 /* LHBAddTagsToolBar.h */,
 				EF147D951D31111D00D9FC62 /* LHBAddTagsToolBar.m */,
 				EF147D971D31113200D9FC62 /* LHBAddTagsToolBar.xib */,
+				EFCD950A1D32827A009337E8 /* LHBTagsBtn.h */,
+				EFCD950B1D32827A009337E8 /* LHBTagsBtn.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -871,6 +876,7 @@
 
 				EF58DA331D255FEB00E883D8 /* LHBComment.m in Sources */,
 				EFA7CBB31CFEE2370097FA52 /* LHBUINavigationController.m in Sources */,
+				EFCD950C1D32827A009337E8 /* LHBTagsBtn.m in Sources */,
 				EFA7CBA81CFED8D00097FA52 /* LHBTabBar.m in Sources */,
 				EFE5D90A1D1C1ADA0029E0FF /* LHBProgressView.m in Sources */,
 				EFA135C61D0725A500FB6964 /* LHBRecommendTagsModel.m in Sources */,
