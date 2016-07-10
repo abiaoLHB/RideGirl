@@ -21,10 +21,23 @@
  *  编辑好标签后，添加按钮
  */
 @property (nonatomic,strong) UIButton *addBtn;
+/**
+ *  所有的标签按钮
+ */
+@property (nonatomic,strong) NSMutableArray *tagsBtnArr;
 
 @end
 
 @implementation LHBAddTagsViewController
+
+- (NSMutableArray *)tagsBtnArr
+{
+    if (!_tagsBtnArr) {
+        _tagsBtnArr = [NSMutableArray array];
+    }
+    return _tagsBtnArr;
+}
+
 
 - (UIButton *)addBtn
 {
@@ -35,7 +48,7 @@
         btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         btn.contentEdgeInsets = UIEdgeInsetsMake(0, LHBMARGIN, 0, LHBMARGIN);
         btn.width = self.bigTagsView.width;
-        btn.backgroundColor = LHBRGBColor(74, 139, 209);
+        btn.backgroundColor = LHBTagsBtnColor;
         btn.titleLabel.font = [UIFont systemFontOfSize:14];
         btn.height = 35;
         [self.bigTagsView addSubview:btn];
@@ -97,16 +110,93 @@
         
     }else{
         self.addBtn.hidden = YES;
-    
     }
+    //更新标签和文本框的frame
+    [self updateTagBtnFrame];
 }
 /**
  *  添加标签按钮事件
  */
 - (void)addBtnClick
 {
+    //添加一个标签按钮
+    UIButton *tagButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [tagButton setTitle:self.textField.text forState:UIControlStateNormal];
+    [tagButton setImage:[UIImage imageNamed:@"chose_tag_close_icon"] forState:UIControlStateNormal];
+    [tagButton setBackgroundColor:LHBTagsBtnColor];
+    [tagButton addTarget:self action:@selector(tagBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [tagButton sizeToFit];
+    [self.bigTagsView addSubview:tagButton];
+    [self.tagsBtnArr addObject:tagButton];
     
+    //清空textField文字
+    self.textField.text = nil;
+    //隐藏添加按钮
+    self.addBtn.hidden = YES;
+    //排序位置
+    [self updateTagBtnFrame];
 }
+
+/**
+ *  每次添加完按钮，就更新下布局
+ */
+- (void)updateTagBtnFrame
+{
+    //更新标签按钮的frame
+    for (NSInteger i=0; i<self.tagsBtnArr.count; i++) {
+        UIButton *tagBtn = self.tagsBtnArr[i];
+        
+        if (i==0) {//最前面的按钮,第一个按钮
+            tagBtn.x = 0;
+            tagBtn.y = 0;
+        }else{//其他按钮，后面的按钮
+            UIButton *lastTagBtn = self.tagsBtnArr[i-1];
+            //计算当前行左边的宽度
+            CGFloat leftWidth = CGRectGetMaxX(lastTagBtn.frame) + LHBTAGBTNMARGIN;
+            //计算当前行右边的宽度
+            CGFloat rightWidth = self.bigTagsView.width - leftWidth;
+            if (rightWidth >= tagBtn.width) {//按钮在当前行显示
+                tagBtn.y = lastTagBtn.y;
+                tagBtn.x = leftWidth;
+            }else{//换行显示
+                tagBtn.x = 0;
+                tagBtn.y = CGRectGetMaxY(lastTagBtn.frame)+LHBTAGBTNMARGIN;
+            }
+        }
+    }
+    
+    UIButton *lastTagBtn = [self.tagsBtnArr lastObject];
+    //更新textField的frame
+    if (self.bigTagsView.width - CGRectGetMaxX(lastTagBtn.frame) - LHBTAGBTNMARGIN >= [self textFieldTextWidth]) {
+        self.textField.x = CGRectGetMaxX(lastTagBtn.frame) + LHBTAGBTNMARGIN;
+        self.textField.y = lastTagBtn.y;
+    }else{
+        self.textField.x = 0;
+        self.textField.y = CGRectGetMaxY([[self.tagsBtnArr lastObject]frame]) + LHBTAGBTNMARGIN;
+    }
+}
+/**
+ *   标签按钮本身的点击
+ */
+- (void)tagBtnClick:(UIButton *)tagBtn
+{
+    [tagBtn removeFromSuperview];
+    [self.tagsBtnArr removeObject:tagBtn];
+    
+    //重新更新所有标签的frame
+    [UIView animateWithDuration:0.3 animations:^{
+        [self updateTagBtnFrame];
+    }];
+}
+/**
+ *  textField的文字宽度
+ */
+- (CGFloat)textFieldTextWidth
+{
+    CGFloat textWidth = [self.textField.text sizeWithAttributes:@{NSFontAttributeName : self.textField.font}].width;
+    return MAX(100, textWidth);
+}
+
 
 
 - (void)done

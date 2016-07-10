@@ -24,6 +24,7 @@
 #define LHBLogFunc LHBLog(@"%s",__func__)
 #define LHBRGBColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 #define LHBGlobalColor LHBRGBColor(223, 223, 223)
+#define LHBTagsBtnColor LHBRGBColor(74, 139, 209)
 
 #import "UIView+LHBFrameExtension.h"
 #import "UIBarButtonItem+LHBUIBarButtonItemExtension.h"
@@ -35,6 +36,10 @@
  *  通用间距
  */
 #define LHBMARGIN 10
+/**
+ *  发布段子时添加标签间距
+ */
+#define LHBTAGBTNMARGIN 5
 /**
  *  导航条高度
  */
