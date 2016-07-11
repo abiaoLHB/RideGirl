@@ -68,9 +68,13 @@
 		EFB3B0741D11AAC70016EB15 /* LHBWordPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB3B0731D11AAC70016EB15 /* LHBWordPictureView.m */; };
 		EFB3B0761D11AB120016EB15 /* LHBWordPictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB3B0751D11AB120016EB15 /* LHBWordPictureView.xib */; };
 
+
 		EFB3B2F21D1EC0260030CAB4 /* LHBPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB3B2F01D1EC0260030CAB4 /* LHBPublishViewController.m */; };
 		EFB3B2F31D1EC0260030CAB4 /* LHBPublishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB3B2F11D1EC0260030CAB4 /* LHBPublishViewController.xib */; };
 		EFB7C12B1D27F8F200605CA9 /* LHBCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFFCC46D1D26BDB500FF1715 /* LHBCommentViewController.m */; };
+
+
+		EFB5CAF31D33DF89001B1946 /* LHBPulishTagsTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB5CAF21D33DF89001B1946 /* LHBPulishTagsTextField.m */; };
 
 		EFC598151D0C046900BA2153 /* LHBAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC598141D0C046900BA2153 /* LHBAllViewController.m */; };
 		EFC598181D0C047E00BA2153 /* LHBVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC598171D0C047E00BA2153 /* LHBVideoViewController.m */; };
@@ -222,6 +226,8 @@
 		EFB3B0721D11AAC70016EB15 /* LHBWordPictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBWordPictureView.h; sourceTree = "<group>"; };
 		EFB3B0731D11AAC70016EB15 /* LHBWordPictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBWordPictureView.m; sourceTree = "<group>"; };
 		EFB3B0751D11AB120016EB15 /* LHBWordPictureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBWordPictureView.xib; sourceTree = "<group>"; };
+		EFB5CAF11D33DF89001B1946 /* LHBPulishTagsTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBPulishTagsTextField.h; sourceTree = "<group>"; };
+		EFB5CAF21D33DF89001B1946 /* LHBPulishTagsTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBPulishTagsTextField.m; sourceTree = "<group>"; };
 		EFC598131D0C046900BA2153 /* LHBAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBAllViewController.h; sourceTree = "<group>"; };
 		EFC598141D0C046900BA2153 /* LHBAllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBAllViewController.m; sourceTree = "<group>"; };
 		EFC598161D0C047E00BA2153 /* LHBVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBVideoViewController.h; sourceTree = "<group>"; };
@@ -466,6 +472,8 @@
 				EF147D971D31113200D9FC62 /* LHBAddTagsToolBar.xib */,
 				EFCD950A1D32827A009337E8 /* LHBTagsBtn.h */,
 				EFCD950B1D32827A009337E8 /* LHBTagsBtn.m */,
+				EFB5CAF11D33DF89001B1946 /* LHBPulishTagsTextField.h */,
+				EFB5CAF21D33DF89001B1946 /* LHBPulishTagsTextField.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -891,6 +899,7 @@
 				EF40E6C21D2FE5970028F1DF /* LHBConst.m in Sources */,
 				EF1691631D0997EE00913827 /* LHBLoginRegisterViewController.m in Sources */,
 				EFDE96871D30B66900AC6F84 /* LHBPlaceholderTextView.m in Sources */,
+				EFB5CAF31D33DF89001B1946 /* LHBPulishTagsTextField.m in Sources */,
 				EFC598151D0C046900BA2153 /* LHBAllViewController.m in Sources */,
 				EFA7CBAC1CFED8D00097FA52 /* LHBMeViewController.m in Sources */,
 				EFA135C01D07203900FB6964 /* LHBRecommendTagsTableViewController.m in Sources */,

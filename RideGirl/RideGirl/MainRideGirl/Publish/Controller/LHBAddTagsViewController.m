@@ -7,6 +7,7 @@
 //
 
 #import "LHBAddTagsViewController.h"
+#import "LHBPulishTagsTextField.h"
 #import "LHBTagsBtn.h"
 
 @interface LHBAddTagsViewController ()<UITextFieldDelegate>
@@ -17,7 +18,7 @@
 /**
  *  编辑标签的textField
  */
-@property (nonatomic,weak) UITextField *textField;
+@property (nonatomic,weak) LHBPulishTagsTextField *textField;
 /**
  *  编辑好标签后，添加按钮
  */
@@ -78,11 +79,20 @@
  */
 - (void)setupTagsTextField
 {
-    UITextField *textField = [[UITextField alloc] init];
+    LHBPulishTagsTextField *textField = [[LHBPulishTagsTextField alloc] init];
     textField.width = self.bigTagsView.width;
     textField.font = [UIFont systemFontOfSize:14];
     textField.height = 25;
     textField.delegate = self;
+    
+    //注意循环引用问题，self拥有了BigTagsView，BigTagsView拥有了textField，textField又拥有了self，会循环引用.
+    //解决循环引用问题
+    __weak typeof(self) weakSelf = self;
+    textField.deleteBlock = ^{
+        //点了删除按钮就相当于点了这个按钮本身，哪一个按钮？最后一个按钮
+        if ([weakSelf.textField hasText]) return ;
+            [weakSelf tagBtnClick:[weakSelf.tagsBtnArr lastObject]];
+    };
     textField.placeholder = @"多个标签请用逗号或者回车隔开";
     //设置在placeholder才起作用
     [textField setValue:[UIColor grayColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -268,6 +278,30 @@
     
     return YES;
 }
+/**
+ *  textField.clearButtonMode = UITextFieldViewModeAlways;
+ *  这个方法调用
+ */
+- (BOOL)textFieldShouldClear:(UITextField *)textField
+{
+    
+    LHBLogFunc;
+    
+    return YES;
+}
+
+/**
+ *  要监听键盘上的删除按钮事件，没有代理方法，可以拿到键盘，便利里边的按钮，找到那个
+ *  删除按钮来添加addtarget事件.键盘是一个widow
+ 
+    这里采用的方案是自定义textField，重写textField协议里面的方法：deleteBackward，就可以监听删除按钮的事件了。在自定义textField里面采用代理、通知、或者block等方式告诉控制器，键盘的删除按钮被点击了.
+ 
+ */
+- (void)testKeyBoardWindow
+{
+    NSLog(@"%@",[[UIApplication sharedApplication] windows]);
+}
+
 
 
 
