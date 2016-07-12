@@ -8,6 +8,7 @@
 
 #import "LHBAddTagsViewController.h"
 #import "LHBPulishTagsTextField.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 #import "LHBTagsBtn.h"
 
 @interface LHBAddTagsViewController ()<UITextFieldDelegate>
@@ -66,7 +67,19 @@
     [self setupNav];
     [self setupBigTagsView];
     [self setupTagsTextField];
+    //加载完毕，加载传过来的tags标签
+    [self setupTags];
 }
+- (void)setupTags
+{
+    for (NSString *tagStr in self.tagsArr) {
+        //相当于textField输入的文字
+        self.textField.text = tagStr;
+        //点击添加
+        [self addBtnClick];
+    }
+}
+
 - (void)setupNav
 {
     self.view.backgroundColor = LHBGlobalColor;
@@ -81,8 +94,6 @@
 {
     LHBPulishTagsTextField *textField = [[LHBPulishTagsTextField alloc] init];
     textField.width = self.bigTagsView.width;
-    textField.font = [UIFont systemFontOfSize:14];
-    textField.height = 25;
     textField.delegate = self;
     
     //注意循环引用问题，self拥有了BigTagsView，BigTagsView拥有了textField，textField又拥有了self，会循环引用.
@@ -93,7 +104,6 @@
         if ([weakSelf.textField hasText]) return ;
             [weakSelf tagBtnClick:[weakSelf.tagsBtnArr lastObject]];
     };
-    textField.placeholder = @"多个标签请用逗号或者回车隔开";
     //设置在placeholder才起作用
     [textField setValue:[UIColor grayColor] forKeyPath:@"_placeholderLabel.textColor"];
     [textField becomeFirstResponder];
@@ -120,7 +130,23 @@
  */
 - (void)done
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    //传递数据给上一个控制器，最好不要传按钮过去，传文字过去
+//    NSMutableArray *tagsTitleMuArr = [NSMutableArray array];
+//    for (LHBTagsBtn *tagButton in self.tagsBtnArr) {
+//        [tagsTitleMuArr addObject:tagButton.currentTitle];
+//        //[tagsTitle addObject:[tagButton titleForState:UIControlStateNormal]];
+//        LHBLog(@"%@",tagsTitleMuArr);
+//    }
+    
+    //或者通过KVC方式读值---》拿出self.tagsBtnArr里面所有对象的currentTitle的属性
+    NSArray *tagsTitleMuArr = [self.tagsBtnArr valueForKeyPath:@"currentTitle"];
+    
+    
+    //传参
+    !self.tagsBtnTitleBlck ? : self.tagsBtnTitleBlck(tagsTitleMuArr);
+    
+    //push进来的，pop出去
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 //监听textField文字改变
@@ -155,6 +181,13 @@
  */
 - (void)addBtnClick
 {
+    if (self.tagsBtnArr.count == 5) {
+        [SVProgressHUD setMinimumDismissTimeInterval:0.3];
+        [SVProgressHUD showErrorWithStatus:@"最多添加5个标签"];
+        [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+        return;
+    }
+    
     //添加一个标签按钮
     LHBTagsBtn *tagButton = [LHBTagsBtn buttonWithType:UIButtonTypeCustom];
     [tagButton setTitle:self.textField.text forState:UIControlStateNormal];
@@ -164,8 +197,8 @@
 //    tagButton.clipsToBounds = YES;
 //    [tagButton setImage:[UIImage imageNamed:@"chose_tag_close_icon"] forState:UIControlStateNormal];
 //    [tagButton setBackgroundColor:LHBTagsBtnColor];
-
-    tagButton.height =self.textField.height;
+//    tagButton.height =self.textField.height;
+    
     [tagButton addTarget:self action:@selector(tagBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     //sizeToFit 要放在设置后面，防止设置完字体又被算回去。。放自定义按钮里去了
 //    [tagButton sizeToFit];

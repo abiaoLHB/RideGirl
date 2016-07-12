@@ -44,6 +44,10 @@
  *  导航条高度
  */
 #define LHBNAVHEIGHT 64
+/**
+ *  标签按钮后面的自定义textField高度
+ */
+#define LHBTAGSFIELDHEIGHT 25
 
 
 

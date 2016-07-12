@@ -32,6 +32,8 @@
     [self sizeToFit];
     //算完以后给按钮加上三个间距，再在layoutSubviews里均匀的调整这三个间距，左中右。
     self.width += 3 * LHBTAGBTNMARGIN;
+    //算完再算高度
+    self.height = LHBTAGSFIELDHEIGHT;
 }
 
 - (void)layoutSubviews

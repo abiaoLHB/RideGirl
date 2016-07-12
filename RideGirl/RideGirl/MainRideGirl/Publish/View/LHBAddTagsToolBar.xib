@@ -12,7 +12,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDi-LR-EJ4" userLabel="顶部">
-                    <rect key="frame" x="0.0" y="0.0" width="362" height="80"/>
+                    <rect key="frame" x="5" y="0.0" width="352" height="80"/>
                     <color key="backgroundColor" red="1" green="0.95234439810000004" blue="0.1196714864" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ygG-40-QkI" userLabel="底部">
@@ -43,7 +43,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Sdq-mM-y0z" firstAttribute="top" secondItem="uDi-LR-EJ4" secondAttribute="bottom" id="02f-Gi-2He"/>
-                <constraint firstItem="uDi-LR-EJ4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8lG-kh-5Kc"/>
+                <constraint firstItem="uDi-LR-EJ4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="8lG-kh-5Kc"/>
                 <constraint firstItem="ygG-40-QkI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CWa-wd-epw"/>
                 <constraint firstAttribute="trailing" secondItem="ygG-40-QkI" secondAttribute="trailing" id="Kem-gH-lnb"/>
                 <constraint firstAttribute="bottom" secondItem="Sdq-mM-y0z" secondAttribute="bottom" id="Nfa-Pu-eXx"/>
@@ -56,7 +56,7 @@
                 <constraint firstAttribute="trailing" secondItem="rxj-qF-8nQ" secondAttribute="trailing" id="iOG-6M-v2o"/>
                 <constraint firstAttribute="bottom" secondItem="rxj-qF-8nQ" secondAttribute="bottom" id="jsz-ep-yYK"/>
                 <constraint firstItem="rxj-qF-8nQ" firstAttribute="top" secondItem="uDi-LR-EJ4" secondAttribute="bottom" id="qio-MX-mER"/>
-                <constraint firstAttribute="trailing" secondItem="uDi-LR-EJ4" secondAttribute="trailing" id="t7B-yr-Miy"/>
+                <constraint firstAttribute="trailing" secondItem="uDi-LR-EJ4" secondAttribute="trailing" constant="5" id="t7B-yr-Miy"/>
                 <constraint firstItem="7FK-PP-iE3" firstAttribute="top" secondItem="uDi-LR-EJ4" secondAttribute="bottom" id="uYJ-Eg-q2h"/>
                 <constraint firstItem="uDi-LR-EJ4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wIq-9W-K7d"/>
             </constraints>
