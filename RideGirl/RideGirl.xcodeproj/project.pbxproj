@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9F97ED90D251420C1EB932F5 /* Pods_RideGirl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36F7713304DB02680F4305B9 /* Pods_RideGirl.framework */; };
+		EF000D371D36892E00A3E249 /* LHBNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF000D351D36892E00A3E249 /* LHBNewFeatureViewController.m */; };
+		EF000D381D36892E00A3E249 /* LHBNewFeatureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF000D361D36892E00A3E249 /* LHBNewFeatureViewController.xib */; };
 		EF062A281D0A7F4E00F189C1 /* LHBCusTomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = EF062A271D0A7F4E00F189C1 /* LHBCusTomTextField.m */; };
 		EF09C7081CFF156D00F95B28 /* LHBFriendTrendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF09C7071CFF156D00F95B28 /* LHBFriendTrendsViewController.xib */; };
 		EF09C70C1CFF1D5800F95B28 /* LHBRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF09C70A1CFF1D5800F95B28 /* LHBRecommendViewController.m */; };
@@ -67,15 +69,8 @@
 		EFA7CBB31CFEE2370097FA52 /* LHBUINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CBB21CFEE2370097FA52 /* LHBUINavigationController.m */; };
 		EFB3B0741D11AAC70016EB15 /* LHBWordPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB3B0731D11AAC70016EB15 /* LHBWordPictureView.m */; };
 		EFB3B0761D11AB120016EB15 /* LHBWordPictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB3B0751D11AB120016EB15 /* LHBWordPictureView.xib */; };
-
-
-		EFB3B2F21D1EC0260030CAB4 /* LHBPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB3B2F01D1EC0260030CAB4 /* LHBPublishViewController.m */; };
-		EFB3B2F31D1EC0260030CAB4 /* LHBPublishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB3B2F11D1EC0260030CAB4 /* LHBPublishViewController.xib */; };
-		EFB7C12B1D27F8F200605CA9 /* LHBCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFFCC46D1D26BDB500FF1715 /* LHBCommentViewController.m */; };
-
-
 		EFB5CAF31D33DF89001B1946 /* LHBPulishTagsTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB5CAF21D33DF89001B1946 /* LHBPulishTagsTextField.m */; };
-
+		EFB7C12B1D27F8F200605CA9 /* LHBCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFFCC46D1D26BDB500FF1715 /* LHBCommentViewController.m */; };
 		EFC598151D0C046900BA2153 /* LHBAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC598141D0C046900BA2153 /* LHBAllViewController.m */; };
 		EFC598181D0C047E00BA2153 /* LHBVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC598171D0C047E00BA2153 /* LHBVideoViewController.m */; };
 		EFC5981B1D0C04A900BA2153 /* LHBVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC5981A1D0C04A900BA2153 /* LHBVoiceViewController.m */; };
@@ -90,13 +85,10 @@
 		EFDE96871D30B66900AC6F84 /* LHBPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDE96861D30B66900AC6F84 /* LHBPlaceholderTextView.m */; };
 		EFE214C71D0EFD1700DCABAA /* LHBWordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDB07D81D0D9C220035303F /* LHBWordTableViewCell.m */; };
 		EFE5D90A1D1C1ADA0029E0FF /* LHBProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE5D9091D1C1ADA0029E0FF /* LHBProgressView.m */; };
-
 		EFE94E621D2D4284003283F8 /* LHBMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE94E611D2D4284003283F8 /* LHBMeCell.m */; };
 		EFE94E651D2D472D003283F8 /* LHBMeFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE94E641D2D472D003283F8 /* LHBMeFootView.m */; };
 		EFE94E681D2D4AB3003283F8 /* LHBMeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE94E671D2D4AB3003283F8 /* LHBMeModel.m */; };
 		EFE94E6B1D2D4F5F003283F8 /* LHBMeCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE94E6A1D2D4F5F003283F8 /* LHBMeCustomButton.m */; };
-		EFFCC46F1D26BDB500FF1715 /* LHBCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFFCC46D1D26BDB500FF1715 /* LHBCommentViewController.m */; };
-
 		EFFCC4701D26BDB500FF1715 /* LHBCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFFCC46E1D26BDB500FF1715 /* LHBCommentViewController.xib */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +113,9 @@
 		36F7713304DB02680F4305B9 /* Pods_RideGirl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideGirl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18E73453938C145A53A055B /* Pods-RideGirl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideGirl.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideGirl/Pods-RideGirl.release.xcconfig"; sourceTree = "<group>"; };
 		D3068E2231FA0651355DB87D /* Pods-RideGirl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideGirl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideGirl/Pods-RideGirl.debug.xcconfig"; sourceTree = "<group>"; };
+		EF000D341D36892E00A3E249 /* LHBNewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBNewFeatureViewController.h; sourceTree = "<group>"; };
+		EF000D351D36892E00A3E249 /* LHBNewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBNewFeatureViewController.m; sourceTree = "<group>"; };
+		EF000D361D36892E00A3E249 /* LHBNewFeatureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBNewFeatureViewController.xib; sourceTree = "<group>"; };
 		EF062A261D0A7F4E00F189C1 /* LHBCusTomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBCusTomTextField.h; sourceTree = "<group>"; };
 		EF062A271D0A7F4E00F189C1 /* LHBCusTomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBCusTomTextField.m; sourceTree = "<group>"; };
 		EF09C7071CFF156D00F95B28 /* LHBFriendTrendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBFriendTrendsViewController.xib; sourceTree = "<group>"; };
@@ -309,6 +304,40 @@
 				36F7713304DB02680F4305B9 /* Pods_RideGirl.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF000D301D36890300A3E249 /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				EF000D311D36890300A3E249 /* Controller */,
+				EF000D321D36890300A3E249 /* Model */,
+				EF000D331D36890300A3E249 /* View */,
+			);
+			path = NewFeature;
+			sourceTree = "<group>";
+		};
+		EF000D311D36890300A3E249 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EF000D341D36892E00A3E249 /* LHBNewFeatureViewController.h */,
+				EF000D351D36892E00A3E249 /* LHBNewFeatureViewController.m */,
+				EF000D361D36892E00A3E249 /* LHBNewFeatureViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EF000D321D36890300A3E249 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EF000D331D36890300A3E249 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		EF09C70E1CFF2BA600F95B28 /* Controller */ = {
@@ -584,6 +613,7 @@
 				EFA7CBA01CFED8D00097FA52 /* Me */,
 				EFA7CBA31CFED8D00097FA52 /* New */,
 				EF40E6C41D2FE5B10028F1DF /* Publish */,
+				EF000D301D36890300A3E249 /* NewFeature */,
 				EF40E6BD1D2FE5970028F1DF /* Other */,
 			);
 			path = MainRideGirl;
@@ -803,6 +833,7 @@
 				EF147D981D31113200D9FC62 /* LHBAddTagsToolBar.xib in Resources */,
 				EF38A5771D280605002BE631 /* LHBCommentCell.xib in Resources */,
 				EF09C70D1CFF1D5800F95B28 /* LHBRecommendViewController.xib in Resources */,
+				EF000D381D36892E00A3E249 /* LHBNewFeatureViewController.xib in Resources */,
 				EFDB07DB1D0D9C220035303F /* LHBWordTableViewCell.xib in Resources */,
 				EFA351921D1ADE7A00AAE9B7 /* LHBShowPictureViewController.xib in Resources */,
 			);
@@ -877,11 +908,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				EFB7C12B1D27F8F200605CA9 /* LHBCommentViewController.m in Sources */,
-
 				EF40E6D01D2FE5B10028F1DF /* LHBPushGuideView.m in Sources */,
-
 				EF58DA331D255FEB00E883D8 /* LHBComment.m in Sources */,
 				EFA7CBB31CFEE2370097FA52 /* LHBUINavigationController.m in Sources */,
 				EFCD950C1D32827A009337E8 /* LHBTagsBtn.m in Sources */,
@@ -926,6 +954,7 @@
 				EFDB07DA1D0D9C220035303F /* LHBWordTableViewCell.m in Sources */,
 				EF147D9B1D31310900D9FC62 /* LHBAddTagsViewController.m in Sources */,
 				EFA7CBA61CFED8D00097FA52 /* UIBarButtonItem+LHBUIBarButtonItemExtension.m in Sources */,
+				EF000D371D36892E00A3E249 /* LHBNewFeatureViewController.m in Sources */,
 				EFC5981E1D0C04BB00BA2153 /* LHBPictureViewController.m in Sources */,
 				EF38A5761D280605002BE631 /* LHBCommentCell.m in Sources */,
 				EF3602D21CFDCC0000ABD8AD /* main.m in Sources */,
