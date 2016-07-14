@@ -1099,9 +1099,9 @@
 				INFOPLIST_FILE = RideGirl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lhb.company;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lhb.RideGirl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "781c54cd-3d14-4c93-a62a-f9b26b7fb107";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1118,9 +1118,9 @@
 				INFOPLIST_FILE = RideGirl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lhb.company;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lhb.RideGirl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "781c54cd-3d14-4c93-a62a-f9b26b7fb107";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
