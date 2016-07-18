@@ -191,15 +191,12 @@
     }else{
         self.topCmtView.hidden = YES;
     }
-    
-    
-    
 }
 
 
 - (void)setButtonTitle:(UIButton *)btn count:(NSInteger)count placeholdStr:(NSString *)placeholdStr
 {
-    if (count >10000) {
+    if (count > 10000) {
         placeholdStr = [NSString stringWithFormat:@"%.1f万",count/10000.0];
     }else if(count >0){
         placeholdStr = [NSString stringWithFormat:@"%zd",count];
