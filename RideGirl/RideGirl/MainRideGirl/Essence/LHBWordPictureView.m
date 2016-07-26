@@ -15,7 +15,6 @@
 #import "LHBWordModel.h"
 @interface LHBWordPictureView ()
 
-
 @property (weak, nonatomic) IBOutlet UIImageView *wordPicture;
 @property (weak, nonatomic) IBOutlet UIImageView *gitImageView;
 @property (weak, nonatomic) IBOutlet UIButton *seeBigBtn;

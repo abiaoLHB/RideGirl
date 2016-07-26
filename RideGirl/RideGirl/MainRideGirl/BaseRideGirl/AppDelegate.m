@@ -25,10 +25,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     LHBTabBarViewController *tabBarVC = [[LHBTabBarViewController alloc] init];
-    
-        //另一种做法，在tab里，给tabBarItem增加方法
-        //    tabBarVC.delegate = self;
-        self.window.rootViewController =tabBarVC;
+    //另一种做法，在tab里，给tabBarItem增加方法
+    //    tabBarVC.delegate = self;
+    self.window.rootViewController =tabBarVC;
     
     [self.window makeKeyAndVisible];
 

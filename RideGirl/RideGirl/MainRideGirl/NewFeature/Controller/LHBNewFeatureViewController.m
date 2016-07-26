@@ -7,12 +7,15 @@
 //
 
 #import "LHBNewFeatureViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface LHBNewFeatureViewController ()
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (nonatomic,strong) NSArray *imageArr;
+
+
 
 @end
 
@@ -36,7 +39,7 @@
 - (void)setupScrollView
 {
     self.scrollView.backgroundColor = [UIColor orangeColor];
-    self.scrollView.contentSize = CGSizeMake(LHBScreenW * 4, 0);
+    self.scrollView.contentSize = CGSizeMake(LHBScreenW, 0);
     self.scrollView.pagingEnabled = YES;
 }
 
