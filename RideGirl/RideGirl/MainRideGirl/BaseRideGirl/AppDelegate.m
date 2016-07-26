@@ -26,24 +26,10 @@
     
     LHBTabBarViewController *tabBarVC = [[LHBTabBarViewController alloc] init];
     
-    
-    NSString *key = @"CFBundleShortVersionString";
-    //获得当前软件版本号
-    NSString *currentVersion = [NSBundle mainBundle].infoDictionary[key];
-    //获得沙盒中存储的上一次版本号
-    NSString *sanBoxVersion = [[NSUserDefaults standardUserDefaults] stringForKey:key];
-    if ([currentVersion isEqualToString:sanBoxVersion]) {//测试时删掉了！号
-        LHBNewFeatureViewController *featureVC = [[LHBNewFeatureViewController alloc] init];
-        self.window.rootViewController = featureVC;
-        
-        //存储版本号
-        [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:key];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }else{
         //另一种做法，在tab里，给tabBarItem增加方法
         //    tabBarVC.delegate = self;
         self.window.rootViewController =tabBarVC;
-    }
+    
     [self.window makeKeyAndVisible];
 
     [LHBPushGuideView show];
