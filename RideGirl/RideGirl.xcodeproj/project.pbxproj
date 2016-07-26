@@ -1093,15 +1093,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Hongbiao Luo (GCWDE52XFU)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PREFIX_HEADER = RideGirl/PrefixHeader.pch;
 				INFOPLIST_FILE = RideGirl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lhb.RideGirl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e5a3660a-4cf4-49ae-89d7-d01d4c387c4f";
+				PROVISIONING_PROFILE = "781c54cd-3d14-4c93-a62a-f9b26b7fb107";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1112,15 +1112,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Hongbiao Luo (GCWDE52XFU)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hongbiao Luo (GCWDE52XFU)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PREFIX_HEADER = RideGirl/PrefixHeader.pch;
 				INFOPLIST_FILE = RideGirl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lhb.RideGirl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e5a3660a-4cf4-49ae-89d7-d01d4c387c4f";
+				PROVISIONING_PROFILE = "781c54cd-3d14-4c93-a62a-f9b26b7fb107";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
