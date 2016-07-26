@@ -13,7 +13,6 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDi-LR-EJ4" userLabel="顶部">
                     <rect key="frame" x="5" y="0.0" width="352" height="80"/>
-                    <color key="backgroundColor" red="1" green="0.95234439810000004" blue="0.1196714864" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ygG-40-QkI" userLabel="底部">
                     <rect key="frame" x="0.0" y="80" width="362" height="35"/>

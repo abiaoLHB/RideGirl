@@ -47,17 +47,31 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"square";
     params[@"c"] = @"topic";
+
+    [SVProgressHUD showWithStatus:@"正在加载"];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleLight];//SVProgressHUDStyleDark
     
     [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        NSArray *quauresArr = [LHBMeModel mj_objectArrayWithKeyValuesArray:responseObject[@"square_list"]];
         
+        NSArray *quauresArr = [LHBMeModel mj_objectArrayWithKeyValuesArray:responseObject[@"square_list"]];
+    
         [self creatSquares:quauresArr];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [SVProgressHUD showSuccessWithStatus:@"加载成功"];
+            [SVProgressHUD setDefaultStyle:SVProgressHUDStyleLight];
+            [SVProgressHUD dismissWithDelay:0.5];
+        });
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
-        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [SVProgressHUD showErrorWithStatus:@"加载失败"];
+            [SVProgressHUD setDefaultStyle:SVProgressHUDStyleLight];
+            [SVProgressHUD dismissWithDelay:0.5];
+
+        });
     }];
     
 }
@@ -123,7 +137,9 @@
         
     }else{
         
-        webViewVC.url = btn.model.url;
+        //有彩铃、购买流量什么的，牵扯到内购，被拒。这里统一条转到http://www.budejie.com/tag/117/
+        webViewVC.url = @"http://www.budejie.com/tag/117/";
+        //webViewVC.url = btn.model.url;
         webViewVC.navigationItem.title = btn.model.name;
     }
     [nav pushViewController:webViewVC animated:YES];

@@ -49,7 +49,12 @@ static NSString *LHBMeCellID = @"me";
     //调整tableView
     self.tableView.sectionHeaderHeight = 0;
     self.tableView.sectionFooterHeight = LHBMARGIN;
-    self.tableView.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
+//    有登录／注册 和 离线下载
+//    self.tableView.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
+    
+//    无登录／注册 和 离线下载
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);//可以不写
+    
     [self.tableView registerClass:[LHBMeCell class] forCellReuseIdentifier:LHBMeCellID];
 
     LHBMeFootView *footView = [[LHBMeFootView alloc] init];
@@ -76,7 +81,8 @@ static NSString *LHBMeCellID = @"me";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+//    return 2;
+    return 0;
 }
 
 

@@ -7,14 +7,31 @@
 //
 
 #import "LHBLoginRegisterViewController.h"
-
+#import "LHBCusTomTextField.h"
 #import "LHBTopWindow.h"
 
 @interface LHBLoginRegisterViewController ()
-
+//注册帐号&已有帐号切换按钮
 @property (weak, nonatomic) IBOutlet UIButton *loginOrRegisterBtn;
-@property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
+//登录手机文本输入框
+@property (weak, nonatomic) IBOutlet UITextField *logInPhoneTextField;
+
+@property (weak, nonatomic) IBOutlet LHBCusTomTextField *logInPassWordTextField;
+
+@property (weak, nonatomic) IBOutlet LHBCusTomTextField *registerPhoneTextField;
+
+@property (weak, nonatomic) IBOutlet LHBCusTomTextField *registerPassWordTextField;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *inputBgViewLeftLeading;
+
+/**
+ *  登录按钮
+ */
+@property (weak, nonatomic) IBOutlet UIButton *logInButton;
+/**
+ *  注册按钮
+ */
+@property (weak, nonatomic) IBOutlet UIButton *registerButton;
 
 @end
 
@@ -22,12 +39,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupLoginOrRegirstTextField];
+    
+    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(endEdit)]];
+}
+- (void)endEdit
+{
+    [self.view endEditing:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     //设置状态栏样式(也可以在登录按钮点击后，model视图动画执行完毕后在改变也行)
     [self stupStatsBar];
+}
+
+- (void)setupLoginOrRegirstTextField
+{
+    [self.logInPhoneTextField becomeFirstResponder];
+    
+    self.logInPhoneTextField.text = @"13716280757";
+    self.logInPassWordTextField.text = @"123456";
 }
 
 
@@ -67,10 +99,29 @@
     [LHBTopWindow hiddenWindow];
 }
 
+/**
+ *  登录事件
+ */
 
+- (IBAction)logInAction:(id)sender
+{
+    [self.view endEditing:YES];
+    
+    if (self.logInPhoneTextField.text.length == 11 && self.logInPassWordTextField.text.length)
+    {
+        [self dismissViewControllerAnimated:YES completion:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGINBTNCLICK" object:nil];
+    }
+}
 
+/**
+ *  注册事件
+ */
+- (IBAction)regirstAction:(id)sender
+{
+    NSLog(@"注册");
 
-
+}
 
 
 

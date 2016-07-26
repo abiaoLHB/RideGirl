@@ -9,8 +9,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LHBLoginRegisterViewController">
             <connections>
                 <outlet property="inputBgViewLeftLeading" destination="Pum-yZ-iAJ" id="E3t-r0-sAw"/>
+                <outlet property="logInButton" destination="11c-fG-0Fa" id="Ahx-q2-fVa"/>
+                <outlet property="logInPassWordTextField" destination="O5Q-D1-Xcp" id="a4z-B9-HGF"/>
+                <outlet property="logInPhoneTextField" destination="xpV-ve-SzI" id="j16-fy-P2D"/>
                 <outlet property="loginOrRegisterBtn" destination="oEy-Zg-gUY" id="M5h-Y2-rJV"/>
-                <outlet property="phoneTextField" destination="xpV-ve-SzI" id="qkV-od-e2Y"/>
+                <outlet property="registerButton" destination="Teg-6g-c0o" id="dfB-ZE-LKa"/>
+                <outlet property="registerPassWordTextField" destination="msV-56-asf" id="MUy-hk-B7t"/>
+                <outlet property="registerPhoneTextField" destination="JQq-p4-pAR" id="td3-cj-NeU"/>
                 <outlet property="view" destination="dvO-NF-Oda" id="V23-ZQ-BiQ"/>
             </connections>
         </placeholder>
@@ -144,7 +149,7 @@
                                 <constraint firstItem="xpV-ve-SzI" firstAttribute="leading" secondItem="Bln-jn-2t9" secondAttribute="leading" constant="10" id="xZq-v7-yX9"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11c-fG-0Fa">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11c-fG-0Fa" userLabel="登录按钮">
                             <rect key="frame" x="167" y="117" width="266" height="40"/>
                             <state key="normal" title="登录" backgroundImage="login_register_button"/>
                             <state key="selected" backgroundImage="login_register_button_click"/>
@@ -155,6 +160,9 @@
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="logInAction:" destination="-1" eventType="touchUpInside" id="ekR-Vv-zpU"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dw0-Oc-KMj">
                             <rect key="frame" x="368" y="177" width="65" height="28"/>
@@ -215,7 +223,7 @@
                                 <constraint firstItem="JQq-p4-pAR" firstAttribute="leading" secondItem="kDZ-Vr-NGc" secondAttribute="leading" constant="10" id="yHJ-fG-c7t"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Teg-6g-c0o">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Teg-6g-c0o" userLabel="注册按钮">
                             <rect key="frame" x="167" y="117" width="266" height="40"/>
                             <state key="normal" title="注册" backgroundImage="login_register_button"/>
                             <state key="highlighted" backgroundImage="login_register_button_click"/>
@@ -225,6 +233,9 @@
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="regirstAction:" destination="-1" eventType="touchUpInside" id="9G3-tT-TBB"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

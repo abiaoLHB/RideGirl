@@ -17,6 +17,7 @@
 
 @implementation LHBTabBar
 
+
 //创建发布按钮
 - (instancetype)initWithFrame:(CGRect)frame
 {

@@ -129,6 +129,10 @@
     
     //换掉tabbar以后在还tabbar的背景(写道自定义tabbar里)
 //    [self.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbar-light"]];
+    
+    
+    //luo 关注里的登录按钮被点击,要选中tabbar第一个按钮
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginBtnClick) name:@"LOGINBTNCLICK" object:nil];
 }
 
 /*
@@ -153,6 +157,12 @@
 }
 
 
+- (void)loginBtnClick
+{
+    NSLog(@"tabar监听到了登录按钮点击");
+    //选中第一个“精华”按钮
+    self.childViewControllers.firstObject.tabBarController.selectedIndex = 0 ;
+}
 
 
 
