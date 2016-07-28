@@ -42,6 +42,9 @@
     [addButton addTarget:self action:@selector(addButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [self.topView addSubview:addButton];
     self.addBtn = addButton;
+    
+    //默认添加两个标签
+    [self creatToolBarTags:@[@"吐槽",@"搞笑"]];
 }
 
 - (void)addButtonClick
@@ -87,7 +90,53 @@
     }
     return _tagLabelArr;
 }
+/**
+ *  该方法默认调一次，第一次显示掉一次，当自身尺寸发生变化，其他情况都不会调用
+ */
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    for (NSInteger i=0;i<self.tagLabelArr.count;i++) {
+        
+        UILabel *tagLabel = self.tagLabelArr[i];
+        //设置位置
+        if (i==0) {//最前面的标签,第一个标签
+            tagLabel.x = 5;
+            tagLabel.y = 0;
+        }else{//其他按钮，后面的按钮
+            UILabel *lastTagLabel = self.tagLabelArr[i-1];
+            //计算当前行左边的宽度
+            CGFloat leftWidth = CGRectGetMaxX(lastTagLabel.frame) + LHBTAGBTNMARGIN;
+            //计算当前行右边的宽度
+            CGFloat rightWidth = self.topView.width - leftWidth;
+            if (rightWidth >= tagLabel.width) {//按钮在当前行显示
+                tagLabel.y = lastTagLabel.y;
+                tagLabel.x = leftWidth;
+            }else{//换行显示
+                tagLabel.x = 0;
+                tagLabel.y = CGRectGetMaxY(lastTagLabel.frame)+LHBTAGBTNMARGIN;
+            }
+        }
+        
+    }
+    
+    UILabel *lastTagLabel = [self.tagLabelArr lastObject];
+    //更新textField的frame
+    if (self.topView.width - CGRectGetMaxX(lastTagLabel.frame) - LHBTAGBTNMARGIN >= self.addBtn.width) {
+        self.addBtn.x = CGRectGetMaxX(lastTagLabel.frame) + LHBTAGBTNMARGIN;
+        self.addBtn.y = lastTagLabel.y;
+    }else{
+        self.addBtn.x = 0;
+        self.addBtn.y = CGRectGetMaxY([[self.tagLabelArr lastObject]frame]) + LHBTAGBTNMARGIN;
+    }
+    
+    //最后的高度,整体的高度
+    CGFloat oldH = self.height;
+    self.height = CGRectGetMaxY(self.addBtn.frame) + 45;
+    self.y -= (self.height - oldH);
 
+}
 
 /**
  *  创建toolBar上面的标签
@@ -116,36 +165,50 @@
         tagLabel.textColor = [UIColor whiteColor];
         [self.topView addSubview:tagLabel];
         
-        //设置位置
-        if (i==0) {//最前面的标签,第一个标签
-            tagLabel.x = 0;
-            tagLabel.y = 0;
-        }else{//其他按钮，后面的按钮
-            UILabel *lastTagLabel = self.tagLabelArr[i-1];
-            //计算当前行左边的宽度
-            CGFloat leftWidth = CGRectGetMaxX(lastTagLabel.frame) + LHBTAGBTNMARGIN;
-            //计算当前行右边的宽度
-            CGFloat rightWidth = self.topView.width - leftWidth;
-            if (rightWidth >= tagLabel.width) {//按钮在当前行显示
-                tagLabel.y = lastTagLabel.y;
-                tagLabel.x = leftWidth;
-            }else{//换行显示
-                tagLabel.x = 0;
-                tagLabel.y = CGRectGetMaxY(lastTagLabel.frame)+LHBTAGBTNMARGIN;
-            }
-        }
-        
     }
     
-    UILabel *lastTagLabel = [self.tagLabelArr lastObject];
-    //更新textField的frame
-    if (self.topView.width - CGRectGetMaxX(lastTagLabel.frame) - LHBTAGBTNMARGIN >= self.addBtn.width) {
-        self.addBtn.x = CGRectGetMaxX(lastTagLabel.frame) + LHBTAGBTNMARGIN;
-        self.addBtn.y = lastTagLabel.y;
-    }else{
-        self.addBtn.x = 0;
-        self.addBtn.y = CGRectGetMaxY([[self.tagLabelArr lastObject]frame]) + LHBTAGBTNMARGIN;
-    }
+    //重新布局子控件,会调用layoutSubviews方法
+    [self setNeedsLayout];
+    
+    
+//    从xib中创建的控件不要再这里算尺寸，要在layoutSubviews里面算。防止xib尺寸被扯大或者扯小
+    
+//
+//        //设置位置
+//        if (i==0) {//最前面的标签,第一个标签
+//            tagLabel.x = 5;
+//            tagLabel.y = 0;
+//        }else{//其他按钮，后面的按钮
+//            UILabel *lastTagLabel = self.tagLabelArr[i-1];
+//            //计算当前行左边的宽度
+//            CGFloat leftWidth = CGRectGetMaxX(lastTagLabel.frame) + LHBTAGBTNMARGIN;
+//            //计算当前行右边的宽度
+//            CGFloat rightWidth = self.topView.width - leftWidth;
+//            if (rightWidth >= tagLabel.width) {//按钮在当前行显示
+//                tagLabel.y = lastTagLabel.y;
+//                tagLabel.x = leftWidth;
+//            }else{//换行显示
+//                tagLabel.x = 0;
+//                tagLabel.y = CGRectGetMaxY(lastTagLabel.frame)+LHBTAGBTNMARGIN;
+//            }
+//        }
+//        
+//    }
+//    
+//    UILabel *lastTagLabel = [self.tagLabelArr lastObject];
+//    //更新textField的frame
+//    if (self.topView.width - CGRectGetMaxX(lastTagLabel.frame) - LHBTAGBTNMARGIN >= self.addBtn.width) {
+//        self.addBtn.x = CGRectGetMaxX(lastTagLabel.frame) + LHBTAGBTNMARGIN;
+//        self.addBtn.y = lastTagLabel.y;
+//    }else{
+//        self.addBtn.x = 0;
+//        self.addBtn.y = CGRectGetMaxY([[self.tagLabelArr lastObject]frame]) + LHBTAGBTNMARGIN;
+//    }
+//    
+//    //最后的高度,整体的高度
+//    CGFloat oldH = self.height;
+//    self.height = CGRectGetMaxY(self.addBtn.frame) + 45;
+//    self.y -= (self.height - oldH);
 }
 
 

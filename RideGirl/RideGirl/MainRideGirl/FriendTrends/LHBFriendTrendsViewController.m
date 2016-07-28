@@ -23,16 +23,18 @@
     self.navigationItem.title = @"关注";
     
     //正常登陆界面
-//    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImageNormalName:@"friendsRecommentIcon" andHeightLightImageName:@"friendsRecommentIcon-click" target:self andAction:@selector(friendLeftBtnDown)];
-//    
-//    self.view.backgroundColor = LHBGlobalColor;
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImageNormalName:@"friendsRecommentIcon" andHeightLightImageName:@"friendsRecommentIcon-click" target:self andAction:@selector(friendLeftBtnDown)];
+    
+    self.view.backgroundColor = LHBGlobalColor;
 
     //appstore上架
-    [self appstore];
-    
+//    [self appstore];
+    self.testContentAppStoreBgView.hidden = YES;
     
 }
-
+/**
+ *  test app上架
+ */
 - (void)appstore
 {
     self.testContentAppStoreBgView.backgroundColor = [UIColor whiteColor];

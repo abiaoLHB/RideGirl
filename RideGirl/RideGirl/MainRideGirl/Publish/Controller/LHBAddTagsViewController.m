@@ -53,6 +53,8 @@
         btn.contentEdgeInsets = UIEdgeInsetsMake(0, LHBMARGIN, 0, LHBMARGIN);
         btn.width = self.bigTagsView.width;
         btn.backgroundColor = LHBTagsBtnColor;
+        btn.layer.cornerRadius = 5;
+        btn.clipsToBounds = YES;
         btn.titleLabel.font = [UIFont systemFontOfSize:14];
         btn.height = 35;
         [self.bigTagsView addSubview:btn];
@@ -65,7 +67,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupNav];
-    [self setupBigTagsView];
+    [self setupBigTagsView];//最好用懒加载
     [self setupTagsTextField];
     //加载完毕，加载传过来的tags标签
     [self setupTags];
@@ -111,6 +113,16 @@
     [self.bigTagsView addSubview:textField];
     self.textField = textField;
 }
+/**
+ *  专门用来布局控制器view的子控件
+ */
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+}
+
+
+
 
 /**
  *  当作标签的容器view

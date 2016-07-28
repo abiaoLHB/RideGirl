@@ -55,6 +55,7 @@
 		EFA135C61D0725A500FB6964 /* LHBRecommendTagsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA135C51D0725A500FB6964 /* LHBRecommendTagsModel.m */; };
 		EFA135CA1D07272F00FB6964 /* LHBRecommendTagsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA135C81D07272F00FB6964 /* LHBRecommendTagsTableViewCell.m */; };
 		EFA135CB1D07272F00FB6964 /* LHBRecommendTagsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFA135C91D07272F00FB6964 /* LHBRecommendTagsTableViewCell.xib */; };
+		EFA258C81D4A343F00953D24 /* LHBSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA258C71D4A343F00953D24 /* LHBSettingViewController.m */; };
 		EFA351911D1ADE7A00AAE9B7 /* LHBShowPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA3518F1D1ADE7A00AAE9B7 /* LHBShowPictureViewController.m */; };
 		EFA351921D1ADE7A00AAE9B7 /* LHBShowPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFA351901D1ADE7A00AAE9B7 /* LHBShowPictureViewController.xib */; };
 		EFA7CBA61CFED8D00097FA52 /* UIBarButtonItem+LHBUIBarButtonItemExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CB901CFED8D00097FA52 /* UIBarButtonItem+LHBUIBarButtonItemExtension.m */; };
@@ -194,6 +195,8 @@
 		EFA135C71D07272F00FB6964 /* LHBRecommendTagsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBRecommendTagsTableViewCell.h; sourceTree = "<group>"; };
 		EFA135C81D07272F00FB6964 /* LHBRecommendTagsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBRecommendTagsTableViewCell.m; sourceTree = "<group>"; };
 		EFA135C91D07272F00FB6964 /* LHBRecommendTagsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBRecommendTagsTableViewCell.xib; sourceTree = "<group>"; };
+		EFA258C61D4A343F00953D24 /* LHBSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBSettingViewController.h; sourceTree = "<group>"; };
+		EFA258C71D4A343F00953D24 /* LHBSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBSettingViewController.m; sourceTree = "<group>"; };
 		EFA3518E1D1ADE7A00AAE9B7 /* LHBShowPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBShowPictureViewController.h; sourceTree = "<group>"; };
 		EFA3518F1D1ADE7A00AAE9B7 /* LHBShowPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBShowPictureViewController.m; sourceTree = "<group>"; };
 		EFA351901D1ADE7A00AAE9B7 /* LHBShowPictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBShowPictureViewController.xib; sourceTree = "<group>"; };
@@ -681,6 +684,8 @@
 				EF0AF9721D2E97F800E6CE11 /* LHBMeWebViewViewController.h */,
 				EF0AF9731D2E97F800E6CE11 /* LHBMeWebViewViewController.m */,
 				EF0AF9741D2E97F800E6CE11 /* LHBMeWebViewViewController.xib */,
+				EFA258C61D4A343F00953D24 /* LHBSettingViewController.h */,
+				EFA258C71D4A343F00953D24 /* LHBSettingViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -772,7 +777,7 @@
 		EF3602C51CFDCC0000ABD8AD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = LHB;
+				CLASSPREFIX = LHBCopyright;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = LHB;
 				TargetAttributes = {
@@ -908,6 +913,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFA258C81D4A343F00953D24 /* LHBSettingViewController.m in Sources */,
 				EFB7C12B1D27F8F200605CA9 /* LHBCommentViewController.m in Sources */,
 				EF40E6D01D2FE5B10028F1DF /* LHBPushGuideView.m in Sources */,
 				EF58DA331D255FEB00E883D8 /* LHBComment.m in Sources */,

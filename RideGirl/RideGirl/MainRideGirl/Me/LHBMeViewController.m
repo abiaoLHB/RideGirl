@@ -7,6 +7,7 @@
 //
 
 #import "LHBMeViewController.h"
+#import "LHBSettingViewController.h"
 #import "LHBMeCell.h"
 #import "LHBMeFootView.h"
 
@@ -26,8 +27,18 @@ static NSString *LHBMeCellID = @"me";
     [self setupNav];
     [self setupTableView];
 
+//    [self setupTestAppStore];
+    
     NSLog(@"%@",NSStringFromCGRect(self.tableView.tableFooterView.frame));
 }
+
+- (void)setupTestAppStore
+{
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, LHBScreenW, LHBScreenH-64-49)];
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.budejie.com/detail-14907443.html"]]];
+    [self.view addSubview:webView];
+}
+
 
 - (void)setupNav
 {
@@ -50,10 +61,10 @@ static NSString *LHBMeCellID = @"me";
     self.tableView.sectionHeaderHeight = 0;
     self.tableView.sectionFooterHeight = LHBMARGIN;
 //    有登录／注册 和 离线下载
-//    self.tableView.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
     
 //    无登录／注册 和 离线下载
-    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);//可以不写
+//    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);//可以不写
     
     [self.tableView registerClass:[LHBMeCell class] forCellReuseIdentifier:LHBMeCellID];
 
@@ -65,9 +76,13 @@ static NSString *LHBMeCellID = @"me";
     });
 }
 
+/**
+ *  设置按钮被点击
+ */
 - (void)settingRightBtnDown
 {
-    LHBLogFunc;
+    LHBSettingViewController *settingVC = [[LHBSettingViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    [self.navigationController pushViewController:settingVC animated:YES];
 }
 - (void)moonRightBtnDown
 {
@@ -81,8 +96,8 @@ static NSString *LHBMeCellID = @"me";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-//    return 2;
-    return 0;
+    return 2;
+//    return 0;
 }
 
 

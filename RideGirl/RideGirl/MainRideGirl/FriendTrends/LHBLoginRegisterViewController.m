@@ -67,7 +67,7 @@
 {
     [self.view endEditing:YES];
     if (self.inputBgViewLeftLeading.constant == 0) {
-        self.inputBgViewLeftLeading.constant = -self.view.width;
+         //;7  self.inputBgViewLeftLeading.constant = -self.view.width;
         sender.selected = YES;
     }else{
         self.inputBgViewLeftLeading.constant = 0;
@@ -79,7 +79,9 @@
     }];
 }
 
-- (IBAction)back {
+- (IBAction)back
+{    [self.view endEditing:YES];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
     //恢复状态栏
 //    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;

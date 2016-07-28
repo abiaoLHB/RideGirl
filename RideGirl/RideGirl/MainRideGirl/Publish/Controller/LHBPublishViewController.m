@@ -96,6 +96,9 @@ static CGFloat const LHBAnimationDelay = 0.05;
     CGFloat centerEndY = LHBScreenH * 0.2;
     //随便，只要看不见就行
     CGFloat centerBeginY = centerEndY - LHBScreenH;
+    //动画开始之前其位置在0，0出，开始时才从给的位置执行
+    sloganImageView.centerY = centerBeginY;
+    sloganImageView.centerX = centerX;
     anmi.fromValue = [NSValue valueWithCGPoint:CGPointMake(centerX, centerBeginY)];
     anmi.toValue = [NSValue valueWithCGPoint:CGPointMake(centerX, centerEndY)];
     anmi.beginTime = LHBAnimationDelay * images.count + 0.5;

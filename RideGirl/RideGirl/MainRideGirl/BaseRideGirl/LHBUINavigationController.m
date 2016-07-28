@@ -23,7 +23,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
+//    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
+    
+    //默认的在页面最左边右滑退出功能就没有了。清空他的代理就可以了
+    //如果滑动移除控制器的功能失效。清空代理就实现了（让导航控制器重新设置这个功能）
+    self.interactivePopGestureRecognizer.delegate = nil;
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
@@ -46,6 +50,7 @@
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
         [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+        //修改导航栏左边的item。只要这个被修改了，默认的在页面最左边右滑退出功能就没有了
         viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         
         viewController.hidesBottomBarWhenPushed = YES;

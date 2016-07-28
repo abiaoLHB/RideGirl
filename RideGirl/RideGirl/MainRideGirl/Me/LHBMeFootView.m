@@ -138,8 +138,8 @@
     }else{
         
         //有彩铃、购买流量什么的，牵扯到内购，被拒。这里统一条转到http://www.budejie.com/tag/117/
-        webViewVC.url = @"http://www.budejie.com/tag/117/";
-        //webViewVC.url = btn.model.url;
+//        webViewVC.url = @"http://www.budejie.com/tag/117/";
+        webViewVC.url = btn.model.url;
         webViewVC.navigationItem.title = btn.model.name;
     }
     [nav pushViewController:webViewVC animated:YES];
