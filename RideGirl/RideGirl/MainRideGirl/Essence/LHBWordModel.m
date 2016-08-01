@@ -91,17 +91,20 @@
        
         //图片
         if (self.type == LHBWordTypePicture) {
-            //图片等比例显示，因为图片的宽高可能大于或者小于屏款
-            CGFloat imageW = maxSize.width;//和文字同宽
-            CGFloat imageH = imageW * self.height / self.width;
-            if (imageH >= LHBWordPictureMaxH) {
-                imageH = LHBWordPictureNormalH;
-                self.bigPicture = YES;
+            if (self.width != 0 || self.height != 0)
+            {//防止服务器返回0
+                //图片等比例显示，因为图片的宽高可能大于或者小于屏款
+                CGFloat imageW = maxSize.width;//和文字同宽
+                CGFloat imageH = imageW * self.height / self.width;
+                if (imageH >= LHBWordPictureMaxH) {
+                    imageH = LHBWordPictureNormalH;
+                    self.bigPicture = YES;
+                }
+                //计算图片的frame
+                _imageFrame = CGRectMake(LHBMARGIN, textY+textH+LHBMARGIN, imageW, imageH);
+                
+                _cellH += imageH + LHBMARGIN;
             }
-            //计算图片的frame
-            _imageFrame = CGRectMake(LHBMARGIN, textY+textH+LHBMARGIN, imageW, imageH);
-            
-            _cellH += imageH + LHBMARGIN;
         }else if (self.type == LHBWordTypeVoice){// 声音
             CGFloat voiceX = LHBMARGIN;
             CGFloat voiceY = textY+textH+LHBMARGIN;

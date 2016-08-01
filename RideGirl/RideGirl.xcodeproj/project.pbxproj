@@ -68,6 +68,11 @@
 		EFA7CBAD1CFED8D00097FA52 /* LHBNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CBA51CFED8D00097FA52 /* LHBNewViewController.m */; };
 		EFA7CBB01CFED90D0097FA52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CBAF1CFED90D0097FA52 /* AppDelegate.m */; };
 		EFA7CBB31CFEE2370097FA52 /* LHBUINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA7CBB21CFEE2370097FA52 /* LHBUINavigationController.m */; };
+		EFAD42D41D4AE9A3008982EC /* LHBLogInTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EFAD42D31D4AE9A3008982EC /* LHBLogInTool.m */; };
+		EFAD42D61D4AF5A2008982EC /* HuanFu.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFAD42D51D4AF5A2008982EC /* HuanFu.plist */; };
+		EFAD42D91D4AF746008982EC /* UIColor+LHBColorExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EFAD42D81D4AF746008982EC /* UIColor+LHBColorExtension.m */; };
+		EFAD42DE1D4AFD50008982EC /* Skins in Resources */ = {isa = PBXBuildFile; fileRef = EFAD42DD1D4AFD50008982EC /* Skins */; };
+		EFAD42E11D4AFF1C008982EC /* LHBTestHuanFuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFAD42E01D4AFF1C008982EC /* LHBTestHuanFuViewController.m */; };
 		EFB3B0741D11AAC70016EB15 /* LHBWordPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB3B0731D11AAC70016EB15 /* LHBWordPictureView.m */; };
 		EFB3B0761D11AB120016EB15 /* LHBWordPictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB3B0751D11AB120016EB15 /* LHBWordPictureView.xib */; };
 		EFB5CAF31D33DF89001B1946 /* LHBPulishTagsTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB5CAF21D33DF89001B1946 /* LHBPulishTagsTextField.m */; };
@@ -221,6 +226,14 @@
 		EFA7CBAF1CFED90D0097FA52 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EFA7CBB11CFEE2370097FA52 /* LHBUINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBUINavigationController.h; sourceTree = "<group>"; };
 		EFA7CBB21CFEE2370097FA52 /* LHBUINavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBUINavigationController.m; sourceTree = "<group>"; };
+		EFAD42D21D4AE9A3008982EC /* LHBLogInTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBLogInTool.h; sourceTree = "<group>"; };
+		EFAD42D31D4AE9A3008982EC /* LHBLogInTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBLogInTool.m; sourceTree = "<group>"; };
+		EFAD42D51D4AF5A2008982EC /* HuanFu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HuanFu.plist; sourceTree = "<group>"; };
+		EFAD42D71D4AF746008982EC /* UIColor+LHBColorExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+LHBColorExtension.h"; sourceTree = "<group>"; };
+		EFAD42D81D4AF746008982EC /* UIColor+LHBColorExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LHBColorExtension.m"; sourceTree = "<group>"; };
+		EFAD42DD1D4AFD50008982EC /* Skins */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Skins; sourceTree = "<group>"; };
+		EFAD42DF1D4AFF1C008982EC /* LHBTestHuanFuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBTestHuanFuViewController.h; sourceTree = "<group>"; };
+		EFAD42E01D4AFF1C008982EC /* LHBTestHuanFuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBTestHuanFuViewController.m; sourceTree = "<group>"; };
 		EFB3B0721D11AAC70016EB15 /* LHBWordPictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBWordPictureView.h; sourceTree = "<group>"; };
 		EFB3B0731D11AAC70016EB15 /* LHBWordPictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHBWordPictureView.m; sourceTree = "<group>"; };
 		EFB3B0751D11AB120016EB15 /* LHBWordPictureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHBWordPictureView.xib; sourceTree = "<group>"; };
@@ -424,9 +437,11 @@
 		EF3602D01CFDCC0000ABD8AD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EFAD42DD1D4AFD50008982EC /* Skins */,
 				EF3602E11CFDCC0000ABD8AD /* Info.plist */,
 				EF3602D11CFDCC0000ABD8AD /* main.m */,
 				EFA7CB841CFEB9300097FA52 /* PrefixHeader.pch */,
+				EFAD42D51D4AF5A2008982EC /* HuanFu.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -456,6 +471,8 @@
 				EF40E6BF1D2FE5970028F1DF /* LHBConst.m */,
 				EF40E6C01D2FE5970028F1DF /* LHBTopWindow.h */,
 				EF40E6C11D2FE5970028F1DF /* LHBTopWindow.m */,
+				EFAD42D21D4AE9A3008982EC /* LHBLogInTool.h */,
+				EFAD42D31D4AE9A3008982EC /* LHBLogInTool.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -596,6 +613,8 @@
 				EF27B4571D0DC19D004A2E33 /* NSDate+LHBDateExtension.m */,
 				EF425DFF1D291DFA00905C95 /* UIImage+LHBUIImageExtension.h */,
 				EF425E001D291DFA00905C95 /* UIImage+LHBUIImageExtension.m */,
+				EFAD42D71D4AF746008982EC /* UIColor+LHBColorExtension.h */,
+				EFAD42D81D4AF746008982EC /* UIColor+LHBColorExtension.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -686,6 +705,8 @@
 				EF0AF9741D2E97F800E6CE11 /* LHBMeWebViewViewController.xib */,
 				EFA258C61D4A343F00953D24 /* LHBSettingViewController.h */,
 				EFA258C71D4A343F00953D24 /* LHBSettingViewController.m */,
+				EFAD42DF1D4AFF1C008982EC /* LHBTestHuanFuViewController.h */,
+				EFAD42E01D4AFF1C008982EC /* LHBTestHuanFuViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -777,9 +798,9 @@
 		EF3602C51CFDCC0000ABD8AD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = LHBCopyright;
+				CLASSPREFIX = LHB;
 				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = LHB;
+				ORGANIZATIONNAME = LHBCopyright;
 				TargetAttributes = {
 					EF3602CC1CFDCC0000ABD8AD = {
 						CreatedOnToolsVersion = 7.3;
@@ -823,7 +844,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFDA037C1D2174F4005C6CD0 /* LHBWordVoiceView.xib in Resources */,
+				EFAD42D61D4AF5A2008982EC /* HuanFu.plist in Resources */,
 				EF3603071CFDCD6C00ABD8AD /* Assets.xcassets in Resources */,
+				EFAD42DE1D4AFD50008982EC /* Skins in Resources */,
 				EF0AF9761D2E97F800E6CE11 /* LHBMeWebViewViewController.xib in Resources */,
 				EF09C7151CFF2C8E00F95B28 /* LHBRecommendCell.xib in Resources */,
 				EFA135CB1D07272F00FB6964 /* LHBRecommendTagsTableViewCell.xib in Resources */,
@@ -949,6 +972,7 @@
 				EF40E6D41D2FE72C0028F1DF /* LHBPostWordViewController.m in Sources */,
 				EF09C7181CFF2CD500F95B28 /* LHBRecommendModel.m in Sources */,
 				EFA7CBAD1CFED8D00097FA52 /* LHBNewViewController.m in Sources */,
+				EFAD42D91D4AF746008982EC /* UIColor+LHBColorExtension.m in Sources */,
 				EFB3B0741D11AAC70016EB15 /* LHBWordPictureView.m in Sources */,
 				EF1E06681D0C5D8A0083570E /* LHBWordViewController.m in Sources */,
 				EF69DC8C1D008E96007CE788 /* LHBRecommendRightCell.m in Sources */,
@@ -963,6 +987,7 @@
 				EF000D371D36892E00A3E249 /* LHBNewFeatureViewController.m in Sources */,
 				EFC5981E1D0C04BB00BA2153 /* LHBPictureViewController.m in Sources */,
 				EF38A5761D280605002BE631 /* LHBCommentCell.m in Sources */,
+				EFAD42E11D4AFF1C008982EC /* LHBTestHuanFuViewController.m in Sources */,
 				EF3602D21CFDCC0000ABD8AD /* main.m in Sources */,
 				EF1691681D09B08200913827 /* LHBAutoLoginBtn.m in Sources */,
 				EF425E011D291DFA00905C95 /* UIImage+LHBUIImageExtension.m in Sources */,
@@ -973,6 +998,7 @@
 				EFA7CBA91CFED8D00097FA52 /* LHBTabBarViewController.m in Sources */,
 				EFE94E621D2D4284003283F8 /* LHBMeCell.m in Sources */,
 				EFA7CBAB1CFED8D00097FA52 /* LHBFriendTrendsViewController.m in Sources */,
+				EFAD42D41D4AE9A3008982EC /* LHBLogInTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

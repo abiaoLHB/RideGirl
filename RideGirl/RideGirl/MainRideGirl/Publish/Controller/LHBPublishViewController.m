@@ -10,6 +10,7 @@
 #import "LHBPostWordViewController.h"
 #import "LHBUINavigationController.h"
 #import "LHBAutoLoginBtn.h"
+#import "LHBLogInTool.h"
 #import <pop/POP.h>
 
 
@@ -130,6 +131,13 @@ static CGFloat const LHBAnimationDelay = 0.05;
       }else if (btn.tag == 1){
           LHBLog(@"发图片");
       }else if (btn.tag == 2){
+          
+          //判断是否登录
+          if ([LHBLogInTool getUserID] == nil) {
+              //没有登录，弹出登录界面
+          }
+          
+          
           LHBPostWordViewController *postWordVC = [[LHBPostWordViewController alloc] init];
           //这里不能用self去 present。因为 self 已经dismiss了
           //[self presentViewController:postWordVC animated:YES completion:nil];

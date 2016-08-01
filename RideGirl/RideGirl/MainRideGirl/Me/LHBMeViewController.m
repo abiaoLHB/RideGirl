@@ -10,6 +10,7 @@
 #import "LHBSettingViewController.h"
 #import "LHBMeCell.h"
 #import "LHBMeFootView.h"
+#import "LHBTestHuanFuViewController.h"
 
 @interface LHBMeViewController ()
 
@@ -84,14 +85,32 @@ static NSString *LHBMeCellID = @"me";
     LHBSettingViewController *settingVC = [[LHBSettingViewController alloc] initWithStyle:UITableViewStyleGrouped];
     [self.navigationController pushViewController:settingVC animated:YES];
 }
+/**
+ *  夜间模式
+ */
 - (void)moonRightBtnDown
 {
-    LHBLogFunc;
+    //换成红色RedSkins
+    //换成蓝色
+    [[NSUserDefaults standardUserDefaults] setObject:@"BlueSkins" forKey:SKINDIRNAME];
+//     [[NSUserDefaults standardUserDefaults] setObject:@"RedSkins" forKey:SKINDIRNAME];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    //夜间模式方案：把颜色配置写到plist文件，或者写到头文件，新浪微博是写到plist文件里了.两种模式的key要一样..扩展性强，可以换肤
+    
+    //要是多套皮肤的话，可以新建几个皮肤文件夹，例如red、green等，每个文件夹下各有一套图片，这些图片的名字一某一样，换肤时，换文件夹就行了
+    
+    //需要更改皮肤的界面得注册换肤通知
+    LHBTestHuanFuViewController *testVC = [[LHBTestHuanFuViewController alloc] init];
+    [self.navigationController pushViewController:testVC animated:YES];
+    
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 1;
+    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

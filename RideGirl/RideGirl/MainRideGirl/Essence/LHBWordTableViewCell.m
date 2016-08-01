@@ -13,12 +13,13 @@
 #import "LHBWordPictureView.h"
 #import "LHBWordVoiceView.h"
 #import "LHBWordVideoView.h"
+#import "LHBLogInTool.h"
 //评论模型
 #import "LHBComment.h"
 //包含用户模型
 #import "LHBUser.h"
 
-@interface LHBWordTableViewCell ()
+@interface LHBWordTableViewCell ()<UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -207,9 +208,42 @@
  *  cell右上角更多按钮
  */
 - (IBAction)more {
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:nil cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"收藏",@"举报", nil];
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"收藏",@"举报", nil];
     [sheet showInView:self.window];
     
+}
+
+
+#pragma mark - UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+//    if (buttonIndex == 2) {//取消按钮
+//        return;
+//    }else{
+//    //判断是否登录，没登录弹出登录界面
+//        if ([LHBLogInTool getUserID] == nil) {
+//            //登录
+//        }else{
+//        //登录成功，收藏或者举报操作
+//        }
+//    
+//    }
+}
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    //actionSheet本来就是个actionSheet控制器，model的时候，要等这个控制器完全消失，在弹控制器。所以写这个代理方法中
+    if (buttonIndex == 2) {//取消按钮
+        return;
+    }else{
+        //判断是否登录，没登录弹出登录界面
+        if ([LHBLogInTool getUserID:YES] == nil) {
+            //登录
+
+        }else{
+            //登录成功，收藏或者举报操作
+        }
+        
+    }
 }
 
 @end

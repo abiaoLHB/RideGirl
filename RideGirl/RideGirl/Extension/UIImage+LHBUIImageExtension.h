@@ -14,6 +14,10 @@
  *  转成圆形图片
  */
 - (UIImage *)circleImage;
+/**
+ *  根据皮肤文件夹加载图片
+ */
++ (UIImage *)lhb_imageWithName:(NSString *)name;
 
 
 @end
