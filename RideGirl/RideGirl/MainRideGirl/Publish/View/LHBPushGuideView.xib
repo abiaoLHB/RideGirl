@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -12,29 +13,25 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pushguidetop" translatesAutoresizingMaskIntoConstraints="NO" id="k47-Je-SKp">
-                    <rect key="frame" x="62" y="176" width="250" height="55"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="250" id="Nkd-Si-PX6"/>
                         <constraint firstAttribute="height" constant="55" id="UZC-it-eVS"/>
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pushguidemid" translatesAutoresizingMaskIntoConstraints="NO" id="3Gc-Nn-Rof">
-                    <rect key="frame" x="67" y="271" width="240" height="125"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="125" id="Io0-kl-W9S"/>
                         <constraint firstAttribute="width" constant="240" id="soR-rh-KzJ"/>
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pushguidebot" translatesAutoresizingMaskIntoConstraints="NO" id="XB0-Je-DOE">
-                    <rect key="frame" x="122" y="401" width="130" height="90"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="130" id="6br-pV-uuZ"/>
                         <constraint firstAttribute="height" constant="90" id="8Zj-cW-TAu"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KG3-lK-dlT">
-                    <rect key="frame" x="122.5" y="451" width="95" height="40"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="95" id="Hk4-je-FQx"/>
                         <constraint firstAttribute="height" constant="40" id="WMq-KY-MK8"/>
@@ -44,7 +41,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="KG3-lK-dlT" firstAttribute="bottom" secondItem="XB0-Je-DOE" secondAttribute="bottom" id="0fm-Ax-HVc"/>
                 <constraint firstItem="3Gc-Nn-Rof" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="3z4-vX-WUY"/>
@@ -55,7 +52,6 @@
                 <constraint firstItem="XB0-Je-DOE" firstAttribute="top" secondItem="3Gc-Nn-Rof" secondAttribute="bottom" constant="5" id="WJ3-aE-rxX"/>
                 <constraint firstItem="3Gc-Nn-Rof" firstAttribute="top" secondItem="k47-Je-SKp" secondAttribute="bottom" constant="40" id="mCk-YM-iGp"/>
             </constraints>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
         </view>
     </objects>
     <resources>
